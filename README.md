@@ -7,13 +7,13 @@ Please install [git](https://git-scm.com/downloads) and [Elm 0.17](http://elm-la
     $ cd elm-training
     $ elm-reactor
 
-Then open [http://localhost:8000](http://localhost:8000) in your browser. You should be able to navigate to [./topics/introduction/Main.elm](http://localhost:8000/topics/introduction/Main.elm) and see "Hello World"
+Then open [http://localhost:8000](http://localhost:8000) in your browser. You should be able to navigate to [./topics/introduction/Main.elm](http://localhost:8000/topics/introduction/Hello.elm) and see "Hello World"
 
 Introduction to Elm
 -------------------
-- [Basic Syntax + Hello World](./topics/introduction/Main.elm)
-- [Writing and Using Functions](./topics/functions/Main.elm)
-- [Render Functions and the Virtual DOM](./topics/render_dom/Main.elm)
+- [Basic Syntax + Hello World](./topics/introduction/Hello.elm)
+- [Writing and Using Functions](./topics/introduction/Functions.elm)
+- [Render Functions and the Virtual DOM](./topics/introduction/RenderDOM.elm)
 
 Type System
 -----------
@@ -21,7 +21,11 @@ Jamison
 
 Functional Programming
 ---------------------
-Sean
+- Immutability
+- Functional Problem Solving (break this up)
+- Currying
+- Composition: break a solution into small functions
+
 
 The Elm Architecture
 --------------------
