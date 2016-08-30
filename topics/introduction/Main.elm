@@ -35,10 +35,6 @@ import Html exposing (div, text, Html)
 
 
    EXERCISE 3
-   Run it with elm-live and get livereload working:
-      elm-live Instruction.elm
-
-   EXERCISE 4
    Install an Elm plugin for your editor that shows you errors inline whenever you save
       http://imgur.com/a/1IZ2w
 -}
