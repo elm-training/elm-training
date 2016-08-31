@@ -13,7 +13,7 @@ Introduction to Elm
 -------------------
 - [Basic Syntax + Hello World](./topics/introduction/Hello.elm)
 - [Writing and Using Functions](./topics/introduction/Functions.elm)
-- [Render Functions and the Virtual DOM](./topics/introduction/RenderDOM.elm)
+- [Render Functions and the Virtual DOM](./topics/introduction/RenderDom.elm)
 
 Type System
 -----------

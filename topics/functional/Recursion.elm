@@ -4,22 +4,30 @@ module Functional.Recursion exposing (..)
    LEARN
 
    Recursion: functions that call themselves
-     replaces for loops
-     how would you write factorial with a for loop?
+   replaces for loops
+   how would you write factorial with a for loop?
 
    How to write recursive functions
-     1. find base cases
-     2. call the function on the rest
+    1. find base cases
+    2. call the function on the rest
+
+   Factorial
+    factorial 0 = 1
+    factorial 1 = 1
+    factorial 2 = 1*2
+    factorial 3 = 1*2*3 ... etc
 -}
 
 
 factorial : Int -> Int
 factorial n =
-    -- factorial 0 = 1
-    -- factorial 1 = 1
-    -- factorial 2 = 1*2
-    -- factorial 3 = 1*2*3 ... etc
-    Debug.crash "TODO"
+    -- live code
+    case n of
+        0 ->
+            1
+
+        n ->
+            n * factorial (n - 1)
 
 
 
@@ -43,15 +51,18 @@ length : List Int -> Int
 length ns =
     case ns of
         [] ->
+            -- live code
             0
 
         -- this is the same as n :: []
         [ n ] ->
-            0
+            -- live code
+            1
 
         -- you can also match n :: n2 :: n3 :: ns
         n :: rest ->
-            0
+            -- live code
+            1 + length rest
 
 
 
