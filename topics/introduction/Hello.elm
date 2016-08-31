@@ -7,7 +7,7 @@ import Html exposing (div, text, Html)
    OBJECTIVES
 
    Introduce the core language:
-     http://guide.elm-lang.org/core_language.
+     http://guide.elm-lang.org/core_language.html
      values, functions, if/then, lists, tuples, records
 
    Install the elm tools:

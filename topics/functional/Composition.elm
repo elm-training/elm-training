@@ -2,7 +2,9 @@ module Functional.Composition exposing (..)
 
 {-
    LEARN: Composition
-   combine small, useful tools into a large solution
+   combine small, useful functions to solve a larger problems
+   keep your functions small
+   leverage the community
 
    LEARN: List.map
    multiply every element in a list by x.

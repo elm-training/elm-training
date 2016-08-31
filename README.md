@@ -1,7 +1,7 @@
 # Welcome to Elm Training
 This contains the course material for Elm Training. Before attending the training, make sure you can run the code in this repository, and configure your editor to show you errors inline when you save.
 
-Please install [git](https://git-scm.com/downloads) and [Elm 0.17](http://elm-lang.org/install). Then run:
+Please install [git](https://git-scm.com/downloads) and [Elm 0.17](http://elm-lang.org/install), then run:
 
     $ git clone https://github.com/elm-training/elm-training.git
     $ cd elm-training
@@ -42,9 +42,27 @@ The Elm Architecture: Effects
 -----------------------------
 Jamison
 
-Advanced Types
+The Elm Architecture: View Modularity
+-------------------------------------
+Jamison
+
+[Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
+--------------------------------------------------------------------
+- [Maybe](http://guide.elm-lang.org/error_handling/maybe.html)
+- [Result](http://guide.elm-lang.org/error_handling/result.html)
+- [Task](http://guide.elm-lang.org/error_handling/task.html)
+
+Advanced Types (TODO SEAN)
 -----------------------------
-Sean
+Type-driven development - Modeling with types
+Start by outlining your model. Get that clear first.
+
+Principle: compose types, don’t extend them
+Persons of different types
+Person: name, age
+Employee: + salary, assigned team
+Customer: + account
+
 - Type Driven Development
 - Compose Types
 - Data Modeling
@@ -61,17 +79,26 @@ Architecture: Organizing Files
 ------------------------------
 Jamison
 
-Functional Programming: Composition
+Functional Programming: Composition (TODO SEAN)
 -----------------------------------
-Sean
+Composition: building things from the bottom up
+Functional Composition?
+Vs inheritance / switches / etc?
 
-Reusable Components
+Reusable Components (TODO SEAN)
 -------------------
-Sean
+Elm Architecture Modules vs Stateless Components / Context pattern / passing in messages. Lowercase msg.
+Components with children.
+Other component design patterns: Elm Sortable Table.
+Stateful components, like typeahead/autocomplete, accordion, tabs?
+Spend a lot of time here. Multiple exercises. Gain some intuition.
+Wide vs Deep: the cost to Elm Architecture Modules. Stateless components are cheap.
 
-URL Routing
+
+URL Routing (TODO SEAN)
 -----------
-Sean
+Introduce: Use UrlParser and Navigation.
+Mention: Nesting
 
 Testing
 -------
@@ -79,3 +106,5 @@ Jamison
 
 Tour of the package ecosystem
 -----------------------------
+[package.elm-lang.org](http://package.elm-lang.org/)
+See the "extra" packages and anything maintained by elm-community
