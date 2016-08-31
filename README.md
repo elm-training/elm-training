@@ -20,12 +20,14 @@ Type System
 Jamison
 
 Functional Programming
----------------------
-- Immutability
-- Functional Problem Solving (break this up)
-- Currying
-- Composition: break a solution into small functions
-
+----------------------
+- [Immutability](./topics/functional/Immutability.elm)
+- [Recursion](./topics/functional/Recursion.elm)
+- Recursion: lists. duplicate items in a list n times, map, concat, pattern matching, base cases..
+- Recursion: sum dev experience: recursion, state, fold, currying, operators
+- Recursion: filter, currying: split into senior / junior devs
+- Composition: break a solution into small functions. Make your own fancy list function: maximumBy. leadDeveloper (with the most experience). Currying.
+- Big problem: string compression: "abbccccd" -> "ab2c4d". Hint. convert to list, then List.Extra.group?
 
 The Elm Architecture
 --------------------

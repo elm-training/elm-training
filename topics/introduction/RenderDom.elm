@@ -32,14 +32,13 @@ appState =
 
 
 view state =
-    div []
-        [ catView state.catOne
-        , catView state.catTwo
-        ]
+    -- display both cats
+    _________________
 
 
 catView cat =
-    div [] [ imageLink cat.image cat.url ]
+    -- display one cat
+    _________________
 
 
 imageLink image url =
