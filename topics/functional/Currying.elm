@@ -17,26 +17,36 @@ multiplyBy x ns =
 
 
 {-
-   LEARN: Currying
-   functions always have one parameter, return other functions
-   what does multiplyBy return if you only call it with the first param?
+    LEARN: Currying
 
+    Functions always have one parameter, return other functions
+     What does multiplyBy return if you only call it with the first param? (Partial application)
+
+    In Javascript:
+
+        function add(a) {
+            return function(b) {
+                return a + b
+            }
+        }
+
+        add(2)(5) == 7
 -}
 
 
 multiplyBy2 : List Int -> List Int
 multiplyBy2 =
-    -- live code
+    -- live code, demo in repl
     multiplyBy 2
 
 
 
 {-
-   LEARN: Currying
-   operators are functions, we can curry them
-   http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Basics
+    LEARN: Operators are Functions
+     http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Basics
 
-   rewrite the above with currying
+    Operators are curried and can be partially applied
+     rewrite some of our functions using partial application
 -}
 
 

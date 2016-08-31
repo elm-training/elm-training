@@ -34,10 +34,6 @@ The Elm Architecture
 --------------------
 Jamison
 
-Operators
----------
-Jamison
-
 The Elm Architecture: Effects
 -----------------------------
 Jamison
@@ -45,12 +41,6 @@ Jamison
 The Elm Architecture: View Modularity
 -------------------------------------
 Jamison
-
-[Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
---------------------------------------------------------------------
-- [Maybe](http://guide.elm-lang.org/error_handling/maybe.html)
-- [Result](http://guide.elm-lang.org/error_handling/result.html)
-- [Task](http://guide.elm-lang.org/error_handling/task.html)
 
 Advanced Types (TODO SEAN)
 -----------------------------
@@ -67,6 +57,13 @@ Customer: + account
 - Compose Types
 - Data Modeling
 
+[Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
+--------------------------------------------------------------------
+- [Maybe](http://guide.elm-lang.org/error_handling/maybe.html)
+- [Result](http://guide.elm-lang.org/error_handling/result.html)
+- [Task](http://guide.elm-lang.org/error_handling/task.html)
+
+
 The Outside World
 -----------------
 Jamison
@@ -79,14 +76,11 @@ Architecture: Organizing Files
 ------------------------------
 Jamison
 
-Functional Programming: Composition (TODO SEAN)
------------------------------------
+Reusable Components (TODO SEAN)
+-------------------
 Composition: building things from the bottom up
 Functional Composition?
 Vs inheritance / switches / etc?
-
-Reusable Components (TODO SEAN)
--------------------
 Elm Architecture Modules vs Stateless Components / Context pattern / passing in messages. Lowercase msg.
 Components with children.
 Other component design patterns: Elm Sortable Table.
@@ -106,5 +100,5 @@ Jamison
 
 Tour of the package ecosystem
 -----------------------------
-[package.elm-lang.org](http://package.elm-lang.org/)
-See the "extra" packages and anything maintained by elm-community
+- [package.elm-lang.org](http://package.elm-lang.org/)
+- See the "extra" packages and anything maintained by elm-community

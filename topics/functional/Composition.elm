@@ -76,6 +76,42 @@ duplicate n =
 
 
 
+{-
+   LEARN: Function composition
+
+   (f << g) x = f(g(x))
+   (f >> g) x = g(f(x))
+
+   Rarely used in Elm
+   Not important compared to the princple of Composition
+-}
+
+
+duplicateAll' : List a -> List a
+duplicateAll' =
+    -- live code
+    List.concat << List.map duplicate
+
+
+{-
+   LEARN: Pipe operators are used more often than (<<)
+
+   (|>) lets you chain things together, flips them around
+   (<|) lets you avoid parens
+-}
+
+
+duplicateAll'' : List a -> List a
+duplicateAll'' ns =
+    -- live code
+    List.map duplicate ns
+        |> List.concat
+
+
+duplicateAll''' : List a -> List a
+duplicateAll''' ns =
+    -- live code
+    List.concat <| List.map duplicate ns
 
 
 {-
