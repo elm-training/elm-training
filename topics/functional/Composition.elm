@@ -87,8 +87,8 @@ duplicate n =
 -}
 
 
-duplicateAll' : List a -> List a
-duplicateAll' =
+duplicateAll_Compose : List a -> List a
+duplicateAll_Compose =
     -- live code
     List.concat << List.map duplicate
 
@@ -96,20 +96,20 @@ duplicateAll' =
 {-
    LEARN: Pipe operators are used more often than (<<)
 
-   (|>) lets you chain things together, flips them around
-   (<|) lets you avoid parens
+   (|>) pipes result of first function into second
+   (<|) like normal but you can leave out parentheses
 -}
 
 
-duplicateAll'' : List a -> List a
-duplicateAll'' ns =
+duplicateAll_Pipe : List a -> List a
+duplicateAll_Pipe ns =
     -- live code
     List.map duplicate ns
         |> List.concat
 
 
-duplicateAll''' : List a -> List a
-duplicateAll''' ns =
+duplicateAll_Pipe' : List a -> List a
+duplicateAll_Pipe' ns =
     -- live code
     List.concat <| List.map duplicate ns
 
