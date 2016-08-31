@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Introduction.RenderDom exposing (..)
 
 import Html exposing (text, Html, div, img, a, header, h1)
 import Html.Attributes exposing (src, href, width)
@@ -32,13 +32,17 @@ appState =
 
 
 view state =
-    -- display both cats
-    _________________
+    -- live code: display both cats
+    div []
+        [ catView state.catOne
+        , catView state.catTwo
+        ]
 
 
 catView cat =
-    -- display one cat
-    _________________
+    -- live code: display one cat
+    div []
+        [ imageLink cat.image cat.url ]
 
 
 imageLink image url =
@@ -54,11 +58,15 @@ main =
 
 
 
--- EXERCISE
---  Add a "title" to the state.
---  Create a view function that displays the title based on the state
---
---
--- EXERCISE
---  Change catOne and catTwo in state to be a list of cats
---  Render the items in the list with list.map
+{-
+    EXERCISE
+    Add a page title to the state.
+    Create a view function that displays the page title based on the state
+
+    EXERCISE
+    Change catOne and catTwo in state to be a list of cats
+    Render the items in the list with list.map
+
+    EXERCISE
+    Add an image title to each cat. Set the alt text as well and add a small header for each one
+-}

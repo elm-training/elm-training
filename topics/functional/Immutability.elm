@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Functional.Immutability exposing (..)
 
 import Html exposing (div, text, Html)
 
@@ -6,8 +6,13 @@ import Html exposing (div, text, Html)
 {-
    LEARN
 
-   Immutability: bind new variables, don't change old ones
+   Immutability: new local bindings, instead of changing variables
      bind with let
+
+   Implement the score function
+      mutability: we would increment the score
+      immutability: let bindings
+      calculate the score based on kills and deaths and add them
 -}
 
 
@@ -21,18 +26,21 @@ type alias PlayerStats =
 
 score : PlayerStats -> Int
 score stats =
-    -- calculate the score based on kills and deaths and add them
-    Debug.crash "TODO"
+    -- live code
+    let
+        perKill =
+            10
 
+        perDeath =
+            -5
 
-scorePerKill : Int
-scorePerKill =
-    10
+        scoreKills =
+            stats.kills * perKill
 
-
-scorePerDeath : Int
-scorePerDeath =
-    -5
+        scoreDeaths =
+            stats.deaths * perDeath
+    in
+        scoreKills + scoreDeaths
 
 
 example : PlayerStats
@@ -50,12 +58,14 @@ example =
 
 scoreKills : Int -> Int
 scoreKills kills =
-    Debug.crash "TODO"
+    -- live code, change score
+    kills * 10
 
 
 scoreDeaths : Int -> Int
 scoreDeaths deaths =
-    Debug.crash "TODO"
+    -- live code, change score
+    deaths * 10
 
 
 
@@ -64,23 +74,28 @@ scoreDeaths deaths =
 
 gotKills : Int -> PlayerStats -> PlayerStats
 gotKills n stats =
-    -- increment kills by n
-    Debug.crash "TODO"
+    -- live code: increment kills by n
+    { stats | kills = stats.kills + n }
 
 
 
 {- EXERCISE
-   If a player collects over 100 gold, they win the game, so their final score should ignore kills and deaths and be 1000 + 50 points * the gold they collected over 100.
+   If a player collects over 100 gold, they win the game. Add 1000 to their score.
 
-   so 105 gold: score = 1000 + 5*50 = 1250, no matter how many kills / deaths
+   Create a GameResult type alias that contains both the score and a boolean specifying whether they won. Write a function `gameResult` that returns a GameResult given PlayerStats.
+
 -}
 
 
-test =
-    (score { example | gold = 105 } == 1250)
-        && (score { example | gold = 100 } == 1000)
-        && (score { example | gold = 95 } == score example)
+type alias GameResult =
+    {}
+
+
+result : PlayerStats -> GameResult
+result stats =
+    Debug.crash "TODO"
+
 
 
 main =
-    text "use the repl"
+    text "Use elm-repl to test"

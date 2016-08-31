@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Functional.Recursion exposing (..)
 
 {-
    LEARN
@@ -27,9 +27,9 @@ factorial n =
      LEARN: List recursion
 
      Linked lists are implemented like this:
-       type List a = Empty | Cons a (List a)
+       type List a = Empty | Link a (List a)
        Empty = []
-       Cons = (::)
+       Link = (::)
 
      So the list [1,2,3,4] == 1 :: 2 :: 3 :: 4 :: []
 
@@ -71,7 +71,7 @@ multiplyBy x ns =
 
 
 duplicateAll : List a -> List a
-duplicateAll =
+duplicateAll xs =
     Debug.crash "TODO"
 
 
@@ -86,10 +86,10 @@ duplicateAll =
 
 
 repeat : Int -> a -> List a
-repeat =
+repeat n x =
     Debug.crash "TODO"
 
 
 repeatAll : Int -> List a -> List a
-repeatAll =
+repeatAll n xs =
     Debug.crash "TODO"

@@ -1,6 +1,7 @@
-module Main exposing (..)
+module Introduction.Functions exposing (..)
 
-import Html exposing (text, Html, div)
+import Html exposing (text, Html, div, img)
+import Html.Attributes exposing (src, width)
 
 
 -- LEARN: Render functions
@@ -8,11 +9,16 @@ import Html exposing (text, Html, div)
 
 
 greet name =
-    _________________
+    -- live code
+    "Hello, " ++ name
 
 
 main =
-    div [] [ text "Hello World" ]
+    -- live code to use greet
+    div []
+        [ div [] [ text (greet "Sean") ]
+        , div [] [ text (greet "Everyone") ]
+        ]
 
 
 
@@ -21,10 +27,24 @@ main =
 -- documentation: http://package.elm-lang.org/packages/elm-lang/html/latest
 
 
-cats =
-    ___________________
+catView =
+    -- live code, add to main
+    div []
+        [ img
+            [ src "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"
+            , width 400
+            ]
+            []
+        ]
 
 
 
--- EXERCISE: Show an image with a link to a page describing it
--- EXERCISE: Turn this into a function with 2 parameters: image and url. Display 2-3 different ones on the same page
+{-
+    EXERCISE: Change catView so the image links to a web page talking about cats: https://en.wikipedia.org/wiki/Cat
+
+    EXERCISE: Write an imageLink function with 2 parameters: image and url. Use it to display 2-3 images with links on the same page
+
+-}
+
+imageLink image url =
+    Debug.crash "TODO"
