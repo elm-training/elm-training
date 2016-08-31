@@ -17,7 +17,11 @@ Introduction to Elm
 
 Type System
 -----------
-Jamison
+- [Basic Function Signatures](./topics/type-system/BasicFunctionSignatures.elm)
+- [Type Aliases](./topics/type-system/TypeAliases.elm)
+- [Union Types](./topics/type-system/UnionTypes.elm)
+- [Type Variables](./topics/type-system/TypeVariables.elm)
+- [Advanced Function Signatures](./topics/type-system/AdvancedFunctionSignatures.elm)
 
 Functional Programming
 ----------------------
