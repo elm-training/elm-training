@@ -11,9 +11,9 @@ Then open [http://localhost:8000](http://localhost:8000) in your browser. You sh
 
 Introduction to Elm
 -------------------
-- [Basic Syntax + Hello World](./topics/introduction/Hello.elm)
-- [Writing and Using Functions](./topics/introduction/Functions.elm)
-- [Render Functions and the Virtual DOM](./topics/introduction/RenderDOM.elm)
+- [Basic Syntax + Hello World](./topics/Introduction/Hello.elm)
+- [Writing and Using Functions](./topics/Introduction/Functions.elm)
+- [Render Functions and the Virtual DOM](./topics/Introduction/RenderDOM.elm)
 
 Type System
 -----------
@@ -25,13 +25,10 @@ Type System
 
 Functional Programming
 ----------------------
-- [Immutability](./topics/functional/Immutability.elm)
-- [Recursion](./topics/functional/Recursion.elm)
-- Recursion: lists. duplicate items in a list n times, map, concat, pattern matching, base cases..
-- Recursion: sum dev experience: recursion, state, fold, currying, operators
-- Recursion: filter, currying: split into senior / junior devs
-- Composition: break a solution into small functions. Make your own fancy list function: maximumBy. leadDeveloper (with the most experience). Currying.
-- Big problem: string compression: "abbccccd" -> "ab2c4d". Hint. convert to list, then List.Extra.group?
+- [Immutability](./topics/Functional/Immutability.elm)
+- [Recursion](./topics/Functional/Recursion.elm)
+- [Composition](./topics/Functional/Composition.elm)
+- [Currying](./topics/Functional/Currying.elm)
 
 The Elm Architecture
 --------------------

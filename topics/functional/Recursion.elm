@@ -55,41 +55,76 @@ length ns =
 
 
 
-{- EXERCISE: multiply every element in a list by n -}
+{-
+   EXERCISE
+   multiply every element in a list by x.
+   use explicit recursion
+-}
 
 
 multiplyBy : Int -> List Int -> List Int
 multiplyBy x ns =
-    Debug.crash "TODO"
+    -- live code
+    case ns of
+        [] ->
+            []
 
-
-
-{- LEARN: map
-
-   EXERCISE: duplicate items in a list
--}
-
-
-duplicateAll : List a -> List a
-duplicateAll xs =
-    Debug.crash "TODO"
+        n :: ns ->
+            n * x :: multiplyBy x ns
 
 
 
 {-
-   LEARN: List.concat
-
-   EXERCISE:
-     write repeatAll, which is the same as duplicate, but n times instead of 2
-     to solve this, write a function repeat that takes a value and repeats it n times
+   EXERCISE
+   sum all values in a list
+   use explicit recursion
 -}
 
 
-repeat : Int -> a -> List a
-repeat n x =
-    Debug.crash "TODO"
+sum : List Int -> Int
+sum ns =
+    case ns of
+        [] ->
+            0
+
+        n :: ns ->
+            n + (sum ns)
 
 
-repeatAll : Int -> List a -> List a
-repeatAll n xs =
-    Debug.crash "TODO"
+
+{-
+   EXERCISE
+   only keep values less than x
+   use explicit recursion
+-}
+
+
+lessThan : Int -> List Int -> List Int
+lessThan x ns =
+    case ns of
+        [] ->
+            []
+
+        n :: ns ->
+            if n < x then
+                n :: lessThan x ns
+            else
+                lessThan x ns
+
+
+
+{-
+   EXERCISE
+   duplicate items in a list
+   use explicit recursion
+-}
+
+
+duplicateAll : List a -> List a
+duplicateAll ns =
+    case ns of
+        [] ->
+            []
+
+        n :: ns ->
+            n :: n :: duplicateAll ns
