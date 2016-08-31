@@ -11,9 +11,9 @@ Then open [http://localhost:8000](http://localhost:8000) in your browser. You sh
 
 Introduction to Elm
 -------------------
-- [Basic Syntax + Hello World](./topics/Introduction/Hello.elm)
-- [Writing and Using Functions](./topics/Introduction/Functions.elm)
-- [Render Functions and the Virtual DOM](./topics/Introduction/RenderDOM.elm)
+- [Basic Syntax + Hello World](./topics/introduction/Hello.elm)
+- [Writing and Using Functions](./topics/introduction/Functions.elm)
+- [Render Functions and the Virtual DOM](./topics/introduction/RenderDOM.elm)
 
 Type System
 -----------
@@ -25,10 +25,10 @@ Type System
 
 Functional Programming
 ----------------------
-- [Immutability](./topics/Functional/Immutability.elm)
-- [Recursion](./topics/Functional/Recursion.elm)
-- [Composition](./topics/Functional/Composition.elm)
-- [Currying](./topics/Functional/Currying.elm)
+- [Immutability](./topics/functional/Immutability.elm)
+- [Recursion](./topics/functional/Recursion.elm)
+- [Composition](./topics/functional/Composition.elm)
+- [Currying](./topics/functional/Currying.elm)
 
 The Elm Architecture
 --------------------
