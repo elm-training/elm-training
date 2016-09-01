@@ -1,5 +1,6 @@
 module AdvancedTypes.TDD exposing (..)
 
+import Dict exposing (Dict)
 import Html exposing (text)
 import String
 
@@ -53,11 +54,20 @@ calculateOp : Op -> Float -> Float
 calculateOp op tot =
     -- live code: seems easy to write leave until later
     case op of
-        Add n -> tot + n
-        Sub n -> tot - n
-        Div n -> tot / n
-        Mul n -> tot * n
-        Lit n -> n
+        Add n ->
+            tot + n
+
+        Sub n ->
+            tot - n
+
+        Div n ->
+            tot / n
+
+        Mul n ->
+            tot * n
+
+        Lit n ->
+            n
 
 
 calculateOps : List Op -> Float
@@ -67,7 +77,6 @@ calculateOps ops =
     List.foldl calculateOp 0 ops
 
 
-
 calculate' : String -> Float
 calculate' input =
     -- live code: does this fit with parse and calculateOps?
@@ -75,15 +84,12 @@ calculate' input =
         |> calculateOps
 
 
-
 parse : String -> List Op
 parse input =
     -- live code: try parseMap first
     -- but parseMap is impossible to write
-
     String.split " " input
         |> parseRecursive
-
 
 
 parseMap : String -> Op
@@ -91,8 +97,11 @@ parseMap str =
     -- live code: I need to write this function to see if it's actually possible
     -- wait, what does the signature of this have to be?
     case str of
-        "+" -> Debug.crash "I can't just return Add, that's (Float -> Op)"
-        _ -> Debug.crash "..."
+        "+" ->
+            Debug.crash "I can't just return Add, that's (Float -> Op)"
+
+        _ ->
+            Debug.crash "..."
 
 
 parseFoldl : String -> b -> b
@@ -103,34 +112,64 @@ parseFoldl str =
 
 parseRecursive : List String -> List Op
 parseRecursive strs =
-    let parseDefault0 n =
-        String.toFloat n
-            |> Result.withDefault 0
+    let
+        parseDefault0 n =
+            String.toFloat n
+                |> Result.withDefault 0
 
-    -- live code: let's recurse manually
-    in case strs of
-        ("+" :: n :: rest) ->
-            Add (parseDefault0 n) :: parseRecursive rest
+        -- live code: let's recurse manually
+    in
+        case strs of
+            "+" :: n :: rest ->
+                Add (parseDefault0 n) :: parseRecursive rest
 
-        ("-" :: n :: rest) ->
-            Sub (parseDefault0 n) :: parseRecursive rest
+            "-" :: n :: rest ->
+                Sub (parseDefault0 n) :: parseRecursive rest
 
-        ("*" :: n :: rest) ->
-            Mul (parseDefault0 n) :: parseRecursive rest
+            "*" :: n :: rest ->
+                Mul (parseDefault0 n) :: parseRecursive rest
 
-        ("/" :: n :: rest) ->
-            Div (parseDefault0 n) :: parseRecursive rest
+            "/" :: n :: rest ->
+                Div (parseDefault0 n) :: parseRecursive rest
 
-        (n :: rest) ->
-            Lit (parseDefault0 n) :: parseRecursive rest
+            n :: rest ->
+                Lit (parseDefault0 n) :: parseRecursive rest
 
-        [] ->
-            [ ]
+            [] ->
+                []
+
+
 
 {-
 
-    EXERCISE
+   EXERCISE
 
-    Add variables to your calculator
+   The calculator needs to support variables. Instead of just processing a single line at a time, process a series of lines, some of which can store literals into a variable.
 
- -}
+       A = 3
+       2 + 3 + A
+       B = 4
+       B - A
+
+   Should return
+
+       [0, 8, 0, 3]
+
+   Don't worry about implementing all functions, the exercise is just to see if you can create the type signatures for functions that would fit together.
+
+   Implement enough of them to be sure your solution fits
+
+   Change the signatures of the above functions to match your assumptions. Get it to compile using Debug.crash
+
+-}
+
+
+type alias Variables =
+    ()
+
+
+calculateAll : List String -> List Float
+calculateAll steps =
+    -- what does the state look like?
+    -- implement this function to make sure it fits with your solution
+    Debug.crash "TODO"
