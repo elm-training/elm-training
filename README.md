@@ -44,18 +44,10 @@ Jamison
 
 Advanced Types (TODO SEAN)
 -----------------------------
-Type-driven development - Modeling with types
-Start by outlining your model. Get that clear first.
+* [Type Driven Development](./topics/AdvancedTypes/TDD.elm)
+* [Data Modeling](./topics/AdvancedTypes/Modeling.elm)
+* [Composing Types](./topics/AdvancedTypes/Composing.elm)
 
-Principle: compose types, don’t extend them
-Persons of different types
-Person: name, age
-Employee: + salary, assigned team
-Customer: + account
-
-- Type Driven Development
-- Compose Types
-- Data Modeling
 
 [Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
 --------------------------------------------------------------------
