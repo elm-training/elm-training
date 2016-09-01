@@ -7,13 +7,13 @@ Please install [git](https://git-scm.com/downloads) and [Elm 0.17](http://elm-la
     $ cd elm-training
     $ elm-reactor
 
-Then open [http://localhost:8000](http://localhost:8000) in your browser. You should be able to navigate to [./topics/introduction/Hello.elm](http://localhost:8000/topics/introduction/Hello.elm) and see "Hello World"
+Then open [http://localhost:8000](http://localhost:8000) in your browser. You should be able to navigate to [./topics/Introduction/Hello.elm](http://localhost:8000/topics/Introduction/Hello.elm) and see "Hello World"
 
 Introduction to Elm
 -------------------
-- [Basic Syntax + Hello World](./topics/introduction/Hello.elm)
-- [Writing and Using Functions](./topics/introduction/Functions.elm)
-- [Render Functions and the Virtual DOM](./topics/introduction/RenderDom.elm)
+- [Basic Syntax + Hello World](./topics/Introduction/Hello.elm)
+- [Writing and Using Functions](./topics/Introduction/Functions.elm)
+- [Render Functions and the Virtual DOM](./topics/Introduction/RenderDom.elm)
 
 Type System
 -----------
@@ -25,10 +25,10 @@ Type System
 
 Functional Programming
 ----------------------
-- [Immutability](./topics/functional/Immutability.elm)
-- [Recursion](./topics/functional/Recursion.elm)
-- [Composition](./topics/functional/Composition.elm)
-- [Currying](./topics/functional/Currying.elm)
+- [Immutability](./topics/Functional/Immutability.elm)
+- [Recursion](./topics/Functional/Recursion.elm)
+- [Composition](./topics/Functional/Composition.elm)
+- [Currying](./topics/Functional/Currying.elm)
 
 The Elm Architecture
 --------------------
