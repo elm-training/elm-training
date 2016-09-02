@@ -231,7 +231,6 @@ calculateAll steps =
         variables =
             List.map parseVariable varLines
                 |> Dict.fromList
-
     in
         calculate' variables calcLine
 
