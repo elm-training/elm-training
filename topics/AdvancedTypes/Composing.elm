@@ -133,9 +133,10 @@ pageView : Record Page -> Html msg
 pageView (Record info page) =
     div []
         [ h1 [] [ text page.name ]
-        , div [] [ text ("Updated at: " ++ toString info.updated)]
+        , div [] [ text ("Updated at: " ++ toString info.updated) ]
         , div [] [ text page.content ]
         ]
+
 
 
 -- we can write generic functions that work on any record
@@ -143,21 +144,27 @@ pageView (Record info page) =
 
 filterNotDeleted : List (Record a) -> List (Record a)
 filterNotDeleted records =
-    let notDeleted (Record info _) =
-        not info.deleted
-    in List.filter notDeleted records
+    let
+        notDeleted (Record info _) =
+            not info.deleted
+    in
+        List.filter notDeleted records
 
 
-{-  EXERCISE
 
-    Change Record to be a type alias instead of a type
+{- EXERCISE
 
-    Write a function that sorts by date last updated for any record
+   Change Record to be a type alias instead of a type
 
- -}
+   Write a function that sorts by date last updated for any record
 
-type alias Record' = {}
+-}
+
+
+type alias Record' =
+    {}
+
 
 sortByUpdated : ()
 sortByUpdated =
-     Debug.crash "TODO"
+    Debug.crash "TODO"

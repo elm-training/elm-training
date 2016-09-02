@@ -144,23 +144,19 @@ parseRecursive strs =
 
    EXERCISE
 
-   The calculator needs to support variables. Instead of just processing a single line at a time, process a series of lines, some of which can store literals into a variable.
+   Add support for variables to the calculator. The input will now be multiple lines. All lines except the last will contain statements to set variables. The last line will contain a calculation, as before, but it may contain variables.
 
        A = 3
-       2 + 3 + A
-       B = 4
-       B - A
+       B = 2
+       2 + A / B
 
    Should return
 
-       [0, 8, 0, 3]
+        2.5
 
-   Don't worry about implementing all functions, the exercise is just to see if you can create the type signatures for functions that would fit together.
-
-   Implement enough of them to be sure your solution fits
+   Don't worry about implementing all functions, the exercise is to create the type signatures for functions to make sure your solution makes sense. Implement as many functions as is necessary to be confident that your model will work.
 
    Change the signatures of the above functions to match your assumptions. Get it to compile using Debug.crash
-
 -}
 
 
@@ -168,7 +164,7 @@ type alias Variables =
     ()
 
 
-calculateAll : List String -> List Float
+calculateAll : List String -> Float
 calculateAll steps =
     -- what does the state look like?
     -- implement this function to make sure it fits with your solution
