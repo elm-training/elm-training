@@ -17,11 +17,11 @@ Introduction to Elm
 
 Type System
 -----------
-- [Basic Function Signatures](./topics/type-system/BasicFunctionSignatures.elm)
-- [Type Aliases](./topics/type-system/TypeAliases.elm)
-- [Union Types](./topics/type-system/UnionTypes.elm)
-- [Type Variables](./topics/type-system/TypeVariables.elm)
-- [Advanced Function Signatures](./topics/type-system/AdvancedFunctionSignatures.elm)
+- [Basic Function Signatures](./topics/TypeSystem/BasicFunctionSignatures.elm)
+- [Type Aliases](./topics/TypeSystem/TypeAliases.elm)
+- [Union Types](./topics/TypeSystem/UnionTypes.elm)
+- [Type Variables](./topics/TypeSystem/TypeVariables.elm)
+- [Advanced Function Signatures](./topics/TypeSystem/AdvancedFunctionSignatures.elm)
 
 Functional Programming
 ----------------------
@@ -32,7 +32,8 @@ Functional Programming
 
 The Elm Architecture
 --------------------
-Jamison
+- [Introduction](./topics/ElmArchitecture/Intro.elm)
+- [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
 
 The Elm Architecture: Effects
 -----------------------------

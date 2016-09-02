@@ -1,4 +1,4 @@
-module Main exposing (..)
+module TypeSyste.TypeAliases exposing (..)
 
 import Html exposing (div)
 

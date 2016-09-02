@@ -1,4 +1,4 @@
-module Main exposing (..)
+module TypeSystem.TypeVariables exposing (..)
 
 -- LEARN: Elm has no such thing as undefined. How do we represent a value that might not exist?
 type Nullable a = Null | Value a

@@ -1,4 +1,4 @@
-module Main exposing (..)
+module TypeSystem.UnionTypes exposing (..)
 
 import Html exposing (div, text, input)
 import Html.Attributes exposing (class, type')
