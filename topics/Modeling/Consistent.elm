@@ -1,14 +1,14 @@
-module Modeling.Modeling exposing (..)
+module Modeling.Consistent exposing (..)
 
 import Html exposing (text, Html)
 
 
 {-
-   LEARN: Data Modeling - Irregular Data
+   LEARN: Data Modeling - Consistent Data
 
    APIs and Object Oriented languages often model very different data with the same object, sometimes flagged with a "type" field.
 
-   It's easy to get into an inconsistent state though. What if a field should always be present when type = "x"? Should that field be optional?
+   It's easy for this to result in an inconsistent state. What if a field should always be present when type = "x"? Should that field be optional?
 
 -}
 
@@ -26,15 +26,32 @@ type alias Sides =
 
 
 type alias Shape =
+    -- live code
     -- "circle" or "polygon"
     -- radius only valid for cirlce
     -- numSides only valid for polygon
     -- color valid for both
     { shapeType : String
     , color : Color
-    , radius : Radius
-    , numSides : Sides
+    , radius : Maybe Radius
+    , numSides : Maybe Sides
     }
+
+
+displayShape : Shape -> Html msg
+displayShape shape =
+    -- live code
+    -- to display a circle we have to pattern match twice now:
+    case shape.shapeType of
+        "circle" ->
+            case shape.radius of
+                Just r ->
+                    text "Now we can display a circle"
+                Nothing ->
+                    text "This is an invalid Shape... "
+
+        _ ->
+            Debug.crash "..."
 
 
 

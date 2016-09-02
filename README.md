@@ -47,7 +47,7 @@ Jamison
 Real World Types - Data Modeling
 --------------------------------
 - [Type Driven Development](./topics/Modeling/TDD.elm)
-- [Irregular Data](./topics/Modeling/Modeling.elm)
+- [Consistent Data](./topics/Modeling/Consistent.elm)
 - [Composing Types](./topics/Modeling/Composing.elm)
 - [Getting Specific](./topics/Modeling/Specific.elm)
 
