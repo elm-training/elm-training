@@ -45,6 +45,7 @@ type alias Employee =
 
 
 type alias ProjectEmployees =
+    -- live code
     { project : Project
     , manager : Employee
     , assigned : List Employee
@@ -80,12 +81,14 @@ type alias ProjectEmployees =
 
 
 type alias PageCreateRequest =
+    -- live code
     { name : String
     , content : String
     }
 
 
 type alias Page =
+    -- live code
     { id : ID
     , name : String
     , content : String
@@ -102,6 +105,7 @@ type alias Page =
    Instead, let's make the extra info that comes from the server a separate generic type.
 
 -}
+-- live code
 
 
 type Record a
@@ -131,6 +135,7 @@ createPage page =
 
 pageView : Record Page -> Html msg
 pageView (Record info page) =
+    -- live code
     div []
         [ h1 [] [ text page.name ]
         , div [] [ text ("Updated at: " ++ toString info.updated) ]
@@ -144,6 +149,7 @@ pageView (Record info page) =
 
 filterNotDeleted : List (Record a) -> List (Record a)
 filterNotDeleted records =
+    -- live code
     let
         notDeleted (Record info _) =
             not info.deleted
@@ -168,3 +174,16 @@ type alias Record' =
 sortByUpdated : ()
 sortByUpdated =
     Debug.crash "TODO"
+
+
+
+{-
+    EXERCISE
+
+    1. Create a type to represent an employee and the project she belongs to.
+
+    2. What if you needed to know the other developers also assigned to the project?
+-}
+
+
+type alias EmployeeProject = ()
