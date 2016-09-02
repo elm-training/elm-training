@@ -1,4 +1,4 @@
-module AdvancedTypes.Composing exposing (..)
+module Modeling.Composing exposing (..)
 
 import Date exposing (Date)
 import Html exposing (text, Html, div, h1)

@@ -46,10 +46,10 @@ Jamison
 
 Real World Types - Data Modeling
 --------------------------------
-- [Type Driven Development](./topics/AdvancedTypes/TDD.elm)
-- [Irregular Data](./topics/AdvancedTypes/Modeling.elm)
-- [Composing Types](./topics/AdvancedTypes/Composing.elm)
-- [Getting Specific](./topics/AdvancedTypes/Specific.elm)
+- [Type Driven Development](./topics/Modeling/TDD.elm)
+- [Irregular Data](./topics/Modeling/Modeling.elm)
+- [Composing Types](./topics/Modeling/Composing.elm)
+- [Getting Specific](./topics/Modeling/Specific.elm)
 
 
 [Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)

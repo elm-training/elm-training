@@ -1,4 +1,4 @@
-module AdvancedTypes.Modeling exposing (..)
+module Modeling.Modeling exposing (..)
 
 import Html exposing (text, Html)
 

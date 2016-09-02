@@ -1,4 +1,4 @@
-module AdvancedTypes.Specific exposing (..)
+module Modeling.Specific exposing (..)
 
 import Html exposing (Html, text, div)
 

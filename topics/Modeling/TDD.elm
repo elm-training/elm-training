@@ -1,4 +1,4 @@
-module AdvancedTypes.TDD exposing (..)
+module Modeling.TDD exposing (..)
 
 import Dict exposing (Dict)
 import Html exposing (text)
