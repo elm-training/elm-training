@@ -97,15 +97,15 @@ tweetContentView content =
 
    Your API returns a list of employees, their roles, the project they are assigned to, and what their expertise is. The objects look like this:
 
-       {
-         id: xxx
-         name: "person",
-         salary: 123456,
-         role: "developer" | "manager" | "support"
-         assignedProjectId: "projectId",
-         managedProjectId: "projectId"
-         expertise: "web" | "server" | "qa" | "technical support"
-       }
+        {
+            id: xxx
+            name: "person",
+            salary: 123456,
+            role: "developer" | "manager" | "support"
+            assignedProjectId: "projectId",
+            managedProjectId: "projectId"
+            expertise: "web" | "server" | "qa" | "technical support"
+        }
 
     Developers: have an assigned project, expertise of either "web" or "server", but no managed project
 
@@ -138,7 +138,7 @@ tweetContentView content =
             expertise: "qa" | "technical support"
        }
 
-    Create a type Employee that can represent all of these and doesn't allow for inconsistent states. For example, a developer should never have a "qa" expertise, and should always have an assignedProjectId
+    Create a type Employee that can represent all of these and doesn't allow for inconsistent states. For example, a developer should never have a "qa" expertise, and should always have an assignedProjectId.
 
 -}
 
