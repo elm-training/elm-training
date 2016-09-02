@@ -4,3 +4,16 @@ body {
   "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
 }
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+  width: 500px;
+}
+
+.toggle {
+  background-color: #3498db;
+}
