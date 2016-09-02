@@ -4,7 +4,7 @@ import Html exposing (text, Html)
 
 
 {-
-   LEARN: Data Modeling
+   LEARN: Data Modeling - Irregular Data
 
    APIs and Object Oriented languages often model very different data with the same object, sometimes flagged with a "type" field.
 

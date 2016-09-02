@@ -43,11 +43,13 @@ Elm Architecture Modules
 -------------------------------------
 Jamison
 
-Advanced Types
------------------------------
-* [Type Driven Development](./topics/AdvancedTypes/TDD.elm)
-* [Data Modeling](./topics/AdvancedTypes/Modeling.elm)
-* [Composing Types](./topics/AdvancedTypes/Composing.elm)
+
+Real World Types - Data Modeling
+--------------------------------
+- [Type Driven Development](./topics/AdvancedTypes/TDD.elm)
+- [Irregular Data](./topics/AdvancedTypes/Modeling.elm)
+- [Composing Types](./topics/AdvancedTypes/Composing.elm)
+- [Getting Specific](./topics/AdvancedTypes/Specific.elm)
 
 
 [Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
@@ -98,3 +100,10 @@ Tour of the package ecosystem
 -----------------------------
 - [package.elm-lang.org](http://package.elm-lang.org/)
 - See the "extra" packages and anything maintained by elm-community
+
+
+Enterprise Applications
+-----------------------
+- Config and Environment
+- Nested Routing
+-
