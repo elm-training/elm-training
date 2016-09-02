@@ -63,6 +63,9 @@ Jamison
 
 Detailed Rendering
 ------------------
+- [Inline Styles](./topics/DetailedRendering/InlineStyles.elm)
+- [CSS](./topics/DetailedRendering/Css.elm)
+- [Optimization](./topics/DetailedRendering/Optimization.elm)
 Jamison
 
 Architecture: Organizing Files
