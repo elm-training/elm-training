@@ -42,7 +42,7 @@ The Elm Architecture: View Modularity
 -------------------------------------
 Jamison
 
-Advanced Types (TODO SEAN)
+Advanced Types
 -----------------------------
 * [Type Driven Development](./topics/AdvancedTypes/TDD.elm)
 * [Data Modeling](./topics/AdvancedTypes/Modeling.elm)
