@@ -46,51 +46,61 @@ calculate input =
 type
     Op
     -- live code: what are our possible operations?
-    = Add Float
-    | Sub Float
-    | Div Float
-    | Mul Float
-    | Lit Float
+    = Add Value
+    | Sub Value
+    | Div Value
+    | Mul Value
+    | Lit Value
+
+
+type Value
+    = Val Float
+    | Var String
+
+
+value : Variables -> Value -> Float
+value vars val =
+    Debug.crash "TODO"
 
 
 
 -- create some function signatures and see if they fit together...
 
 
-calculateOp : Op -> Float -> Float
-calculateOp op tot =
+calculateOp : Variables -> Op -> Float -> Float
+calculateOp vars op tot =
     -- live code: seems easy to write. skip
     case op of
         Add n ->
-            tot + n
+            tot + (value vars n)
 
         Sub n ->
-            tot - n
+            tot - (value vars n)
 
         Div n ->
-            tot / n
+            tot / (value vars n)
 
         Mul n ->
-            tot * n
+            tot * (value vars n)
 
         Lit n ->
-            n
+            (value vars n)
 
 
-calculateOps : List Op -> Float
-calculateOps ops =
+calculateOps : Variables -> List Op -> Float
+calculateOps vars ops =
     -- live code: does this fit with calculate Op?
     -- fill this in
-    List.foldl calculateOp 0 ops
+    List.foldl (calculateOp vars) 0 ops
 
 
-calculate' : String -> Float
-calculate' input =
+calculate' : Variables -> String -> Float
+calculate' vars input =
     -- live code: does this fit with parse and calculateOps?
     -- fill this in
     -- we still need to parse into that format though
     parse input
-        |> calculateOps
+        |> calculateOps vars
 
 
 parse : String -> List Op
@@ -126,7 +136,7 @@ parseMapPairs ( op, val ) =
     -- this is definitely possible, so skip for now
     let
         v =
-            parseDefault 0 val
+            parseValue val
     in
         case op of
             "+" ->
@@ -158,6 +168,10 @@ toPairs items =
 {-
    Now we go back an fill in the functions. Follow the same process.
 -}
+
+parseValue : String -> Value
+parseValue str =
+    Debug.crash "TODO"
 
 
 parseDefault : Float -> String -> Float
@@ -199,11 +213,34 @@ toPair strs =
 
 
 type alias Variables =
-    ()
+    Dict String Float
+
+
+type alias Variable =
+    ( String, Float )
 
 
 calculateAll : List String -> Float
 calculateAll steps =
     -- what does the state look like?
     -- implement this function to make sure it fits with your solution
+    let
+        ( calcLine, varLines ) =
+            splitCalculation steps
+
+        variables =
+            List.map parseVariable varLines
+                |> Dict.fromList
+
+    in
+        calculate' variables calcLine
+
+
+splitCalculation : List String -> ( String, List String )
+splitCalculation steps =
+    Debug.crash "Calculation, Variable Lines"
+
+
+parseVariable : String -> Variable
+parseVariable str =
     Debug.crash "TODO"
