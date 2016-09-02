@@ -1,37 +1,163 @@
 module AdvancedTypes.Composing exposing (..)
 
-import Html exposing (text)
+import Date exposing (Date)
+import Html exposing (text, Html, div, h1)
+import Task exposing (Task)
+import Http exposing (Error)
+
 
 {-
-Relational Data - include it inside the other object? No! Make a new object that has both! Compose Types
+   LEARN: Compose Types
+   Use smaller types and combine them into bigger ones. Don't make your main type try to do everything
 
-    employee.project
-    project.employees ... shoot! It's a loop. The API doesn't return it, it's relational. You go out and fetch it with a second request.
+   EXAMPLE: Relational Data
 
-    type alias ProjectEmployees =
-        { assigned : List Employee
-        , project : Project
-        }
+   From the previous exercise, let's add a Project object. On a certain page, you want to display the Project information, along with a list of employees assigned to it.
 
+   It is reasonable to expect Project to have an employees field, and vice versa
 
-
-Requests / Responses from a REST API - Compose types! Generic Types
-
-    User: has all the fields
-    Request: no id, created, updated, etc, but enough information to create it
-
-    type Record a = Record RecordInfo a
-
-    type alias RecordInfo =
-        { id: String
-        , created: Date
-        , updated: Date
-        , deleted: Bool
-        }
-
-    type alias User =
-        { name : String }
-
-    createUser : User -> Task Error (Record User)
-    createUser = ...
 -}
+
+
+type alias ID =
+    Int
+
+
+type alias Project =
+    { id : ID
+    , employees : List Employee
+    }
+
+
+type alias Employee =
+    -- can we add a project : Project field?
+    { id : ID }
+
+
+
+{-
+   LEARN: But that structure is infinitely recursive. We can't define the Employee until we have the Project, and we can't define the Project until we have the employees. Instead, let's create a new type, that comoses both:
+
+   Now we can easily display a page with all of this information. Our local model doesn't have to match the API or the database!
+
+   We can pass around Project separately, when Employees don't matter, or all together when it does
+-}
+
+
+type alias ProjectEmployees =
+    { project : Project
+    , manager : Employee
+    , assigned : List Employee
+    }
+
+
+
+{-
+
+   LEARN: Generic / Extensible Types
+   You can make types generic and compose them by combining them with other types.
+
+   EXAMPLE: We have an API that allows us to create Pages on a wiki
+
+       POST /pages
+       {
+           "name" : "Hello",
+           "content" : "Hello World!"
+       }
+
+   The server calculates a lot of information, like id, and date created. It returns something like this:
+
+       {
+           "id" : 1234,
+           "name" : "Hello",
+           "content" : "Hello World!",
+           "created" : "2016-09-01T21:45:11Z",
+       }
+
+   We could try to solve this by making two separate objects:
+
+-}
+
+
+type alias PageCreateRequest =
+    { name : String
+    , content : String
+    }
+
+
+type alias Page =
+    { id : ID
+    , name : String
+    , content : String
+    , created : Date
+    }
+
+
+
+{-
+   But this means we have to write a second JSON decoder, and deal with the duplication of the common fields.
+
+   Also, what if the API does this for every kind of object? Then we would have to make a UserCreateRequest, CommentCreateRequest...
+
+   Instead, let's make the extra info that comes from the server a separate generic type.
+
+-}
+
+
+type Record a
+    = Record RecordInfo a
+
+
+type alias RecordInfo =
+    { id : String
+    , created : Date
+    , updated : Date
+    , deleted : Bool
+    }
+
+
+
+-- Our API would look something like this:
+
+
+createPage : Page -> Task Error (Record Page)
+createPage page =
+    Debug.crash "..."
+
+
+
+-- we might use it like this:
+
+
+pageView : Record Page -> Html msg
+pageView (Record info page) =
+    div []
+        [ h1 [] [ text page.name ]
+        , div [] [ text ("Updated at: " ++ toString info.updated)]
+        , div [] [ text page.content ]
+        ]
+
+
+-- we can write generic functions that work on any record
+
+
+filterNotDeleted : List (Record a) -> List (Record a)
+filterNotDeleted records =
+    let notDeleted (Record info _) =
+        not info.deleted
+    in List.filter notDeleted records
+
+
+{-  EXERCISE
+
+    Change Record to be a type alias instead of a type
+
+    Write a function that sorts by date last updated for any record
+
+ -}
+
+type alias Record' = {}
+
+sortByUpdated : ()
+sortByUpdated =
+     Debug.crash "TODO"
