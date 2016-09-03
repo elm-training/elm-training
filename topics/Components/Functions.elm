@@ -194,6 +194,34 @@ order3 model =
 
 
 {-
+
+   LEARN: Context / Config
+
+   If you start to get too many arguments to your component, you can use a type alias.
+
+   See toggleButtonContext in ./Functions/Button.elm
+
+-}
+
+
+order4 : Model -> Html Msg3
+order4 model =
+    -- live code
+    div []
+        [ Button.toggleButtonContext
+            { onToggle = Food
+            , isActive = model.wantsFood
+            , label = "Food"
+            }
+        , Button.toggleButtonContext
+            { onToggle = Drink
+            , isActive = model.wantsDrink
+            , label = "Drink"
+            }
+        ]
+
+
+{-
    EXERCISE:
 
    Make a stateless component that lets someone choose Good, Bad, or Ok. When you select one, the others should deactivate.

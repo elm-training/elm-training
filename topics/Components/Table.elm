@@ -5,6 +5,7 @@ import Html.Attributes exposing (style, src, placeholder)
 import Html.Events exposing (onClick, onInput)
 import Html.App as Html
 import String
+import Regex exposing (Regex, regex, caseInsensitive)
 import Components.Examples.RestaurantData exposing (restaurants, dishes, Restaurant, Dish)
 
 
@@ -25,6 +26,8 @@ import Components.Examples.RestaurantData exposing (restaurants, dishes, Restaur
    - Restaurants filter based on name and fare
    - restaurants sort by name
    - dishes sort by price
+
+   Let's create a component that can support both of these views
 -}
 
 
@@ -94,16 +97,17 @@ view model =
 
 -- restaurants --------------------------------------
 
-matchRestaurant : String -> Restaurant -> Bool
+
+matchRestaurant : Regex -> Restaurant -> Bool
 matchRestaurant search rest =
-    String.contains search rest.name
-        || String.contains search rest.fare
+    Regex.contains search rest.name
+        || Regex.contains search rest.fare
 
 
 restaurantsView : String -> List Restaurant -> Html Msg
 restaurantsView search rests =
     div []
-        [ div [ style [("display", "flex")] ]
+        [ div [ style [ ( "display", "flex" ) ] ]
             [ input
                 [ onInput SearchRestaurant
                 , style searchBox
@@ -112,7 +116,8 @@ restaurantsView search rests =
                 []
             ]
         , rests
-            |> List.filter (matchRestaurant search)
+            |> List.filter (matchRestaurant (regex search |> caseInsensitive))
+            |> List.sortBy .name
             |> List.map restaurantRow
             |> div []
         ]
@@ -143,15 +148,15 @@ restaurantRow rest =
 -- menu ----------------------------------------------
 
 
-matchDish : String -> Dish -> Bool
+matchDish : Regex -> Dish -> Bool
 matchDish search dish =
-    String.contains search dish.name
+    Regex.contains search dish.name
 
 
 dishesView : String -> List Dish -> Html Msg
 dishesView search menu =
     div []
-        [ div [ style [("display", "flex")] ]
+        [ div [ style [ ( "display", "flex" ) ] ]
             [ input
                 [ onInput SearchMenu
                 , style searchBox
@@ -165,7 +170,8 @@ dishesView search menu =
                 , th [] [ text "Price" ]
                 ]
             , menu
-                |> List.filter (matchDish search)
+                |> List.filter (matchDish (regex search |> caseInsensitive))
+                |> List.sortBy .price
                 |> List.map dishRow
                 |> tbody []
             ]
@@ -204,9 +210,10 @@ rowSubTitle =
     , ( "font-size", "12px" )
     ]
 
+
 searchBox : List ( String, String )
 searchBox =
-    [ ( "padding", "8px" ), ("flex", "1") ]
+    [ ( "padding", "8px" ), ( "flex", "1" ) ]
 
 
 main =
@@ -219,11 +226,37 @@ main =
 
 
 {-
+
+   REUSABILITY: Find common functionality and create functions
+
+   What's really in common between these two cases?
+   - filter logic
+   - the search bar
+
+   We may be tempted to make a single component that covers both cases, and lets the user specify which one they want. But what about when a 3rd case appears, then a 4th?  You can't support all possible use cases (especially those you don't think of). Let's use composition instead.
+
+   See ./Examples/FilterRows.elm
+
+   live code: replace the above with FilterRows.view
+-}
+
+
+{-
+   EXAMPLE: Elm Sortable Table
+
+   For an example of a component that does more all at once. https://github.com/evancz/elm-sortable-table
+
+-}
+
+
+{-
    EXERCISE
 
-   Create some composable functions to allow users to choose the sort order.
+   1. Create some composable functions to allow users to choose the sort order.
 
    Restaurants: can sort by either name or fare
    Menu Items: can sort by either name or price
+
+   2. Can you make them usable both with and without the search bar?
 
 -}

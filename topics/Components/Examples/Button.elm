@@ -61,6 +61,27 @@ toggle isActive =
 
 
 
+-- toggle button with context -------------------------
+-------------------------------------------------------
+
+
+type alias ToggleContext msg =
+    { onToggle : Bool -> msg
+    , isActive : Bool
+    , label : String
+    }
+
+
+toggleButtonContext : ToggleContext msg -> Html msg
+toggleButtonContext { onToggle, isActive, label } =
+    Html.button
+        [ onClick (onToggle (toggle isActive))
+        , style (buttonIsActive isActive)
+        ]
+        [ text label ]
+
+
+
 -- toggle button 2 -----------------------------------
 ------------------------------------------------------
 
@@ -103,11 +124,18 @@ toggleButtonSpecific =
 ---------------------------------------------------------
 
 
-stateButton : (a -> a) -> (a -> List ( String, String )) -> (a -> msg) -> a -> List (Html msg) -> Html msg
-stateButton next stateStyles setValue state content =
+type alias StateButtonContext a msg =
+    { next : a -> a
+    , styles : a -> List (String, String)
+    , onNext : a -> msg
+    , state : a
+    }
+
+stateButton : StateButtonContext a msg -> List (Html msg)  -> Html msg
+stateButton {next, styles, onNext, state} content =
     -- add stateStyles, next
     Html.button
-        [ onClick (setValue (next state))
-        , style (stateStyles state)
+        [ onClick (onNext (next state))
+        , style (styles state)
         ]
         content

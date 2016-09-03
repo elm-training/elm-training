@@ -9,11 +9,11 @@ import Components.Examples.Button as Button
 
 
 {-
-    EXAMPLE: Comosable Children
+   EXAMPLE: Comosable Children
 
-    HTML lets me wrap things to add functionality. Let's say I make a box component/function. I don't have to change box to have it support layout. I can wrap it in a div!
+   HTML lets me wrap things to add functionality. Let's say I make a box component/function. I don't have to change box to have it support layout. I can wrap it in a div!
 
-    Div is very composable because it can hold anything inside. You don't have to explicitly program div to accept different kinds of content:
+   Div is very composable because it can hold anything inside. You don't have to explicitly program div to accept different kinds of content:
 -}
 
 
@@ -57,7 +57,8 @@ boxesView =
 
    We COULD try to make toggleButton support all of the above, or we could rely on composition once again: pass in the content!
 
-   See ./Examples/Button.elm -> toggleButton2
+   See toggleButton2 in ./Examples/Button.elm
+
 
    Now it's like div. It works with ANY content. Toggle Button doesn't have to know ahead of time what kind of content it wants to support.
 -}
@@ -99,28 +100,28 @@ yesNo val =
 
 {-
 
-    LEARN: Library vs Application inspecific
+   LEARN: Library vs Application inspecific
 
-    Try to write components so that they could be used in any application, not just yours. The resulting design will be much more composable (useful in a more places without changing it)
+   Try to write components so that they could be used in any application, not just yours. The resulting design will be much more composable (useful in a more places without changing it)
 
-    EXAMPLE: Toggle Button as a Library
+   EXAMPLE: Toggle Button as a Library
 
-    Right now our toggle button is application specific, because it has the styles baked in. Let's make those those composable
+   Right now our toggle button is application specific, because it has the styles baked in. Let's make those those composable
 
-    We COULD pass in the base and active styles, then make the buttonIsActive function more generic, but even better: let's have toggleButton work with any function of the form:
+   We COULD pass in the base and active styles, then make the buttonIsActive function more generic, but even better: let's have toggleButton work with any function of the form:
 
-        Bool -> List (Style, Style)
+       Bool -> List (Style, Style)
 
-    See ./Examples/Button.elm -> toggleButtonGeneric
+   See toggleButtonGeneric in ./Examples/Button.elm
 
-    ------------------------------------------------------
+   ------------------------------------------------------
 
 
-    EXAMPLE: Multi-state buttons
+   EXAMPLE: Multi-state buttons
 
-    What if we want a "toggle" button that supports more than one state?
+   What if we want a "toggle" button that supports more than one state?
 
-    See ./Examples/Button.elm -> stateButton
+   See stateButton in ./Examples/Button.elm
 
 -}
 
@@ -160,10 +161,12 @@ hungerStyles hunger =
 hungerView : Model -> Html Msg
 hungerView model =
     div []
-        [ Button.stateButton nextHunger
-            hungerStyles
-            Hunger
-            model.hunger
+        [ Button.stateButton
+            { next = nextHunger
+            , styles = hungerStyles
+            , onNext = Hunger
+            , state = model.hunger
+            }
             [ text ("Hungry? " ++ toString model.hunger) ]
         ]
 
