@@ -74,17 +74,30 @@ Architecture: Organizing Files
 ------------------------------
 Jamison
 
+
 Reusable Components (TODO SEAN)
--------------------
-Composition: building things from the bottom up
-Functional Composition?
-Vs inheritance / switches / etc?
-Elm Architecture Modules vs Stateless Components / Context pattern / passing in messages. Lowercase msg.
-Components with children.
-Other component design patterns: Elm Sortable Table.
-Stateful components, like typeahead/autocomplete, accordion, tabs?
-Spend a lot of time here. Multiple exercises. Gain some intuition.
-Wide vs Deep: the cost to Elm Architecture Modules. Stateless components are cheap.
+-------------------------------
+- [Functions Before Modules](./topics/Components/Functions.elm)
+- [Find Your Inner Library](./topics/Components/Library.elm)
+- [Searchable Table](./topics/Components/Table.elm)
+- [Autocomplete](./topics/Components/Autocomplete.elm)
+- When to avoid the Elm Architecture
+- (Intro) Composition vs TEA: TEA not Free. Wide vs Deep: the cost to Elm Architecture Modules. Small tools help you go wide, rather than deep modularity.
+- (Needs examples) Find what is application inspecific: "What library function, if it existed, would make this trivial?"
+- (Needs examples) Composition: building things from the bottom up
+- (Needs examples) Composition: finding small pieces to break out
+- Stateless Components. Stateless Components. Context pattern. Lowercase msg.
+- Components with children.
+- Bad habits of inheritance: Options, switches, code paths vs Composition
+- Stateful components, like typeahead/autocomplete, accordion, tabs?
+- Stateful Component: Tabs
+- Stateful Component: Autocomplete
+- Stateful Component: Elm Sortable Table
+- Component: Bar Chart with Legend
+- passing "props" into Elm Architecture components
+- don't cache stuff you can calculate
+
+(Principle) Exposing the guts. Components as useful functions or styles exposed in pieces. Library vs Framework. Support what you don't expect. You can still provide a reference implementation!
 
 
 URL Routing (TODO SEAN)
@@ -106,4 +119,9 @@ Enterprise Applications
 -----------------------
 - Config and Environment
 - Nested Routing
--
+- Page Navigation √
+- Modeling the schema √
+- Dashboards ? During the building section
+- Authentication
+- Accordion Control ? During the building section
+- Sortable Tables ? Show elm sortable table, also your example
