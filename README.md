@@ -38,6 +38,7 @@ The Elm Architecture
 Effects
 -----------------------------
 - [Intro To Effects](./topics/Effects/Random.elm)
+- [Http](./topics/Effects/Http.elm)
 
 Elm Architecture Modules
 -------------------------------------

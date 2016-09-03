@@ -175,3 +175,4 @@ main =
 -- EXERCISE: Modify this example to return two random numbers instead of just one
 
 -- The basic pattern is, you build your app out of pure functions that are easy to test and re-use, and you push all the side-effects to the edges of your program, where Elm can handle them for you.
+-- TODO: Make some kind of diagram to show the flow
