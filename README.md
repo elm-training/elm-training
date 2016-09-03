@@ -78,12 +78,13 @@ Architecture: Organizing Files
 Jamison
 
 
-Reusable Components (TODO SEAN)
+Reusable Components
 -------------------------------
 - [Functions Before Modules](./topics/Components/Functions.elm)
 - [Find Your Inner Library](./topics/Components/Library.elm)
 - [Searchable Table](./topics/Components/Table.elm)
 - [Autocomplete](./topics/Components/Autocomplete.elm)
+- Parent-child communication?
 
 
 URL Routing (TODO SEAN)

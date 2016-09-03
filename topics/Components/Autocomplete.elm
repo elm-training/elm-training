@@ -14,8 +14,12 @@ module Components.Autocomplete exposing (..)
     4. Allow for very differnet kinds of entries in the content box
     5. But work easily out of the box
 
-    
+    TODO create an autocomplete component :)
+
+    See http://package.elm-lang.org/packages/thebritican/elm-autocomplete/latest
+
+    What are the downsides of this design?
+
+    EXERCISE: Write your own Autocomplete component using any design pattern.
+
 -}
-
-
--- it should have a search bar, then

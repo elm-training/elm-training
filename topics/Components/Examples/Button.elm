@@ -72,8 +72,8 @@ type alias ToggleContext msg =
     }
 
 
-toggleButtonContext : ToggleContext msg -> Html msg
-toggleButtonContext { onToggle, isActive, label } =
+toggleButton' : ToggleContext msg -> Html msg
+toggleButton' { onToggle, isActive, label } =
     Html.button
         [ onClick (onToggle (toggle isActive))
         , style (buttonIsActive isActive)

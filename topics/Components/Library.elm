@@ -100,7 +100,7 @@ yesNo val =
 
 {-
 
-   LEARN: Library vs Application inspecific
+   LEARN: Library vs Application Specific
 
    Try to write components so that they could be used in any application, not just yours. The resulting design will be much more composable (useful in a more places without changing it)
 

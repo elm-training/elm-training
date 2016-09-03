@@ -208,12 +208,12 @@ order4 : Model -> Html Msg3
 order4 model =
     -- live code
     div []
-        [ Button.toggleButtonContext
+        [ Button.toggleButton'
             { onToggle = Food
             , isActive = model.wantsFood
             , label = "Food"
             }
-        , Button.toggleButtonContext
+        , Button.toggleButton'
             { onToggle = Drink
             , isActive = model.wantsDrink
             , label = "Drink"
