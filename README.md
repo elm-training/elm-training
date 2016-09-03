@@ -48,10 +48,10 @@ Jamison
 
 Real World Types - Data Modeling
 --------------------------------
-- [Type Driven Development](./topics/Modeling/TDD.elm)
 - [Consistent Data](./topics/Modeling/Consistent.elm)
 - [Composing Types](./topics/Modeling/Composing.elm)
 - [Getting Specific](./topics/Modeling/Specific.elm)
+- [Type Driven Development](./topics/Modeling/TDD.elm)
 
 
 [Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
@@ -84,7 +84,6 @@ Reusable Components
 - [Find Your Inner Library](./topics/Components/Library.elm)
 - [Searchable Table](./topics/Components/Table.elm)
 - [Autocomplete](./topics/Components/Autocomplete.elm)
-- Parent-child communication?
 
 
 URL Routing (TODO SEAN)
@@ -110,7 +109,11 @@ Enterprise Applications
 - Nested Routing
 - Page Navigation √
 - Modeling the schema √
-- Dashboards ? During the building section
+- Dashboards? During the building section
 - Authentication
 - Accordion Control ? During the building section
 - Sortable Tables ? Show elm sortable table, also your example
+
+Other Topics
+------------
+- Child to parent communication / events

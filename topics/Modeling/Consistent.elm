@@ -116,10 +116,10 @@ tweetContentView content =
 
         {
             id: xxx
-            name: "person",
+            name: "person"
             salary: 123456,
             role: "developer" | "manager" | "support"
-            assignedProjectId: "projectId",
+            assignedProjectId: "projectId"
             managedProjectId: "projectId"
             expertise: "web" | "server" | "qa" | "technical support"
         }
@@ -128,10 +128,10 @@ tweetContentView content =
 
         {
             id: xxx
-            name: "person",
-            salary: 123456,
+            name: "person"
+            salary: 123456
             role: "developer"
-            assignedProjectId: "projectId",
+            assignedProjectId: "projectId"
             expertise: "web" | "server"
         }
 
@@ -139,17 +139,17 @@ tweetContentView content =
 
        {
             id: xxx
-            name: "person",
+            name: "person"
             salary: 123456,
             role: "manager"
-            managedProjectId: "projectId",
+            managedProjectId: "projectId"
        }
 
     Support: have an expertise of either "qa" or "technical support" and have no projects
 
        {
             id: xxx
-            name: "person",
+            name: "person"
             salary: 123456,
             role: "support"
             expertise: "qa" | "technical support"
