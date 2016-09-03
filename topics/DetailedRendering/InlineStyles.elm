@@ -85,4 +85,17 @@ main =
 
 
 
+
+
+
+
 -- EXERCISE: Make the buttons look glorious with inline styles
+
+center =
+    style
+        [ ( "display", "flex" )
+        , ( "flex-direction", "column" )
+        , ( "align-items", "center" )
+        , ( "width", "800px" )
+        , ( "margin", "0 auto" )
+        ]

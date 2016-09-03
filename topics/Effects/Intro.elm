@@ -1,4 +1,4 @@
-module Effects.Program exposing (..)
+module Effects.Intro exposing (..)
 
 -- LEARN: How to make an Elm app that touches the outside world.
 {-
@@ -33,21 +33,27 @@ module Effects.Program exposing (..)
 
    Well, what if we could create some kind of data structure that represented the thing we wanted Elm to do, and then hand that to Elm to run?
 -}
+--
 
 
 type Msg
     = Response String
+    | Error String
 
 
-type alias RequestData msg =
+type alias RequestAsData =
     { url : String
-    , result : msg
+    , success : String -> Msg
+    , failure : String -> Msg
     }
 
 
-modelHttpRequest : String -> (String -> msg) -> RequestAsData msg
-modelHttpRequest url msg =
-    { url = url, result = msg }
+{-
+We can make a data structure that tells Elm all it needs to know to make an HTTP request: the URL, a place to put the successful response and a place to put the failure message.
+-}
+modelHttpRequest : String -> (String -> Msg) -> (String -> Msg) -> RequestAsData
+modelHttpRequest url success failure =
+    { url = url, success = success, failure = failure }
 
 
 
@@ -55,6 +61,22 @@ modelHttpRequest url msg =
 
    Then we could run this function, and it wouldn't make an HTTP request. Instead, it gives us back data that tells Elm the info it needs to run the HTTP request, as well has how to give us back the result.
 
-   If we could somehow hand this off to Elm, it could make the request for us, grab the result, put it in the `msg`, and then feed that Msg in to our `update` function.
+   If we could somehow hand this off to Elm, it could make the request for us, grab the result, put it in the `msg`, and then feed that Msg in to our `update` function. From there it is just Elm architecture stuff we already know how to deal with - we pattern match on the type, and update our model accordingly.
+
+So we call `modelHttpRequest`, get an object that describes what should happen, hand it to Elm *somehow* (this part is still a mystery), and when the request runs, if the request is successful Elm puts the response in our 
+
+-}
+
+update msg model =
+  case msg of
+    Response str ->
+      { model | response = str, error = Nothing }
+    Error str ->
+      { model | error = Just str }
+
+
+{-
+
+This could work, assuming Elm had built-in support for interpreting our custom data structure. Making a custom structure doesn't scale very well, so Elm has 
 
 -}

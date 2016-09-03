@@ -35,11 +35,11 @@ The Elm Architecture
 - [Introduction](./topics/ElmArchitecture/Intro.elm)
 - [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
 
-The Elm Architecture: Effects
+Effects
 -----------------------------
-Jamison
+- [Intro To Effects](./topics/Effects/Random.elm)
 
-The Elm Architecture: View Modularity
+Elm Architecture Modules
 -------------------------------------
 Jamison
 

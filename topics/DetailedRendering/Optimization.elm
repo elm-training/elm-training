@@ -6,6 +6,8 @@ import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 import Html.Lazy exposing (lazy)
 
+import DetailedRendering.InlineStyles exposing (center)
+
 
 -- LEARN: How to optimize Elm rendering with `lazy`. Show the output first efore diving in to the code.
 
@@ -62,17 +64,6 @@ renderLongList count =
 
 main =
     beginnerProgram { model = model, view = view, update = update }
-
-
-center =
-    style
-        [ ( "display", "flex" )
-        , ( "flex-direction", "column" )
-        , ( "align-items", "center" )
-        , ( "width", "800px" )
-        , ( "margin", "0 auto" )
-        ]
-
 
 
 {-
