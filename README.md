@@ -102,9 +102,7 @@ URL Routing
 
 Testing
 -------
-- [Setting up elm-test](./topics/Testing/Setup.elm)
-- [Testing Decoders](./topics/Testing/Decoders.elm)
-- [Testing Elm Architecture](./topics/Testing/Architecture.elm)
+- [Setting up elm-test](./topics/Testing/ElmTest.elm)
 
 
 Tour of the package ecosystem
