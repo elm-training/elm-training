@@ -85,3 +85,6 @@ view model =
 -- EXERCISE: Add a pause button
 -- EXERCISE: Every 10 seconds, check to see if it is christmas, display below the clock
 
+{-
+
+-}

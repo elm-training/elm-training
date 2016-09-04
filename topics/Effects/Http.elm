@@ -117,13 +117,12 @@ type Msg =
 
 checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
-  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-wfhjizjsvw.now.sh/is-it-christmas"
+  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-yhtvzioarz.now.sh/is-it-christmas"
 
 --}
 
 -- EXERCISE: show a loading spinner when they make the request but it hasn't completed yet.
 
--- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-wfhjizjsvw.now.sh/cool-people" and then get the cool people back
+-- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-yhtvzioarz.now.sh/cool-people" and then get the cool people back
 
--- https://is-it-christmas-api-wfhjizjsvw.now.sh for the demo api
--- TODO: Change the christmas endpoint to include a countdown for the subscription section
+-- https://is-it-christmas-api-yhtvzioarz.now.sh for the demo api
