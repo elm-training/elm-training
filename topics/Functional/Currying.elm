@@ -17,20 +17,20 @@ multiplyBy x ns =
 
 
 {-
-    LEARN: Currying
+   LEARN: Currying
 
-    Functions always have one parameter, return other functions
-     What does multiplyBy return if you only call it with the first param? (Partial application)
+   Functions always have one parameter, return other functions
+    What does multiplyBy return if you only call it with the first param? (Partial application)
 
-    In Javascript:
+   In Javascript:
 
-        function add(a) {
-            return function(b) {
-                return a + b
-            }
-        }
+       function add(a) {
+           return function(b) {
+               return a + b
+           }
+       }
 
-        add(2)(5) == 7
+       add(2)(5) == 7
 -}
 
 
@@ -42,11 +42,11 @@ multiplyBy2 =
 
 
 {-
-    LEARN: Operators are Functions
-     http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Basics
+   LEARN: Operators are Functions
+    http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Basics
 
-    Operators are curried and can be partially applied
-     rewrite some of our functions using partial application
+   Operators are curried and can be partially applied
+    rewrite some of our functions using partial application
 -}
 
 
@@ -187,27 +187,6 @@ maximumBy compare items =
 
 teamLead : Expertise -> List Developer -> Maybe Developer
 teamLead expertise devs =
-    Debug.crash "TODO"
-
-
-
-{-
-   EXERCISE
-
-   Divide your developers into Web, Server, and DB teams. Try to balance the yearsExperience of the teams.
-
--}
-
-
-type alias Teams =
-    { web : List Developer
-    , server : List Developer
-    , db : List Developer
-    }
-
-
-teams : List Developer -> Teams
-teams devs =
     Debug.crash "TODO"
 
 
