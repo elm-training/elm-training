@@ -14,7 +14,9 @@ import Html exposing (div, text, Html)
    Implement the score function
       mutability: we would increment the score
       immutability: let bindings
-      calculate the score based on kills and deaths and add them
+
+   Demo: calculate the score based on kills and deaths and add them. Kills are worth 10 points, deaths are -5 points
+
 -}
 
 
@@ -26,9 +28,9 @@ type alias PlayerStats =
     }
 
 
-score : PlayerStats -> Int
-score stats =
-    -- live code
+calculateScore : PlayerStats -> Int
+calculateScore stats =
+    -- live code: show the total score based on kills and deaths
     let
         perKill =
             10
@@ -82,7 +84,9 @@ gotKills n stats =
 
 
 {- EXERCISE
-   If a player collects over 100 gold, they win the game. Add 1000 to their score.
+   If a player collects over 100 gold, they won the game. Add 1000 to their score.
+
+   TODO: expand this so they actually have to add 1000 to the score of a player
 
    Create a GameResult type alias that contains both the score and a boolean specifying whether they won. Write a function `gameResult` that returns a GameResult given PlayerStats.
 

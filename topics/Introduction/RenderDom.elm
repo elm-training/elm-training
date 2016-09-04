@@ -16,10 +16,13 @@ import Html.Attributes exposing (src, href, width)
    allows us to write render functions in the simplest possible way and not worry about performance
    http://elm-lang.org/blog/blazing-fast-html-round-two
 
+   Demo: using your function from the last exercise, display both cat images and links
+
 -}
 
 
 appState =
+    -- this is my application state, give it to a view
     { catOne =
         { url = "http://www.bbc.com/news/world-europe-34897645"
         , image = "http://ichef.bbci.co.uk/news/1024/cpsprodpb/15664/production/_86825678_cats9.png"
@@ -59,14 +62,19 @@ main =
 
 
 {-
-    EXERCISE
-    Add a page title to the state.
-    Create a view function that displays the page title based on the state
+   EXERCISE
+   Add a page title to the state.
+   Create a view function that displays the page title based on the state, with h1
 
-    EXERCISE
-    Change catOne and catTwo in state to be a list of cats
-    Render the items in the list with list.map
+   EXERCISE
+   Change catOne and catTwo in state to be a list of cats
+   Render the items in the list with List.map.
 
-    EXERCISE
-    Add an image title to each cat. Set the alt text as well and add a small header for each one
+        List.map catView cats
+
+        catView cat =
+            div [] [ text "show a cat" ]
+
+   EXERCISE
+   Add an image title to each cat. Set the alt text as well and add a small header for each one
 -}
