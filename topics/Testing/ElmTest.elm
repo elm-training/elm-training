@@ -61,6 +61,6 @@ Things that are often good candidates for testing:
 
 A principle when looking at Elm code is to ask "How can I encode this behavior in the type system?"
 
--- EXERCISE: Write and run a test for the calculator program we wrote earlier.
+EXERCISE: Write and run a test for the calculator program we wrote earlier.
 
 -}
