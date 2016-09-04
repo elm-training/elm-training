@@ -124,9 +124,15 @@ duplicateAll_Pipe' ns =
 
 repeat : Int -> a -> List a
 repeat n x =
-    Debug.crash "TODO"
+    if n > 0 then
+        x :: repeat (n - 1) x
+    else
+        []
 
 
 repeatAll : Int -> List a -> List a
 repeatAll n xs =
-    Debug.crash "TODO"
+    -- we haven't introduced lambdas or currying yet
+    let repeatValue x =
+        repeat n x
+    in List.concatMap repeatValue xs
