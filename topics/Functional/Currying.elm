@@ -17,20 +17,20 @@ multiplyBy x ns =
 
 
 {-
-    LEARN: Currying
+   LEARN: Currying
 
-    Functions always have one parameter, return other functions
-     What does multiplyBy return if you only call it with the first param? (Partial application)
+   Functions always have one parameter, return other functions
+    What does multiplyBy return if you only call it with the first param? (Partial application)
 
-    In Javascript:
+   In Javascript:
 
-        function add(a) {
-            return function(b) {
-                return a + b
-            }
-        }
+       function add(a) {
+           return function(b) {
+               return a + b
+           }
+       }
 
-        add(2)(5) == 7
+       add(2)(5) == 7
 -}
 
 
@@ -42,11 +42,11 @@ multiplyBy2 =
 
 
 {-
-    LEARN: Operators are Functions
-     http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Basics
+   LEARN: Operators are Functions
+    http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Basics
 
-    Operators are curried and can be partially applied
-     rewrite some of our functions using partial application
+   Operators are curried and can be partially applied
+    rewrite some of our functions using partial application
 -}
 
 
@@ -126,7 +126,8 @@ names =
 
 teamExperience : List Developer -> Years
 teamExperience devs =
-    Debug.crash "TODO"
+    List.map .yearsExperience devs
+        |> List.sum
 
 
 
@@ -138,17 +139,17 @@ teamExperience devs =
 
 seniorDevelopers : List Developer -> List Developer
 seniorDevelopers devs =
-    Debug.crash "TODO"
+    List.filter isSenior devs
 
 
 juniorDevelopers : List Developer -> List Developer
 juniorDevelopers devs =
-    Debug.crash "TODO"
+    List.filter (not << isSenior) devs
 
 
 isSenior : Developer -> Bool
 isSenior dev =
-    Debug.crash "TODO"
+    dev.yearsExperience >= 5
 
 
 
@@ -167,19 +168,33 @@ isSenior dev =
 
 mostSenior : List Developer -> Maybe Developer
 mostSenior devs =
-    Debug.crash "TODO"
+    maximumBy .yearsExperience devs
 
 
 maximumBy : (a -> comparable) -> List a -> Maybe a
 maximumBy compare items =
-    Debug.crash "TODO"
+    let
+        keepMax item oldItem =
+            if (compare item) > (compare oldItem) then
+                item
+            else
+                oldItem
+    in
+        case List.head items of
+            Just first ->
+                Just <| List.foldl keepMax first items
+
+            Nothing ->
+                Nothing
 
 
 
 {-
    EXERCISE
 
-   Use the above to find the "team lead" for a given expertise. It should be the senior developer with that expertise, who has the highest yearsExperience. Only senior developers are qualified to be team leads.
+   Use the above to find the "team lead" for a given expertise. It should be the senior developer with that expertise, who has the highest yearsExperience.
+
+   Only senior developers are qualified to be team leads.
 
    If a suitable developer is not available, return Nothing
 -}
@@ -187,7 +202,16 @@ maximumBy compare items =
 
 teamLead : Expertise -> List Developer -> Maybe Developer
 teamLead expertise devs =
-    Debug.crash "TODO"
+    let
+        hasExpertise ex dev =
+            List.member ex dev.expertise
+
+        validDev dev =
+            hasExpertise expertise dev && isSenior dev
+
+    in
+        List.filter validDev devs
+            |> mostSenior
 
 
 
