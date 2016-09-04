@@ -25,6 +25,6 @@ reverse str = String.reverse str
 
 -- LEARN: type signatures for functions with multipe arguments
 
--- EXERCISE: write the type signature for a function that 
+-- EXERCISE: write the type signature for a function that
 
 -- LEARN: reading type signatures

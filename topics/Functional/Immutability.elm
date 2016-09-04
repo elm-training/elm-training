@@ -9,6 +9,8 @@ import Html exposing (div, text, Html)
    Immutability: new local bindings, instead of changing variables
      bind with let
 
+   EXAMPLE: Game score
+
    Implement the score function
       mutability: we would increment the score
       immutability: let bindings

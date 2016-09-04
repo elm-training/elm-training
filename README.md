@@ -26,6 +26,13 @@ Type System
 - [Advanced Function Signatures](./topics/TypeSystem/AdvancedFunctionSignatures.elm)
 
 
+
+The Elm Architecture
+--------------------
+- [Introduction](./topics/ElmArchitecture/Intro.elm)
+- [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
+
+
 Functional Programming
 ----------------------
 - [Immutability](./topics/Functional/Immutability.elm)
@@ -34,20 +41,15 @@ Functional Programming
 - [Currying](./topics/Functional/Currying.elm)
 
 
-The Elm Architecture
---------------------
-- [Introduction](./topics/ElmArchitecture/Intro.elm)
-- [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
 
-
-Effects
+The Elm Architecture: Effects
 -----------------------------
 - [Intro To Effects](./topics/Effects/Random.elm)
 - [Http](./topics/Effects/Http.elm)
 - [Subscriptions](./topics/Effects/Subscriptions.elm)
 
 
-Elm Architecture Modules
+The Elm Architecture: Modules
 -------------------------------------
 Jamison
 
@@ -61,7 +63,7 @@ Real World Types - Data Modeling
 
 
 [Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
---------------------------------------------------------------------
+---------------------------------------------------
 - [Maybe](http://guide.elm-lang.org/error_handling/maybe.html)
 - [Result](http://guide.elm-lang.org/error_handling/result.html)
 - [Task](http://guide.elm-lang.org/error_handling/task.html)
@@ -88,7 +90,7 @@ Jamison
 
 Reusable Components
 -------------------------------
-- [Functions Before Modules](./topics/Components/Functions.elm)
+- [Functions Before Components](./topics/Components/Functions.elm)
 - [Find Your Inner Library](./topics/Components/Library.elm)
 - [Searchable Table](./topics/Components/Table.elm)
 - [Autocomplete](./topics/Components/Autocomplete.elm)
@@ -125,3 +127,15 @@ Enterprise Applications
 Other Topics
 ------------
 - Child to parent communication / events
+
+Questions
+---------
+
+- Should Functional Programming go later? It's challenging, and people want that sense of "I can do this!". What if we put it after the "User Input" section, but before effects?
+
+- Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it first! Should we change the order?)
+
+
+TODO
+------------------
+- Go through components section and clean up, now that the guide is written differently.

@@ -102,7 +102,7 @@ yesNo val =
 
    LEARN: Library vs Application Specific
 
-   Try to write components so that they could be used in any application, not just yours. The resulting design will be much more composable (useful in a more places without changing it)
+   Try to write functions so that they could be used in any application, not just yours. The resulting design will be much more composable (useful in a more places without changing it)
 
    EXAMPLE: Toggle Button as a Library
 
@@ -174,7 +174,7 @@ hungerView model =
 
 {-
 
-   Let's tie everything together so we can display it one page. Notice how I use the elm architecture here, because I'm displaying multiple views.
+   Let's tie everything together so we can display it one page.
 
 -}
 
@@ -223,14 +223,25 @@ main =
         , update = update
         }
 
+{-
+
+    LEARN: Simplest solution
+
+    stateButton is way to customizable and generic for the benefit it provides. Often the best thing to do is to go ahead and repeat yourself, because this can lead to simpler, understandable code.
+
+    Simplicity is far more important than avoiding repetition.
+
+    Rule of thumb: Choose the absolute simplest thing that does everything you need.
+
+-}
 
 
 {-
    EXERCISE
 
-   Make a reusable tabs component. Focus on creating composable functions.
+   Write some functions to simplify creating navigation tabs.
 
-   Assume you will be publishing the component to package.elm-lang.org, so separate the styles from the view and logic.
+   Assume you will be publishing the module to package.elm-lang.org, so separate the styles from the view and logic.
 
    The tabs should:
        Display different content depending on which tab is active
