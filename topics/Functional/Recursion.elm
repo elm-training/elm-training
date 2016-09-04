@@ -115,7 +115,10 @@ lessThan x ns =
 
 {-
    EXERCISE
-   duplicate items in a list
+   duplicate items in a list, like this:
+
+        [1,2,3,4] -> [1,1,2,2,3,3,4,4]
+
    use explicit recursion
 -}
 
