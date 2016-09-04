@@ -2,6 +2,7 @@ module TypeSystem.BasicFunctionSignatures exposing (..)
 
 import String
 
+
 --LEARN: adding a type annotation to a function
 
 
@@ -20,11 +21,21 @@ mutiply a b =
 
 -- EXERCISE: Write a type signature for a function that reverses a string
 -- reverse : ???
-reverse str = String.reverse str
 
 
--- LEARN: type signatures for functions with multipe arguments
+reverse str =
+    String.reverse str
 
--- EXERCISE: write the type signature for a function that
 
--- LEARN: reading type signatures
+
+-- EXERCISE: write the type signature for a function that concatenates two lists together
+
+-- LEARN: Functions as arguments
+
+applyFunctionIfOdd fn default n =
+    if n % 2 == 0 then
+        fn n
+    else
+        default
+
+

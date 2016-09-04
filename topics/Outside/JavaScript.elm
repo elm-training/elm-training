@@ -14,9 +14,9 @@ import DetailedRendering.InlineStyles exposing (center)
 
     In Elm you treat JS as a third-party service.
 
-    * Show creating the Elm app manually in JS, running it with elm-live.
-    * Show creating aport on the JS side with app.ports.name.subscribe
-    * Sending stuff to it is as simple as calling a function
+    * Mention the `port` keyword at the beginning of the module declaration.
+    * Show creating the Elm app manually in JS in `index.html`, running it with elm-live.
+    * Show subscribing in JS side with app.ports.name.subscribe
     * Show harlem shake app
 
    Run this with `elm-live --port=8001 --open JavaScript.elm --output=elm.js`

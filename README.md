@@ -103,6 +103,8 @@ URL Routing
 Testing
 -------
 - [Setting up elm-test](./topics/Testing/ElmTest.elm)
+- [Running Test in CI](./topics/Testing/CI.elm)
+- [Advanced Testing](./topics/Testing/AdvancedTesting.elm)
 
 
 Tour of the package ecosystem
