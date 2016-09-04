@@ -58,7 +58,7 @@ sum ns =
 
 add2 : Int -> Int
 add2 =
-    -- live code
+    -- live code, demo in repl
     ((+) 2)
 
 
