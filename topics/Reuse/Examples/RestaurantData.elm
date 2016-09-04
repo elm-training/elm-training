@@ -1,4 +1,4 @@
-module Components.Examples.RestaurantData exposing (..)
+module Reuse.Examples.RestaurantData exposing (..)
 
 
 type alias URL = String
