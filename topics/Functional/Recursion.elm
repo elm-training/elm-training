@@ -5,7 +5,7 @@ module Functional.Recursion exposing (..)
 
    Recursion: functions that call themselves
    replaces for loops
-   how would you write factorial with a for loop?
+   Demo: how would you write factorial with a for loop?
 
    How to write recursive functions
     1. find base cases
@@ -41,8 +41,7 @@ factorial n =
 
      So the list [1,2,3,4] == 1 :: 2 :: 3 :: 4 :: []
 
-     You can pattern match with case
-   }
+     Demo: You can pattern match with case
 
 -}
 
@@ -67,7 +66,7 @@ length ns =
 
 
 {-
-   EXERCISE
+   EXAMPLE
    multiply every element in a list by x.
    use explicit recursion
 -}
@@ -94,12 +93,7 @@ multiplyBy x ns =
 
 sum : List Int -> Int
 sum ns =
-    case ns of
-        [] ->
-            0
-
-        n :: ns ->
-            n + (sum ns)
+    Debug.crash "TODO"
 
 
 
@@ -112,15 +106,7 @@ sum ns =
 
 lessThan : Int -> List Int -> List Int
 lessThan x ns =
-    case ns of
-        [] ->
-            []
-
-        n :: ns ->
-            if n < x then
-                n :: lessThan x ns
-            else
-                lessThan x ns
+    Debug.crash "TODO"
 
 
 
@@ -133,9 +119,4 @@ lessThan x ns =
 
 duplicateAll : List a -> List a
 duplicateAll ns =
-    case ns of
-        [] ->
-            []
-
-        n :: ns ->
-            n :: n :: duplicateAll ns
+    Debug.crash "TODO"
