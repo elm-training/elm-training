@@ -1,28 +1,5 @@
 module TypeSystem.AdvancedFunctionSignatures exposing (..)
 
--- LEARN: Union types as arguments. Everything in between the arrows is a single argument.
-
-
-type Nullable a
-    = Null
-    | Value a
-
-
-
--- this is one argument
-
-default : a -> Nullable a -> a
-default a nullable =
-    case nullable of
-        Null ->
-            a
-
-        Value val ->
-            val
-
-
-
--- EXERCISE: 
 
 -- LEARN: Tuples as arguments, destructuring
 
@@ -35,21 +12,26 @@ bar : (Int, String) -> Int
 bar (num, str) = 10
 
 
--- EXERCISE:
+-- LEARN: record descructuring syntax
+
+
+-- EXERCISE: TODO: use destructuring to write a render function that pulls out items from a complex data structure (pulling the first item out of the list using `case`)
 
 {-
-   LEARN: reading type signatures
+   LEARN: reading type signatures both to tell what the args and return types are
 
 * `identity : a -> a` - takes in something of type a, returns something of the same type
 * `or : Int -> Int -> Int` -  takes in 2 Ints, returns an Int
-* `map4 : (a -> b -> c -> d -> e)
+* `Random.map4 : (a -> b -> c -> d -> e)
     -> Generator a
     -> Generator b
     -> Generator c
     -> Generator d
     -> Generator e` - it takes a function that takes in an `a` and a `b` and a `c` and a `d` and returns an `e`, then a Generator of type `a` etc etc
 
--- EXERCISE: Read through the function signatures of [Json.Decode](http://package.elm-lang.org/packages/elm-lang/core/latest/Json-Decode)
+-- EXERCISE: Read through the function signatures of [List](http://package.elm-lang.org/packages/elm-lang/core/latest/List)
+
+-- EXERCISE: TODO: find a function that we haven't introduced yet and have them use it to solve a problem
 
 -}
 

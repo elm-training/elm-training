@@ -65,5 +65,8 @@ main =
 -- LEARN: use function in view instead of storing it in state
 -- PROSE: If you can derive it from the model, calculate it, don't store it.
 
+
+-- TODO: Have the finished version at the bottom, have the busted version commented out at the top.
+
 -- EXERCISE: Add a "Save" button and only do validation when "Save" is clicked
 

@@ -31,7 +31,8 @@ Type System
 The Elm Architecture
 --------------------
 - [Introduction](./topics/ElmArchitecture/Intro.elm)
-- [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
+- [Text Fields](./topics/ElmArchitecture/TextFields.elm)
+- [Derived Data](./topics/ElmArchitecture/DerivedData.elm)
 
 
 
@@ -116,3 +117,8 @@ Enterprise Applications
 - Authentication
 - Accordion Control ? During the building section
 - Sortable Tables ? Show elm sortable table, also your example
+
+
+
+
+TODO: Add section explaining `Html a` calling back to type variables.

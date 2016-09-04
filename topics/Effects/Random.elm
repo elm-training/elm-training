@@ -114,8 +114,6 @@ update msg model =
    The good news is that Elm has answers to both of these problems for us, and it looks a lot like what we've done so far. Let me show you some code, and I'll talk through it as I go.
 -}
 
--- TODO: this is a big jump
--- TODO: explain the Cmd type
 {--}
 
 

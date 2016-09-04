@@ -6,10 +6,12 @@ import Html.Attributes exposing (src)
 import Html.Events exposing (onClick)
 
 
--- LEARN: Get the bare minimum elm architecture app displaying on the screen
--- Some prose: elm architecture is 3 parts, model, view, and update
 
 {-
+LEARN: Get the bare minimum elm architecture app displaying on the screen
+See the Elm Architecture Buttons section at http://guide.elm-lang.org/architecture/user_input/buttons.html
+
+TODO: talk about what main is
 
 +----------+          Model                 +-----------+
 |          +------------------------------> |           |
@@ -18,41 +20,47 @@ import Html.Events exposing (onClick)
 +----------+                                +-----------+
 
 -}
-{--
 
-
-model =
-    0
-
-
-view model =
-    div [] [ text ("I have beaked " ++ (toString model) ++ " times.") ]
-
-
-update msg model =
-    model
+import Html exposing (Html, button, div, text)
+import Html.App as App
+import Html.Events exposing (onClick)
 
 
 main =
-    beginnerProgram { model = model, view = view, update = update }
---}
--- LEARN: Changing state with Msg and update
-{--
-type Msg
-    = Beak
+  App.beginnerProgram { model = model, view = view, update = update }
 
 
-view model =
-    div []
-        [ div [] [ img [ src "https://emoji.slack-edge.com/T09FYU44D/beaker/5c39800bf5891719.gif" ] [] ]
-        , div [] [ text ("I have beaked " ++ (toString model) ++ " times.") ]
-        , div [] [ button [ onClick Beak ] [ text "Beak" ] ]
-        ]
+-- MODEL
+
+type alias Model = Int
+
+model : Model
+model =
+  0
 
 
+-- UPDATE
+
+type Msg = Increment | Decrement
+
+update : Msg -> Model -> Model
 update msg model =
-    case msg of
-        Beak ->
-            model + 1
---}
--- EXERCISE: Add a button that decrements the beak count by 1 when clicked
+  case msg of
+    Increment ->
+      model + 1
+
+    Decrement ->
+      model - 1
+
+
+-- VIEW
+
+view : Model -> Html Msg
+view model =
+  div []
+    [ button [ onClick Decrement ] [ text "-" ]
+    , div [] [ text (toString model) ]
+    , button [ onClick Increment ] [ text "+" ]
+    ]
+
+-- EXERCISE: Add a button to reset the count

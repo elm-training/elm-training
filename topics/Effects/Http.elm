@@ -4,7 +4,7 @@ import Html exposing (div, h1, h2, text, button, Html)
 import Html.App exposing (program)
 import Html.Events exposing (onClick)
 import Http
-import Task
+import Task exposing (Task)
 import DetailedRendering.InlineStyles exposing (center)
 
 
@@ -27,7 +27,7 @@ init =
     ( { isItChristmas = Nothing }, Cmd.none )
 
 
-{--
+{--}
 type Msg
     = CheckChristmas
     | IsItChristmas String
@@ -60,7 +60,7 @@ update msg model =
       ( { model | isItChristmas = Just str }, Cmd.none )
 
 
-{--
+{--}
 checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
   Debug.crash "whoops"
@@ -74,36 +74,42 @@ The only new thing here is how exactly we generate the Cmd Msg.
 
 The function we want to use looks like [this](http://package.elm-lang.org/packages/evancz/elm-http/3.0.1/Http#getString):
 
-```elm
+-}
 getString : String -> Task Error String
-```
+getString _ = Debug.crash "welp"
 
+{-
 and `Error` looks like this:
 
-```elm
+-}
 type Error
     = Timeout
     | NetworkError
     | UnexpectedPayload String
     | BadResponse Int String
-```
+
+{-
 
 So when we call `getString`, we get back a `Task`, which reprepsents an operation that can succeed or fail. If it fails, it gives us back an Error, and if it succeeds it gives us back the result as a String.
 
 Our job now is to turn that `Task` in to a `Cmd Msg`, which we do with `Task.perform`.
 
 Here is what `Task.perform` looks like.
+-}
 
-```elm
 perform : (x -> msg) -> (a -> msg) -> Task x a -> Cmd msg
-```
+perform _ _ _ = Debug.crash "..."
 
+{-
 The type signature tells us perform takes a function from x to msg, a function from a to msg, and a task x a, and returns a cmd.
 
 This is basically transforming the failure and success paths of the Task to a msg, so that no matter what happens when we hand the Cmd to elm, it always gives back a msg that can go in to our update function.
 
+
+DEMO: Change `update`, `model`, and `view` to handle the RequestError
 -}
 
+{--
 type Msg =
     CheckChristmas
     | IsItChristmas String
@@ -113,7 +119,11 @@ checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
   Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-wfhjizjsvw.now.sh/is-it-christmas"
 
+--}
 
 -- EXERCISE: show a loading spinner when they make the request but it hasn't completed yet.
 
+-- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-wfhjizjsvw.now.sh/cool-people" and then get the cool people back
+
 -- https://is-it-christmas-api-wfhjizjsvw.now.sh for the demo api
+-- TODO: Change the christmas endpoint to include a countdown for the subscription section
