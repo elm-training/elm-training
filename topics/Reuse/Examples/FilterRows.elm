@@ -1,4 +1,4 @@
-module Components.Examples.FilterRows exposing (..)
+module Reuse.Examples.FilterRows exposing (..)
 
 import Html exposing (Html, div, text, button, span, tr, table, td, tbody, thead, th, h2, img, input)
 import Html.Attributes exposing (style, src, placeholder)
@@ -20,8 +20,8 @@ view onChange ph =
             ]
 
 
-rows : (a -> Bool) -> (a -> comparable) -> List a -> List a
-rows match sortField items =
+filterSort : (a -> Bool) -> (a -> comparable) -> List a -> List a
+filterSort match sortField items =
     items
         |> List.filter match
         |> List.sortBy sortField

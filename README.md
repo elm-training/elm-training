@@ -88,12 +88,12 @@ Architecture: Organizing Files
 Jamison
 
 
-Reusable Components
--------------------------------
-- [Functions Before Components](./topics/Components/Functions.elm)
-- [Find Your Inner Library](./topics/Components/Library.elm)
-- [Searchable Table](./topics/Components/Table.elm)
-- [Autocomplete](./topics/Components/Autocomplete.elm)
+Reusable Views
+--------------
+- [Functions, not Components](./topics/Reuse/Functions.elm)
+- [Find Your Inner Library](./topics/Reuse/Library.elm)
+- [Searchable Table](./topics/Reuse/Table.elm)
+- [Autocomplete](./topics/Reuse/Autocomplete.elm)
 
 
 URL Routing
@@ -124,18 +124,13 @@ Enterprise Applications
 - Accordion Control ? During the building section
 - Sortable Tables ? Show elm sortable table, also your example
 
-Other Topics
-------------
-- Child to parent communication / events
-
 Questions
 ---------
 
-- Should Functional Programming go later? It's challenging, and people want that sense of "I can do this!". What if we put it after the "User Input" section, but before effects?
+- I moved Functional Programming back one. It's challenging, and people want that sense of "I can do this!". Further back/
 
-- Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it first! Should we change the order?)
+- Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it before explaining modules at all, should we?)
 
 
 TODO
 ------------------
-- Go through components section and clean up, now that the guide is written differently.

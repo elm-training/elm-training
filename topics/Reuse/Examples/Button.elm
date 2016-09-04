@@ -1,4 +1,4 @@
-module Components.Examples.Button exposing (..)
+module Reuse.Examples.Button exposing (..)
 
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (style)
@@ -55,8 +55,8 @@ toggleButton setValue isActive txt =
 
 toggle : Bool -> Bool
 toggle isActive =
-    -- we can expose the logic separately from the component
-    -- this isn't very complicated, but other components might do something more fancy
+    -- we can expose the logic separately from the view function
+    -- this complicated enough to justify a function in real life, but other views might need something fancy like this
     not isActive
 
 
