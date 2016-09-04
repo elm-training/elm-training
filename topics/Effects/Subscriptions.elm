@@ -8,3 +8,8 @@ What about when things happen repeatedly, or when things get pushed to you? Thin
 For that, we use Subscriptions.
 -}
 
+-- Show: multiple subscriptions
+-- Show: using the Model to react to changes in subscriptions
+
+-- EXERCISE: Write an Elm Architecture application that checks if it is Christmas every 60 seconds.
+

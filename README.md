@@ -39,6 +39,7 @@ Effects
 -----------------------------
 - [Intro To Effects](./topics/Effects/Random.elm)
 - [Http](./topics/Effects/Http.elm)
+- [Subscriptions](./topics/Effects/Subscriptions.elm)
 
 Elm Architecture Modules
 -------------------------------------
@@ -62,14 +63,15 @@ Real World Types - Data Modeling
 
 The Outside World
 -----------------
-Jamison
+- [Basic JSON parsing](./topics/Outside/BasicJson.elm)
+- [Advanced JSON parsing](./topics/Outside/AdvancedJson.elm)
+- [Talking to JavaScript](./topics/Outside/JavaScript.elm)
 
 Detailed Rendering
 ------------------
 - [Inline Styles](./topics/DetailedRendering/InlineStyles.elm)
 - [CSS](./topics/DetailedRendering/Css.elm)
 - [Optimization](./topics/DetailedRendering/Optimization.elm)
-Jamison
 
 Architecture: Organizing Files
 ------------------------------
@@ -91,7 +93,9 @@ Mention: Nesting
 
 Testing
 -------
-Jamison
+- [Setting up elm-test](./topics/Testing/Setup.elm)
+- [Testing Decoders](./topics/Testing/Decoders.elm)
+- [Testing Elm Architecture](./topics/Testing/Architecture.elm)
 
 Tour of the package ecosystem
 -----------------------------
