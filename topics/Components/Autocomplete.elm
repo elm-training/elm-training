@@ -6,7 +6,7 @@ module Components.Autocomplete exposing (..)
 
     Sometimes we want the state of a component to be opaque. In those cases, we do want to create a component more like The Elm Architecture.
 
-    Let's create a basic autocomplete componentb
+    Let's create a basic autocomplete component
 
     1. Look nice out of the box
     2. Be packaged into a nice top-level view
@@ -14,12 +14,14 @@ module Components.Autocomplete exposing (..)
     4. Allow for very differnet kinds of entries in the content box
     5. But work easily out of the box
 
-    TODO create an autocomplete component :)
+    TODO create an autocomplete component
 
     See http://package.elm-lang.org/packages/thebritican/elm-autocomplete/latest
 
-    What are the downsides of this design?
+    What are the strengths and weaknesses of this design?
 
-    EXERCISE: Write your own Autocomplete component using any design pattern.
+    -------------------------------------------------------
 
+    EXERCISE: Write an Autocomplete component using any design pattern.
+    
 -}

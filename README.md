@@ -9,11 +9,13 @@ Please install [git](https://git-scm.com/downloads) and [Elm 0.17](http://elm-la
 
 Then open [http://localhost:8000](http://localhost:8000) in your browser. You should be able to navigate to [./topics/Introduction/Hello.elm](http://localhost:8000/topics/Introduction/Hello.elm) and see "Hello World"
 
+
 Introduction to Elm
 -------------------
 - [Basic Syntax + Hello World](./topics/Introduction/Hello.elm)
 - [Writing and Using Functions](./topics/Introduction/Functions.elm)
 - [Render Functions and the Virtual DOM](./topics/Introduction/RenderDom.elm)
+
 
 Type System
 -----------
@@ -23,6 +25,7 @@ Type System
 - [Type Variables](./topics/TypeSystem/TypeVariables.elm)
 - [Advanced Function Signatures](./topics/TypeSystem/AdvancedFunctionSignatures.elm)
 
+
 Functional Programming
 ----------------------
 - [Immutability](./topics/Functional/Immutability.elm)
@@ -30,16 +33,19 @@ Functional Programming
 - [Composition](./topics/Functional/Composition.elm)
 - [Currying](./topics/Functional/Currying.elm)
 
+
 The Elm Architecture
 --------------------
 - [Introduction](./topics/ElmArchitecture/Intro.elm)
 - [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
+
 
 Effects
 -----------------------------
 - [Intro To Effects](./topics/Effects/Random.elm)
 - [Http](./topics/Effects/Http.elm)
 - [Subscriptions](./topics/Effects/Subscriptions.elm)
+
 
 Elm Architecture Modules
 -------------------------------------
@@ -67,11 +73,13 @@ The Outside World
 - [Advanced JSON parsing](./topics/Outside/AdvancedJson.elm)
 - [Talking to JavaScript](./topics/Outside/JavaScript.elm)
 
+
 Detailed Rendering
 ------------------
 - [Inline Styles](./topics/DetailedRendering/InlineStyles.elm)
 - [CSS](./topics/DetailedRendering/Css.elm)
 - [Optimization](./topics/DetailedRendering/Optimization.elm)
+
 
 Architecture: Organizing Files
 ------------------------------
@@ -88,14 +96,17 @@ Reusable Components
 
 URL Routing (TODO SEAN)
 -----------
+- [Routing](./topics/Routing/Routing.elm)
 Introduce: Use UrlParser and Navigation.
 Mention: Nesting
+
 
 Testing
 -------
 - [Setting up elm-test](./topics/Testing/Setup.elm)
 - [Testing Decoders](./topics/Testing/Decoders.elm)
 - [Testing Elm Architecture](./topics/Testing/Architecture.elm)
+
 
 Tour of the package ecosystem
 -----------------------------
