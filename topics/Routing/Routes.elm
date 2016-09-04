@@ -77,8 +77,6 @@ urlParser =
 
 {-
    Demonstrate: create some useful navigation functions
-
-   See: ./Routes.elm
 -}
 
 

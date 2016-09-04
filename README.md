@@ -94,12 +94,9 @@ Reusable Components
 - [Autocomplete](./topics/Components/Autocomplete.elm)
 
 
-URL Routing (TODO SEAN)
+URL Routing
 -----------
 - [Routing](./topics/Routing/Routing.elm)
-Introduce: Use UrlParser and Navigation.
-Mention: Nesting
-
 
 Testing
 -------
