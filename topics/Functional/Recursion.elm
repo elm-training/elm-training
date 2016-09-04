@@ -5,17 +5,20 @@ module Functional.Recursion exposing (..)
 
    Recursion: functions that call themselves
    replaces for loops
+
    Demo: how would you write factorial with a for loop?
+
+       Factorial
+        factorial 0 = 1
+        factorial 1 = 1
+        factorial 2 = 1*2
+        factorial 3 = 1*2*3 ... etc
+
+   Demo: show recursive factorial
 
    How to write recursive functions
     1. find base cases
     2. call the function on the rest
-
-   Factorial
-    factorial 0 = 1
-    factorial 1 = 1
-    factorial 2 = 1*2
-    factorial 3 = 1*2*3 ... etc
 -}
 
 
