@@ -23,6 +23,7 @@ Type System
 - [Type Aliases](./topics/TypeSystem/TypeAliases.elm)
 - [Union Types](./topics/TypeSystem/UnionTypes.elm)
 - [Type Variables](./topics/TypeSystem/TypeVariables.elm)
+- [Maybe](http://guide.elm-lang.org/error_handling/maybe.html)
 - [Advanced Function Signatures](./topics/TypeSystem/AdvancedFunctionSignatures.elm)
 
 
@@ -33,10 +34,17 @@ The Elm Architecture
 - [What to put on the Model](./topics/ElmArchitecture/DerivedData.elm)
 
 
+
+The Elm Architecture: Effects
+-----------------------------
+- [Intro To Effects](./topics/Effects/Random.elm)
+- [Http](./topics/Effects/Http.elm)
+- [Subscriptions](./topics/Effects/Subscriptions.elm)
+- [Task](http://guide.elm-lang.org/error_handling/task.html)
+
+
 Functional Programming
 ----------------------
-
-*Where should this go? Learners should get a sense of success before tackling this section*
 
 - [Immutability](./topics/Functional/Immutability.elm)
 - [Recursion](./topics/Functional/Recursion.elm)
@@ -44,17 +52,12 @@ Functional Programming
 - [Currying](./topics/Functional/Currying.elm)
 
 
-
-The Elm Architecture: Effects
------------------------------
-- [Intro To Effects](./topics/Effects/Random.elm)
-- [Http](./topics/Effects/Http.elm)
-- [Subscriptions](./topics/Effects/Subscriptions.elm)
-
-
-The Elm Architecture: Modules
--------------------------------------
-Jamison
+The Outside World
+-----------------
+- [Basic JSON parsing](./topics/Outside/BasicJson.elm)
+- [Advanced JSON parsing](./topics/Outside/AdvancedJson.elm)
+- [Talking to JavaScript](./topics/Outside/JavaScript.elm)
+- [Result](http://guide.elm-lang.org/error_handling/result.html)
 
 
 Real World Types - Data Modeling
@@ -65,19 +68,6 @@ Real World Types - Data Modeling
 - [Type Driven Development](./topics/Modeling/TDD.elm)
 
 
-[Error Handling and Tasks](http://guide.elm-lang.org/error_handling/)
----------------------------------------------------
-- [Maybe](http://guide.elm-lang.org/error_handling/maybe.html)
-- [Result](http://guide.elm-lang.org/error_handling/result.html)
-- [Task](http://guide.elm-lang.org/error_handling/task.html)
-
-
-The Outside World
------------------
-- [Basic JSON parsing](./topics/Outside/BasicJson.elm)
-- [Advanced JSON parsing](./topics/Outside/AdvancedJson.elm)
-- [Talking to JavaScript](./topics/Outside/JavaScript.elm)
-
 
 Detailed Rendering
 ------------------
@@ -85,10 +75,6 @@ Detailed Rendering
 - [CSS](./topics/DetailedRendering/Css.elm)
 - [Optimization](./topics/DetailedRendering/Optimization.elm)
 
-
-Architecture: Organizing Files
-------------------------------
-Jamison
 
 
 Reusable Views
@@ -99,9 +85,13 @@ Reusable Views
 - [Autocomplete](./topics/Reuse/Autocomplete.elm)
 
 
-URL Routing
------------
+Single Page Applications
+------------------------
+- Modules: Importing / Exporting
+- Nesting: switch between apps
 - [Routing](./topics/Routing/Routing.elm)
+- Mention: When to use reusable views vs nesting.
+
 
 Testing
 -------
@@ -124,22 +114,3 @@ Enterprise Applications
 - Authentication
 - Accordion Control ? During the building section
 - Sortable Tables ? Show elm sortable table, also your example
-
-Questions
----------
-
-- I moved Functional Programming back one. It's challenging, and people want that sense of "I can do this!". Further back?
-
-- Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it before explaining modules at all, should we?). What do we think of his examples compared to mine? Mine seem a little more thorough.
-
-- Effects, Elm Architecture, Outside World duplicate information in the guide. Can you point out where and how it improves on it?
-
-- We should combine the Organizing Files and Routing section into one section on SPA apps. This is where nesting should be mentioned.
-
-- Richard suggests putting all the Nuanced when you should use what stuff after teaching SPA, so you can mention it all at once. So you can talk about it along the way
-
-- What to do with Maybe / result / Task? It's weird having it as a separate heading. Maybe and Task are mentioned in passing earlier. It's just a deep dive?
-
-
-TODO
-------------------
