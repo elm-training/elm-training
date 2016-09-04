@@ -2,6 +2,7 @@ module Modeling.TDD exposing (..)
 
 import Dict exposing (Dict)
 import Html exposing (text)
+import List.Extra as List
 import String
 
 
@@ -149,7 +150,7 @@ toPairs items =
     -- We could probably write this. In fact, I bet it already exists somewhere
     -- go back. Does it fit? Yes!
     -- TODO use List.Extra.groupsOf
-    groupsOf 2 items
+    List.groupsOf 2 ("" :: items)
         |> List.map toPair
 
 
@@ -174,10 +175,6 @@ toPair strs =
         _ ->
             ( "", "" )
 
-
-groupsOf : Int -> List a -> List (List a)
-groupsOf n items =
-    []
 
 
 
