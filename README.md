@@ -135,8 +135,6 @@ Questions
 
 - Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it first! Should we change the order?)
 
-- What to do about Autocomplete? http://package.elm-lang.org/packages/thebritican/elm-autocomplete/latest is brand new.
-
 
 TODO
 ------------------
