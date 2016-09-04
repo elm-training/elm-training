@@ -35,6 +35,9 @@ The Elm Architecture
 
 Functional Programming
 ----------------------
+
+*Where should this go? Learners should get a sense of success before tackling this section*
+
 - [Immutability](./topics/Functional/Immutability.elm)
 - [Recursion](./topics/Functional/Recursion.elm)
 - [Composition](./topics/Functional/Composition.elm)
@@ -127,11 +130,17 @@ Enterprise Applications
 Questions
 ---------
 
-- I moved Functional Programming back one. It's challenging, and people want that sense of "I can do this!". Further back/
+- I moved Functional Programming back one. It's challenging, and people want that sense of "I can do this!". Further back?
 
 - Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it before explaining modules at all, should we?). What do we think of his examples compared to mine? Mine seem a little more thorough.
 
 - Effects, Elm Architecture, Outside World duplicate information in the guide. Can you point out where and how it improves on it?
+
+- We should combine the Organizing Files and Routing section into one section on SPA apps. This is where nesting should be mentioned.
+
+- Richard suggests putting all the Nuanced when you should use what stuff after teaching SPA, so you can mention it all at once. So you can talk about it along the way
+
+- What to do with Maybe / result / Task? It's weird having it as a separate heading. Maybe and Task are mentioned in passing earlier. It's just a deep dive?
 
 
 TODO
