@@ -8,7 +8,12 @@ import Components.Examples.Button as Button
 
 
 {-
-   LEARN: Functions before Modules
+   LEARN: Functions before Components
+
+   Components are the wrong approach
+
+   TODO rewrite, now that the guide is advocating this too
+   (make helper functions, not components!)
 
    The Elm Architecture allows us to make large applications by nesting "modules" inside each other. This allows us to create an application of any size.
 

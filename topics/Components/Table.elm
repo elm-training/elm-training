@@ -242,14 +242,6 @@ main =
 
 
 {-
-   EXAMPLE: Elm Sortable Table
-
-   For an example of a component that does more all at once. https://github.com/evancz/elm-sortable-table
-
--}
-
-
-{-
    EXERCISE
 
    1. Create some composable functions to allow users to choose the sort order.
