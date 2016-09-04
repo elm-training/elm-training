@@ -93,7 +93,12 @@ multiplyBy x ns =
 
 sum : List Int -> Int
 sum ns =
-    Debug.crash "TODO"
+    case ns of
+        [] ->
+            0
+
+        n :: ns ->
+            n + (sum ns)
 
 
 
@@ -106,7 +111,15 @@ sum ns =
 
 lessThan : Int -> List Int -> List Int
 lessThan x ns =
-    Debug.crash "TODO"
+    case ns of
+        [] ->
+            []
+
+        n :: ns ->
+            if n < x then
+                n :: lessThan x ns
+            else
+                lessThan x ns
 
 
 
@@ -119,4 +132,9 @@ lessThan x ns =
 
 duplicateAll : List a -> List a
 duplicateAll ns =
-    Debug.crash "TODO"
+    case ns of
+        [] ->
+            []
+
+        n :: ns ->
+            n :: n :: duplicateAll ns
