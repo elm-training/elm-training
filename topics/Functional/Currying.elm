@@ -214,27 +214,6 @@ teamLead expertise devs =
             |> mostSenior
 
 
-
-{-
-   EXERCISE
-
-   Divide your developers into Web, Server, and DB teams. Try to balance the yearsExperience of the teams.
-
--}
-
-
-type alias Teams =
-    { web : List Developer
-    , server : List Developer
-    , db : List Developer
-    }
-
-
-teams : List Developer -> Teams
-teams devs =
-    Debug.crash "TODO"
-
-
 test devs =
     (teamExperience devs == 33)
         && (List.length (seniorDevelopers devs) == 3)
