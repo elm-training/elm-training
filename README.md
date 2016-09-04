@@ -129,7 +129,9 @@ Questions
 
 - I moved Functional Programming back one. It's challenging, and people want that sense of "I can do this!". Further back/
 
-- Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it before explaining modules at all, should we?)
+- Notice the new "Scaling the Elm Architecture" section: http://guide.elm-lang.org/reuse/. He's advocating the same approach as us (focus on reusing functions before modules. He introduces it before explaining modules at all, should we?). What do we think of his examples compared to mine? Mine seem a little more thorough.
+
+- Effects, Elm Architecture, Outside World duplicate information in the guide. Can you point out where and how it improves on it?
 
 
 TODO
