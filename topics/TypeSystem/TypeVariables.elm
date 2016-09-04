@@ -25,12 +25,6 @@ Show that it doesn't compile when you call it with different types
 -- LEARN: Union types as arguments. Everything in between the arrows is a single argument.
 
 
-type Nullable a
-    = Null
-    | Value a
-
-
-
 -- this is one argument
 
 default : a -> Nullable a -> a

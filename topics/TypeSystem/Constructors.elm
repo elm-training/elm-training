@@ -4,8 +4,8 @@ module TypeSystem.Contstructors exposing (..)
 
 Types are also functions that construct values of those types. To see this let's jump in the REPL.
 
-* Define some union types, then show that when you enter the type name in the REPL it shows up as a function if the type takes any params.
-* Define a type alias, show the same thing.
+DEMO: load this file in the repl, show that FrontCover is a function (String -> Page)
+DEMO: Show that Author is a function (String -> String -> String -> String -> Author)
 -}
 
 type alias Author = {
@@ -16,3 +16,8 @@ type alias Author = {
   }
 
 type Page = FrontCover String | BackCover Author
+
+-- TODO: good motivating examples for this?
+
+-- DEMO: Constructing authors with record syntax and function syntax
+-- DEMO: Using Union types as arguments to functions

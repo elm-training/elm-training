@@ -8,7 +8,7 @@
 <script type="text/javascript">
   var app = Elm.Outside.JavaScript.fullscreen()
 
-  /* Code for demo 1 here 
+  /* Code for demo 1 here  */
   app.ports.shake.subscribe(function(arg) {
     console.log('got a message from Elm, and it looks like this', arg)
     harlemShake()
@@ -16,7 +16,7 @@
 
   //*/
 
-  /* Code for demo 2 for sending from Js -> Elm here: */
+  /* Code for demo 2 for sending from Js -> Elm here: 
 
   function stopShaking() {
     app.ports.stopShaking.send('we have finished')

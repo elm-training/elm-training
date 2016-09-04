@@ -2,7 +2,7 @@ module ElmArchitecture.TextFields exposing (..)
 
 import Html exposing (Html, Attribute, div, input, text)
 import Html.App as App
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (placeholder)
 import Html.Events exposing (onInput)
 import String
 

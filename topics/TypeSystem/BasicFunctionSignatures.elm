@@ -29,9 +29,9 @@ reverse str =
 
 
 
--- EXERCISE: write the type signature for a function that concatenates two lists of Ints
+-- EXERCISE: write the type signature for a function that combines two lists of Ints
 
-concat list1 list2 = list1 ++ list2
+append list1 list2 = list1 ++ list2
 
 
 
@@ -44,6 +44,7 @@ applyFunctionIfOdd fn n =
     else
       n
 
--- EXERCISE: Write the type signature for a function that takes a function as an arg
+-- TODO: EXERCISE: Write the type signature for a function that takes a function as an arg
+
 
 

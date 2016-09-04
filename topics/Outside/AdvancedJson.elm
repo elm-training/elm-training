@@ -3,14 +3,13 @@ module Outside.AdvancedJson exposing (..)
 {-
 
 * Handling errors
-* Combining decoders
 * Decoding union types with `andThen`
 * Using elm-json-extra
 * Handling optional fields with `maybe`
 * Handling polymorphic values with `oneOf`
 * Handling null with `null`
 
-* Jsone Encoding for POST bodies etc
+* Json Encoding for POST bodies etc
 
 encodeSection : PostedSection -> Value
 encodeSection section =
