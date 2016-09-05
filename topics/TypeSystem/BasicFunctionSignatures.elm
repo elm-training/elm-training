@@ -14,7 +14,7 @@ double n =
 -- LEARN: adding a type annotation to a function with mutiple arguments
 
 
-mutiply a b =
+multiply a b =
     a * b
 
 
