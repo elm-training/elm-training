@@ -26,6 +26,8 @@ import Html exposing (div, text, Html)
    elm-live:
      https://github.com/tomekwi/elm-live
 
+   elm-format:
+     https://github.com/avh4/elm-format
 
    RESOURCES
 

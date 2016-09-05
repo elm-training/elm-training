@@ -38,18 +38,20 @@ catView =
             []
         ]
 
-
-
 {-
-    EXERCISE: Change catView so the image links to a web page talking about cats: https://en.wikipedia.org/wiki/Cat
+    EXERCISE: Make the image in catView into a link that points to the wikipedia page. https://en.wikipedia.org/wiki/Cat. It should create this HTML:
 
-        import Html exposing (a, text)
-        import Html.Attributes exposing (href)
+        <a href="https://en.wikipedia.org/wiki/Cat">
+            <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+        </a>
+
+    Use the `a` function. Example:
+
         a [ href "http://google.com" ] [ text "Google" ]
 
     EXERCISE: Write an imageLink function with 2 parameters: image and url. Use it to display 2-3 images with links on the same page
 
 -}
 
-imageLink image url =
+imageLink imageSrc linkUrl =
     Debug.crash "TODO"
