@@ -44,9 +44,11 @@ applyFunctionIfOdd fn n =
     else
       n
 
--- TODO: EXERCISE: Write the type signature for a function that takes a function as an arg
+-- EXERCISE: Write the type signature for a function that takes a function as an arg
 
-
-
-
+transformBob person transform =
+  if person == "Bob" then
+    transform person
+  else
+    person
 
