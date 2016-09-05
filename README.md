@@ -97,8 +97,8 @@ Single Page Applications
 Testing
 -------
 - [Setting Up elm-test](./topics/Testing/ElmTest.elm)
-- [Running Tests in CI](./topics/Testing/CI.elm)
-- [Advanced Testing](./topics/Testing/AdvancedTesting.elm)
+- [Running Tests in CI](./topics/Testing/Ci.elm)
+- [Advanced Testing](./topics/Testing/Advanced.elm)
 
 
 Tour of the package ecosystem
