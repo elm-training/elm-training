@@ -149,7 +149,6 @@ subscriptions model =
 --}
 
 
-
 {-
 
    WHEW. That sure is a lot of work, but it looks like our app appears. Notice a few things here.

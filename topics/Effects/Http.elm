@@ -167,12 +167,12 @@ subscriptions _ = Sub.none
 
 checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
-  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-bmyvrnqvxb.now.sh/is-it-christmas"
+  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-bjpuutprrl.now.sh/is-it-christmas"
 
 --}
 
 -- EXERCISE: show a loading message when they make the request but it hasn't completed yet.
 
--- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-bmyvrnqvxb.now.sh/cool-people" and then get the cool people back
+-- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-bjpuutprrl.now.sh/cool-people" and then get the cool people back
 
--- https://is-it-christmas-api-bmyvrnqvxb.now.sh for the demo api
+-- https://is-it-christmas-api-bjpuutprrl.now.sh for the demo api
