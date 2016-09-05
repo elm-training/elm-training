@@ -1,7 +1,8 @@
 module Outside.AdvancedJson exposing (..)
 
-import Json.Decode exposing (decodeString, succeed, string, (:=), Decoder, maybe, oneOf, list)
+import Json.Decode exposing (decodeString, succeed, string, (:=), Decoder, maybe, oneOf, list, float, int)
 import Json.Decode.Extra exposing ((|:))
+import Json.Encode as Encode
 import Html exposing (div, h1, h2, text, button, ul, li, Html)
 import Html.App exposing (program)
 import Html.Events exposing (onClick)
@@ -206,61 +207,208 @@ update msg model =
 
 getCoolPeople : Cmd Msg
 getCoolPeople =
-  -- live code
-  let
-      task = coolPeopleTask
-  in
-      Task.perform (always RequestError) FoundCoolPeople task
+    -- live code
+    let
+        task =
+            coolPeopleTask
+    in
+        Task.perform (always RequestError) FoundCoolPeople task
+
+
 
 {-
-By giving Http.get a decoder instead of a string, we get back a Task err value. So if the request fails, or the decoding fails, we still get back an `Http.Error`.
+   By giving Http.get a decoder instead of a string, we get back a Task err value. So if the request fails, or the decoding fails, we still get back an `Http.Error`.
 
-But if the request succeeds, we get a task for the decoded value, which is how we usually want to work with it in our program.
+   But if the request succeeds, we get a task for the decoded value, which is how we usually want to work with it in our program.
 
 -}
+
 
 coolPeopleTask : Task Http.Error (List String)
 coolPeopleTask =
-  Http.get (list string) "https://is-it-christmas-api-bjpuutprrl.now.sh/cool-people"
-
-
+    Http.get (list string) "https://is-it-christmas-api-bjpuutprrl.now.sh/cool-people"
 --}
 
+
+
 -- EXERCISE: add a button to fetch, decode, and render Luke Skywalker from the API. "http://swapi.co/api/people/1/" You should be able to re-use your person decoder.
-
-
-
 {-
-LEARN: Decodeing union types.
+   LEARN: Decodeing union types.
 
-So far we've only decoded primitive types, but a great thing about Elm is that the type system lets you store a lot more meaning then you would get if you were just using strings everywhere.
+   So far we've only decoded primitive types, but a great thing about Elm is that the type system lets you store a lot more meaning then you would get if you were just using strings everywhere.
 
 -}
+
+
+type alias Person4 =
+    { name : String
+    , favoriteBand : Band
+    }
+
+
+
+-- in the dystopian future theare are only two bands, radiohead, or beyonce
+
+
+type Band
+    = Radiohead
+    | Beyonce
+    | OtherBand
+
+
+jenn =
+    """
+{
+  "name": "Jenn",
+  "favorite_band": "Beyoncé"
+}
+"""
+
+
+reggie =
+    """
+{
+  "name": "Reggie",
+  "favorite_band": "Lupe Fiasco"
+}
+"""
+
+
+parseBand : String -> Band
+parseBand band =
+    -- live code
+    case band of
+        "Radiohead" ->
+            Radiohead
+
+        "Beyoncé" ->
+            Beyonce
+
+        _ ->
+            OtherBand
+
+
+person4 : Decoder Person4
+person4 =
+    -- live code
+    succeed Person4
+        |: ("name" := string)
+        |: ("favorite_band" := (Json.Decode.map parseBand string))
+
+
+
+-- EXERCISE: Create a union type for gender and add it to the `Person` type and `person` decoder.
+{-
+   LEARN: How to POST data to the server using Json.Encode
+
+   We've seen how to decode incoming JSON, but we also need to transform Elm data in to something that we can send *out* over the wire.
+
+   Look at the function signature for Http.post: http://package.elm-lang.org/packages/evancz/elm-http/latest/Http#post
+
+-}
+
+
+post : Decoder value -> String -> Http.Body -> Task Http.Error value
+post _ _ _ =
+    Debug.crash "..."
+
+
+
+{-
+
+   It takes a decoder for the result, just like get, a String for the URL, and Body, which is new.
+   Check out the type for Body: http://package.elm-lang.org/packages/evancz/elm-http/latest/Http#Body
+
+   Just below it we see a function, `Http.string`, that turns a `String` in to a `Body`, along with a horrible-looking example of using it:
+-}
+
+
+coolestHats : Task Http.Error (List String)
+coolestHats =
+    post
+        (list string)
+        "http://example.com/hats"
+        (Http.string """{ "sortBy": "coolness", "take": 10 }""")
+
+
+
 {-
 
 
-   * Making HTTP requests and decoding the results
+   So somehow we need to turn our Elm object in to a `String`, and then turn that `String` in to a body with `Http.string`.
 
-   * Handling errors in the elm architecture
+   For that, we can use Json.Encode! (http://package.elm-lang.org/packages/elm-lang/core/latest/Json-Encode)
 
-   * Decoding union types with `map`
+   Let's say we want to post a HighScore object to a server.
 
-   * Handling optional fields with `maybe`
+   We can use Json.Encode to turn this data in to a `String`, like so:
 
-   * Handling polymorphic values with `oneOf`
-
-   * Handling null with `null`
-
-   * Json Encoding for POST bodies
-
-   encodeSection : PostedSection -> Value
-   encodeSection section =
-     Encode.object
-       [ ( "title", Encode.string section.title )
-       , ( "offeringId", Encode.string section.offeringId )
-       , ( "sectionId", Encode.string section.sectionId )
-       ]
+-}
 
 
-   * Show http://noredink.github.io/json-to-elm/ for auto-generating encoders and decoders
+type Weapon
+    = RustySpoon
+    | MolderingPillow
+    | MoistTissue
+
+
+type alias HighScore =
+    { name : String
+    , points : Int
+    , favoriteWeapon : Weapon
+    , time : Float
+    }
+
+
+encodeHighScore : HighScore -> Encode.Value
+encodeHighScore { name, points, favoriteWeapon, time } =
+    -- live code
+    Encode.object
+        [ ( "name", Encode.string name )
+        , ( "points", Encode.int points )
+        , ( "favorite_weapon", Encode.string (toString favoriteWeapon) )
+        , ( "time", Encode.float time )
+        ]
+
+parseWeapon : String -> Weapon
+parseWeapon weapon =
+  case weapon of
+    "Rusty Spoon" -> RustySpoon
+    "Moldering Pillow" -> MolderingPillow
+    "Moist Tissue" -> MoistTissue
+    _ -> RustySpoon
+
+
+highScore : Decoder HighScore
+highScore =
+  succeed HighScore
+  |: ("name" := string)
+  |: ("points" := int)
+  |: ("favorite_weapon" := Json.Decode.map parseWeapon string)
+  |: ("time" := float)
+
+
+{-
+   The basic principle is you turn any Elm types you want to encode in to JSON values with a function from Json.Encode, and then compose those values together in to objects or arrays with `Encode.object` or `Encode.list`.
+
+   We still need a few more steps to turn our high score in to something we can hand to `Http.post`:
+
+-}
+
+
+postHighScore : String -> HighScore -> Task Http.Error HighScore
+postHighScore url aHighScore =
+    -- live code
+    Http.post highScore url (aHighScore |> encodeHighScore |> Encode.encode 2 |> Http.string)
+
+
+
+-- EXERCISE: add a button to the Elm Architecture app that posts Luke Skywalker to http://httpbin.org/. It is ok if you just use the hard-coded result.
+
+
+{-
+
+* Show http://noredink.github.io/json-to-elm/ for auto-generating encoders and decoders
+* Show posting JSON content-types with Http.send (ugh this is a giant mess)
+* Show https://github.com/lukewestby/elm-http-builder as an alternative to Http.send
 -}
