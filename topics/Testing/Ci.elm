@@ -8,6 +8,6 @@ LEARN: How to run your test suite in CI with [node-test-runner](https://github.c
 * `npm i -g elm-test`
 * `elm-test init`
 
-This will generate a Main.elm file that `elm-test` knows how to run, and an empty Test.elm file that you can put your tests in.
+This generates a few files and directories for us.
 
 -}

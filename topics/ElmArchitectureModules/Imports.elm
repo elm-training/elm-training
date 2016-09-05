@@ -1,4 +1,4 @@
-module ElmArchitectureModules.Imports exposing (Book, Genre, generateTitle)
+module ElmArchitectureModules.Imports exposing (Book, Genre, generateTitle, (<>))
 
 
 type Genre
@@ -12,8 +12,14 @@ type Genre
 type alias Book =
     { genre : Genre
     , author : String
+    , title : String
     , bio : String
     , pages : List String
     }
 
+generateTitle : Book -> String
+generateTitle book = (book.author ++ "\n" ++ book.title)
 
+(<>) : Book -> Int -> Bool
+(<>) book page =
+  page >= ( List.length book.pages)

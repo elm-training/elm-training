@@ -2,14 +2,21 @@ module Outside.AdvancedJson exposing (..)
 
 {-
 
-* Handling errors
-* Decoding union types with `andThen`
 * Using elm-json-extra
+
+* Making HTTP requests and decoding the results
+
+* Handling errors in the elm architecture
+
+* Decoding union types with `andThen`
+
 * Handling optional fields with `maybe`
+
 * Handling polymorphic values with `oneOf`
+
 * Handling null with `null`
 
-* Json Encoding for POST bodies etc
+* Json Encoding for POST bodies
 
 encodeSection : PostedSection -> Value
 encodeSection section =
@@ -19,4 +26,6 @@ encodeSection section =
     , ( "sectionId", Encode.string section.sectionId )
     ]
 
+
+* Show http://noredink.github.io/json-to-elm/ for auto-generating encoders and decoders
 -}

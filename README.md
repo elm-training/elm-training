@@ -88,16 +88,16 @@ Reusable Views
 
 Single Page Applications
 ------------------------
-- Modules: Importing / Exporting
-- Nesting: switch between apps
+- [Modules](./topics/ElmArchitectureModules/ImportingFiles.elm)
+- [Nesting](./topics/ElmArchitectureModules/Nesting.elm)
 - [Routing](./topics/Routing/Routing.elm)
 - Mention: When to use reusable views vs nesting.
 
 
 Testing
 -------
-- [Setting up elm-test](./topics/Testing/ElmTest.elm)
-- [Running Test in CI](./topics/Testing/CI.elm)
+- [Setting Up elm-test](./topics/Testing/ElmTest.elm)
+- [Running Tests in CI](./topics/Testing/CI.elm)
 - [Advanced Testing](./topics/Testing/AdvancedTesting.elm)
 
 

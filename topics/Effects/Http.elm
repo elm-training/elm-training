@@ -16,6 +16,10 @@ We follow the same pattern we did with Random. We create data structures that te
 Here is a tiny example.
 --}
 
+{--
+
+main = program { init = init, view = view, update = update, subscriptions = subscriptions }
+
 
 type alias Model =
     { isItChristmas : Maybe String
@@ -27,12 +31,10 @@ init =
     ( { isItChristmas = Nothing }, Cmd.none )
 
 
-{--}
 type Msg
     = CheckChristmas
     | IsItChristmas String
 
---}
 
 view : Model -> Html Msg
 view model =
@@ -59,14 +61,15 @@ update msg model =
     IsItChristmas str ->
       ( { model | isItChristmas = Just str }, Cmd.none )
 
+subscriptions _ = Sub.none
 
-{--}
+
 checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
   Debug.crash "whoops"
 
---}
 
+--}
 {-
 So far this looks similar to the Random example. We have a Msg type that models two interactions: generating the Cmd and grabbing its results. We have the basic Elm Effects loop, where a user action comes in, out `update` function creates a Cmd, elm runs the Cmd, and it gets fed back to the update function as a Msg.
 
@@ -109,20 +112,67 @@ This is basically transforming the failure and success paths of the Task to a ms
 DEMO: Change `update`, `model`, and `view` to handle the RequestError
 -}
 
-{--
+{--}
+
+main = program { init = init, view = view, update = update, subscriptions = subscriptions }
+
+
+type alias Model =
+    { isItChristmas : Maybe String,
+      error: Maybe String
+    }
+
 type Msg =
     CheckChristmas
     | IsItChristmas String
     | RequestError
 
+
+init : ( Model, Cmd Msg )
+init =
+    ( { isItChristmas = Nothing, error = Nothing }, Cmd.none )
+
+
+view : Model -> Html Msg
+view model =
+    div [ center ]
+        [ h1 [] [ text "IS IT CHRISTMAS" ]
+        , h2 []
+            [ text
+                (case model.isItChristmas of
+                    Nothing ->
+                        "WHO CAN SAY"
+
+                    Just str ->
+                        str
+                )
+            ]
+        , div [] [ button [ onClick CheckChristmas ] [ text "Let's Find Out" ] ]
+        , div [] [ text (Maybe.withDefault "" model.error) ]
+        ]
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    CheckChristmas ->
+      (model, checkChristmasStatus)
+    IsItChristmas str ->
+      ( { model | isItChristmas = Just str, error = Nothing }, Cmd.none )
+    RequestError ->
+      ( { model | isItChristmas = Nothing, error = Just "OH NO AN ERROR" }, Cmd.none )
+
+
+subscriptions _ = Sub.none
+
+
 checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
-  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-yhtvzioarz.now.sh/is-it-christmas"
+  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-bmyvrnqvxb.now.sh/is-it-christmas"
 
 --}
 
--- EXERCISE: show a loading spinner when they make the request but it hasn't completed yet.
+-- EXERCISE: show a loading message when they make the request but it hasn't completed yet.
 
--- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-yhtvzioarz.now.sh/cool-people" and then get the cool people back
+-- EXCERCISE : Add another button and a text field to post strings to "https://is-it-christmas-api-bmyvrnqvxb.now.sh/cool-people" and then get the cool people back
 
--- https://is-it-christmas-api-yhtvzioarz.now.sh for the demo api
+-- https://is-it-christmas-api-bmyvrnqvxb.now.sh for the demo api
