@@ -51,4 +51,3 @@ transformBob person transform =
     transform person
   else
     person
-

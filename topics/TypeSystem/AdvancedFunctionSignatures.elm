@@ -103,7 +103,7 @@ count list =
 
 
 
--- EXERCISE: use argument destructuring and case destructuring to write a render function that renders the first skateboard in the first list if it exists, or the first skateboard in the second list if it doesn't exist, or a default empty message.
+-- EXERCISE: use array, tuple, and record destructuring to write a render function that renders the first skateboard in the first list if it exists, or the first skateboard in the second list if it doesn't exist, or a default empty message.
 
 
 mySkateboards : ( List Skateboard, List Skateboard ) -> Html a
@@ -127,7 +127,7 @@ mySkateboards _ =
 
    -- EXERCISE: Read through the function signatures of [List](http://package.elm-lang.org/packages/elm-lang/core/latest/List)
 
-   -- EXERCISE: Read the type signature for [any](http://package.elm-lang.org/packages/elm-lang/core/latest/List#any), tell me what it does, and then use it to write a function that returns `True` if any of the people in the list are named Sarah
+   -- EXERCISE: Find and use a function in List to write a function that returns `True` if any of the people in the list are named Sarah
 
 
 -}
