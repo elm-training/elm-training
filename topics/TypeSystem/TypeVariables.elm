@@ -38,9 +38,19 @@ default a nullable =
 
 
 
--- EXERCISE: Make a list that holds two different types
+{-
+
+EXERCISE: Make a list that holds values of two different types.
+
+You'll need to make a union type, like this:
 
 
---type MagicType a b = Thing a | OtherThing b
---stuff : List (MagicType String Int)
---stuff = [ Thing "WASSUP", OtherThing 10, Thing "WOOP WOOP"
+type TwoThings ???
+
+
+Then create a list holding those values, like this:
+
+
+stuff : List (TwoThings ???)
+
+-}

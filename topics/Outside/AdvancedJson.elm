@@ -231,13 +231,19 @@ coolPeopleTask =
 
 
 {-
+LEARN: Decodeing union types.
+
+So far we've only decoded primitive types, but a great thing about Elm is that the type system lets you store a lot more meaning then you would get if you were just using strings everywhere.
+
+-}
+{-
 
 
    * Making HTTP requests and decoding the results
 
    * Handling errors in the elm architecture
 
-   * Decoding union types with `andThen`
+   * Decoding union types with `map`
 
    * Handling optional fields with `maybe`
 
