@@ -88,7 +88,7 @@ Reusable Views
 
 Single Page Applications
 ------------------------
-- [Modules](./topics/ElmArchitectureModules/ImportingFiles.elm)
+- [Modules](http://guide.elm-lang.org/reuse/modules.html)
 - [Nesting](./topics/ElmArchitectureModules/Nesting.elm)
 - [Routing](./topics/Routing/Routing.elm)
 - Mention: When to use reusable views vs nesting.
