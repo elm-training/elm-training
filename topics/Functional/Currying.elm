@@ -11,7 +11,7 @@ import Html exposing (text)
 
 multiplyBy : Int -> List Int -> List Int
 multiplyBy x ns =
-    -- live code
+    -- live code: copy previous version
     List.map (\n -> n * x) ns
 
 
@@ -20,7 +20,8 @@ multiplyBy x ns =
    LEARN: Currying
 
    Functions always have one parameter, return other functions
-    What does multiplyBy return if you only call it with the first param? (Partial application)
+
+   What does multiplyBy return if you only call it with the first param? (Partial application). Put parentheses around return.
 
    In Javascript:
 
@@ -79,7 +80,6 @@ lessThan x ns =
 
 
 type alias Developer =
-    -- live code?
     { name : Name
     , yearsExperience : Years
     , expertise : List Expertise
@@ -113,7 +113,7 @@ developers =
 
 names : List Developer -> List Name
 names =
-    -- live code
+    -- live code: you can use .name as a function
     List.map .name
 
 
@@ -170,8 +170,8 @@ mostSenior devs =
     Debug.crash "TODO"
 
 
-maximumBy : (a -> comparable) -> List a -> Maybe a
-maximumBy compare items =
+maximumBy : (a -> value) -> List a -> Maybe a
+maximumBy toValue items =
     Debug.crash "TODO"
 
 
@@ -191,6 +191,7 @@ teamLead expertise devs =
 
 
 test devs =
+    -- this should return True if you got everything
     (teamExperience devs == 33)
         && (List.length (seniorDevelopers devs) == 3)
         && (List.length (juniorDevelopers devs) == 3)
