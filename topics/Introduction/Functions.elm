@@ -18,7 +18,7 @@ main =
     div []
         [ div [] [ text (greet "Sean") ]
         , div [] [ text (greet "Everyone") ]
-        , catView
+        , div [] [ catView ]
         ]
 
 
