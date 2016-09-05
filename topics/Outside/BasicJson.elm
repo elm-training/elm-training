@@ -10,10 +10,7 @@ import Html exposing (text)
 
    JSON decoding is how you transform JSON in to Elm types.
 
-   I'm not quite sure how to explain what decoding is. I have more of an intuitive feel for it instead of a deep intellectual understanding of it.
-
-   You are basically building up a pipeline of functions that take in data as strings and turn it in to elm types.
-
+   Demo: fill in the examples, then run in the repl
 -}
 -- LEARN: Decoding single json values with the building block decoders
 -- NOTE: the workflow for each example is fill it in, then run it in the repl to show what the result is

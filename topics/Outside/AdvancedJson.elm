@@ -382,10 +382,10 @@ parseWeapon weapon =
 highScore : Decoder HighScore
 highScore =
   succeed HighScore
-  |: ("name" := string)
-  |: ("points" := int)
-  |: ("favorite_weapon" := Json.Decode.map parseWeapon string)
-  |: ("time" := float)
+      |: ("name" := string)
+      |: ("points" := int)
+      |: ("favorite_weapon" := Json.Decode.map parseWeapon string)
+      |: ("time" := float)
 
 
 {-
