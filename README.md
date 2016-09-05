@@ -117,8 +117,3 @@ Enterprise Applications
 - Authentication
 - Accordion Control ? During the building section
 - Sortable Tables ? Show elm sortable table, also your example
-
-
-
-
-TODO: Add section explaining `Html a` calling back to type variables.
