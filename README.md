@@ -1,7 +1,7 @@
 # Welcome to Elm Training
 This contains the course material for Elm Training. Before attending the training, make sure you can run the code in this repository, and configure your editor to show you errors inline when you save.
 
-Please install [git](https://git-scm.com/downloads) [Elm 0.17](http://elm-lang.org/install), and [elm-live](https://github.com/tomekwi/elm-live) then run:
+Please install [git](https://git-scm.com/downloads), [Elm 0.17](http://elm-lang.org/install), and [elm-live](https://github.com/tomekwi/elm-live) then run:
 
     $ git clone https://github.com/elm-training/elm-training.git
     $ cd elm-training
