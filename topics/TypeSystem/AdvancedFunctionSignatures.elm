@@ -17,12 +17,6 @@ foo tuple =
 
 
 bar : ( Int, String ) -> Int
-
-
-
--- live-code
-
-
 bar ( num, str ) =
     10
 
@@ -103,7 +97,7 @@ count list =
 
 
 
--- EXERCISE: use array, tuple, and record destructuring to write a render function that renders the first skateboard in the first list if it exists, or the first skateboard in the second list if it doesn't exist, or a default empty message.
+-- EXERCISE: use array, tuple, and record destructuring to write a render function that calls showSkateboard on the first skateboard in the first list if it exists, or the first skateboard in the second list if it doesn't exist, or shows a default empty message.
 
 
 mySkateboards : ( List Skateboard, List Skateboard ) -> Html a

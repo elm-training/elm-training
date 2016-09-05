@@ -9,7 +9,7 @@ type Nullable a = Null | Value a
 
 -- EXERCISE: Create a function that displays "Has value" or "Has no value" for any kind of `Nullable`
 
-{- 
+{-
 LEARN: all the `a`s represent the same type.
 Write a `withDefault` function for Nullable.
 
