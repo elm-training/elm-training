@@ -1,6 +1,7 @@
 module Outside.BasicJson exposing (..)
 
 import Json.Decode as Decode exposing (decodeString, list, int, float, string, bool, null, (:=), object2, object4, object5, object8, Decoder)
+import Html exposing (text)
 
 
 {-
@@ -101,8 +102,9 @@ characters =
     "[\"Hal Incandenza\", \"Michael Pelmulis\", \"Joelle Van Dyne\", \"Mario Incandenza\"]"
 
 
-decodedCharacters =
-    Debug.crash "..."
+-- uncomment me when ready
+--decodedCharacters =
+--    Debug.crash "..."
 
 
 
@@ -194,8 +196,12 @@ luke =
 
 type alias StarWarsCharacter = {}
 
-characterDecoder : Decoder StarWarsCharacter
-characterDecoder = Debug.crash "..."
 
-decodedCharacter =
-  decodeString characterDecoder luke
+--characterDecoder : Decoder StarWarsCharacter
+--characterDecoder = Debug.crash "..."
+
+-- uncomment this when you are done
+--decodedCharacter =
+--  decodeString characterDecoder luke
+
+main = text "run in the repl"

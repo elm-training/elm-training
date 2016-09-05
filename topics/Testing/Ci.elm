@@ -1,4 +1,7 @@
 module Testing.Ci exposing (..)
+
+import Html exposing (text)
+
 {-
 
 LEARN: How to run your test suite in CI with [node-test-runner](https://github.com/rtfeldman/node-test-runner)
@@ -48,3 +51,5 @@ Then re-run `elm-test`, and check that you got the failure message.
 
 In practice, when you are missing a dependency in your test `elm-package.json` file the tests will just fail, so it isn't too scary to maintain two separate files.
 -}
+
+main = text "Just read the file"

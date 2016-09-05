@@ -28,7 +28,7 @@ doubleTests =
 
 -- EXERCISE: Write a test suite for `mulitply` using a fuzzer
 
-{--
+{--}
 main =
     Test.Runner.Html.run doubleTests
 --}
@@ -49,7 +49,7 @@ brokenDoubleTest =
   fuzz int "broken double works" (\num -> Expect.equal (num * 2) (brokenDouble num))
 
 
-{--}
+{--
 main =
     Test.Runner.Html.run brokenDoubleTest
 

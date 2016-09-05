@@ -1,6 +1,7 @@
 module ElmArchitectureModules.Nesting exposing (..)
 
 import Html exposing (div, h1, text, button, ul, li, Html)
+import Html.Attributes exposing (disabled)
 import Html.App exposing (program)
 import Html.Events exposing (onClick)
 import Effects.Random as ER
@@ -103,8 +104,19 @@ view model =
     div []
         [ h1 [] [ text "App Switcher" ]
         , ul []
-            [ li [] [ button [ onClick (ChangeCurrentApp RandomApp) ] [ text "Random Numbers" ] ]
-            , li [] [ button [ onClick (ChangeCurrentApp HttpApp) ] [ text "Http Requests" ] ]
+            [ li [] [ button 
+            [ 
+              onClick (ChangeCurrentApp RandomApp)
+              , disabled (model.activeApp == RandomApp)
+              ]
+            [ text "Random Numbers" ] 
+            ]
+            , li [] [ button 
+            [ 
+              onClick (ChangeCurrentApp HttpApp)
+              , disabled (model.activeApp == HttpApp)
+              ]
+                [ text "Http Requests" ] ]
             ]
         , renderChild model
         ]

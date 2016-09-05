@@ -85,7 +85,7 @@ main =
    Most of the time, Elm will be fast enough. If it isn't, check out `lazy` to avoid expensive computation.
 
 
-   SCRIPT: explain optimization, click around and show how there is some lag between when the button is clicked and it re-renders. Then talk about how you should never eyeball optimization, and use the Chrome timeline recorder to take a snapshot and show how long the rendering time is.
+   DEMO: explain optimization, click around and show how there is some lag between when the button is clicked and it re-renders. Then talk about how you should never eyeball optimization, and use the Chrome timeline recorder to take a snapshot and show how long the rendering time is.
 
    Then add lazy, show it is faster, make them remind you to measure, show how the time to re-render is faster b/c you aren't recomputing that giant list of li elements every time you click the button.
 -}

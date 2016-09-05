@@ -325,7 +325,7 @@ post _ _ _ =
 
 coolestHats : Task Http.Error (List String)
 coolestHats =
-    post
+    Http.post
         (list string)
         "http://example.com/hats"
         (Http.string """{ "sortBy": "coolness", "take": 10 }""")
