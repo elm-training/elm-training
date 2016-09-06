@@ -1,13 +1,19 @@
 module DetailedRendering.InlineStyles exposing (..)
 
-
 import Html exposing (div, h1, text, button, Html)
 import Html.App exposing (beginnerProgram)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 
 
--- LEARN: How to style Elm views with inline styles
+{-
+LEARN: How to style Elm views with inline styles
+
+We've got a simple game here. It looks ugly. Let's add some inline styles to make it look pretty!
+-}
+
+
+
 model =
     100
 
@@ -32,6 +38,39 @@ update msg model =
                 model + 10
 
 
+view model =
+    div
+        []
+        [ h1 [] [ text "The Best Game Ever" ]
+        , div
+            []
+            [ button [ onClick Damage ] [ text "🔫" ]
+            , div
+                []
+                [ div []
+                    [ text
+                        (if model == 0 then
+                            "💀"
+                         else if model == 100 then
+                            "😁"
+                         else
+                            "😐"
+                        )
+                    ]
+                , div [] [ text (toString model) ]
+                ]
+            , button [ onClick Heal ] [ text "🍕" ]
+            ]
+        ]
+
+
+main =
+    beginnerProgram { model = model, view = view, update = update }
+
+
+
+{--
+-- the styled view
 view model =
     div
         [ style
@@ -79,17 +118,9 @@ healthToOpacity : Int -> String
 healthToOpacity health =
     1 - ((toFloat health) / 100) |> toString
 
-
-main =
-    beginnerProgram { model = model, view = view, update = update }
-
-
-
-
-
-
-
+--}
 -- EXERCISE: Make the buttons look glorious with inline styles
+
 
 center =
     style

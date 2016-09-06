@@ -112,10 +112,9 @@ update msg model =
    2. How do we handle other cases? This is very hard-coded to our specific use case, but what if you want to do Http requests or WebSockets or handle a clock ticking or any other kind of thing that depends on side-effects?
 
    The good news is that Elm has answers to both of these problems for us, and it looks a lot like what we've done so far. Let me show you some code, and I'll talk through it as I go.
+
 -}
 
--- TODO: this is a big jump
--- TODO: explain the Cmd type
 {--}
 
 
@@ -171,8 +170,32 @@ main =
 --}
 
 
+{-
+EXERCISE: Modify this example to return two random numbers instead of just one
 
--- EXERCISE: Modify this example to return two random numbers instead of just one
+The basic pattern is, you build your app out of pure functions that are easy to test and re-use, and you push all the side-effects to the edges of your program, where Elm can handle them for you.
 
--- The basic pattern is, you build your app out of pure functions that are easy to test and re-use, and you push all the side-effects to the edges of your program, where Elm can handle them for you.
--- TODO: Make some kind of diagram to show the flow
+The new diagram for the architecture looks like this:
+
+     +---------+
+     |         |
+     |  Elm    |
+     |         |
+     |         |
+     +-+----+--+
+       ^    |
+       |    |
+Cmd Msg|    | Msg
+       |    |
+       |    |
+       |    |
+       |    ^
+      ++----+----+          Model                 +-----------+
+      |          +------------------------------> |           |
+      |  Update  |          Msg, Model            |    View   |
+      |          +^-------------------------------+           |
+      +----------+                                +-----------+
+
+
+-}
+

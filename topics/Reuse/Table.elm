@@ -1,4 +1,4 @@
-module Components.Table exposing (..)
+module Reuse.Table exposing (..)
 
 import Html exposing (Html, div, text, button, span, tr, table, td, tbody, thead, th, h2, img, input)
 import Html.Attributes exposing (style, src, placeholder)
@@ -6,7 +6,7 @@ import Html.Events exposing (onClick, onInput)
 import Html.App as Html
 import String
 import Regex exposing (Regex, regex, caseInsensitive)
-import Components.Examples.RestaurantData exposing (restaurants, dishes, Restaurant, Dish)
+import Reuse.Examples.RestaurantData exposing (restaurants, dishes, Restaurant, Dish)
 
 
 {-
@@ -27,7 +27,7 @@ import Components.Examples.RestaurantData exposing (restaurants, dishes, Restaur
    - restaurants sort by name
    - dishes sort by price
 
-   Let's create a component that can support both of these views
+   Let's create some functions that can support both of these views
 -}
 
 
@@ -233,11 +233,13 @@ main =
    - filter logic
    - the search bar
 
-   We may be tempted to make a single component that covers both cases, and lets the user specify which one they want. But what about when a 3rd case appears, then a 4th?  You can't support all possible use cases (especially those you don't think of). Let's use composition instead.
+   We may be tempted to make a single component that handles everything, then asks the user to specify what they want with options. But what about when a 3rd case appears, then a 4th?  You can't support all possible use cases (especially those you don't think of). Let's use view functions instead.
 
    See ./Examples/FilterRows.elm
 
-   live code: replace the above with FilterRows.view
+   Demo: replace the above with FilterRows.view
+
+   Learn: is filterSort any better than doing filter and sortBy every time? Is it worth the new vocabulary word?
 -}
 
 

@@ -14,7 +14,9 @@ import Html exposing (div, text, Html)
    Implement the score function
       mutability: we would increment the score
       immutability: let bindings
-      calculate the score based on kills and deaths and add them
+
+   Demo: calculate the score based on kills and deaths and add them. Kills are worth 10 points, deaths are -5 points
+
 -}
 
 
@@ -26,9 +28,9 @@ type alias PlayerStats =
     }
 
 
-score : PlayerStats -> Int
-score stats =
-    -- live code
+calculateScore : PlayerStats -> Int
+calculateScore stats =
+    -- live code: show the total score based on kills and deaths
     let
         perKill =
             10
@@ -74,17 +76,43 @@ scoreDeaths deaths =
 {- LEARN: Immutability - record updates -}
 
 
-gotKills : Int -> PlayerStats -> PlayerStats
-gotKills n stats =
-    -- live code: increment kills by n
-    { stats | kills = stats.kills + n }
+gotKill : PlayerStats -> PlayerStats
+gotKill stats =
+    -- live code: increment kills
+    { stats | kills = stats.kills + 1 }
+
+died : PlayerStats -> PlayerStats
+died stats =
+    -- live code: increment deaths
+    { stats | deaths = stats.deaths + 1 }
+
+
+collectedGold : Int -> PlayerStats -> PlayerStats
+collectedGold n stats =
+    -- live code, increment gold
+    { stats | gold = stats.gold + n }
 
 
 
 {- EXERCISE
-   If a player collects over 100 gold, they win the game. Add 1000 to their score.
+   1. During the course of a game, player "Tron" has the following happen, in order:
 
-   Create a GameResult type alias that contains both the score and a boolean specifying whether they won. Write a function `gameResult` that returns a GameResult given PlayerStats.
+        - kill
+        - gold 200
+        - death
+        - kill
+        - kill
+        - gold 200
+        - death
+        - gold 800
+
+   Write a function that returns the final value of Tron's PlayerState after all of the above. Use the `gotKill`, `died`, and `collectedGold` functions, in order.
+
+   2. The game ends when one player collects 1000 gold, and that player wins. Add 1000 to their score.
+
+   Create a GameResult type alias that contains both the score and a boolean specifying whether a player won. Write a function `gameResult` that returns the GameResult given PlayerStats.
+
+   Print out the GameResult for Tron.
 
 -}
 
@@ -96,7 +124,6 @@ type alias GameResult =
 result : PlayerStats -> GameResult
 result stats =
     Debug.crash "TODO"
-
 
 
 main =

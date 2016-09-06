@@ -10,18 +10,20 @@ import DetailedRendering.InlineStyles exposing (center)
 
 
 {-
-    The goal of Elm is to eliminate the need to write JS. Sometimes this is unavoidable. When you really need to interop with JS code, Elm makes this safe with ports.
+  The goal of Elm is to eliminate the need to write JS. Sometimes this is unavoidable. When you really need to interop with JS code, Elm makes this safe with ports.
 
-    In Elm you treat JS as a third-party service.
+  In Elm you treat JS as a third-party service.
 
-    * Show creating the Elm app manually in JS, running it with elm-live.
-    * Show creating aport on the JS side with app.ports.name.subscribe
-    * Sending stuff to it is as simple as calling a function
-    * Show harlem shake app
+  * Mention the `port` keyword at the beginning of the module declaration.
+  * Show creating the Elm app manually in JS in `index.html`, running it with elm-live.
+  * Show subscribing in JS side with app.ports.name.subscribe
+  * Show harlem shake app
 
-   Run this with `elm-live --port=8001 --open JavaScript.elm --output=elm.js`
+  Run this with `elm-live --port=8001 --open JavaScript.elm --output=elm.js`
+
+  SEE https://www.youtube.com/watch?v=8f7wj_RcqYk for background.
 -}
-{--
+{--}
 
 
 init =
@@ -85,7 +87,7 @@ main =
    * Error handling in ports:
 
 -}
-{--}
+{--
 
 
 init =
@@ -157,4 +159,4 @@ main =
     program { init = init, view = view, update = update, subscriptions = subscriptions }
 --}
 
--- EXERCISE: Send a message in from JS to change the background color in Elm.
+-- EXERCISE: Send a message in from JS to increment BEATS_DROPPED

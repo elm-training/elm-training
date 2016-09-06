@@ -1,27 +1,20 @@
-module Components.Functions exposing (..)
+module Reuse.Functions exposing (..)
 
 import Html exposing (Html, div, text, button, span)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 import Html.App as Html
-import Components.Examples.Button as Button
+import Reuse.Examples.Button as Button
 
 
 {-
-   LEARN: Functions before Components
+   LEARN: Functions, not Components
 
-   Components are the wrong approach
+   From http://guide.elm-lang.org/reuse/
 
-   TODO rewrite, now that the guide is advocating this too
-   (make helper functions, not components!)
+   "If you are coming from JavaScript, you are probably wondering “where are my reusable components?” and “how do I do parent-child communication between them?” A great deal of time and effort is spent on these questions in JavaScript, but it just works different in Elm. We do not think in terms of reusable components. Instead, we focus on reusable functions. It is a functional language after all!"
 
-   The Elm Architecture allows us to make large applications by nesting "modules" inside each other. This allows us to create an application of any size.
-
-   1. It takes some effort to create and use an Elm Arhitecture Module, so we will naturally avoid using them for small things
-
-   2. What if we want to use a module in an unexpected way?
-
-   When you think "component", try to create functions before you create TEA modules. When you think "screen" or "view" reach for TEA modules.
+   ---------------------------------------------
 
    EXAMPLE: Toggle Button
 
@@ -113,14 +106,14 @@ main =
 
    Composition: Small, Reusable Building Blocks
 
-   Instead of starting big (with a TEA module), let's start small. What is in common between the two buttons?
+   Instead of reaching for a component, let's start small. What is in common between the two buttons?
 
    1. Base button style
    2. Active button style
    3. Logic to apply an active style if the button is active
    4. Logic to toggle the button state
 
-   We could make a TEA module, but that would package everything into one opinionated, opaque, and inflexible module.
+   We could try to make a "component", but that would package everything into one opinionated, opaque, and inflexible group.
 
    What if we want to create a non-toggle button? We would reuse the base style, but not the logic.
 
@@ -128,13 +121,13 @@ main =
 
    COMPOSE: STYLES
 
-   buttonStyle and buttonActiveStyle are already reusable, just expose them in a style module!
+   buttonStyle and buttonActiveStyle are already reusable. We can move them into another module if we need them in two different views
 
-   (live code) replace buttonStyle with Style.button, etc
+   Demo: replace buttonStyle with Style.button, etc
 
    What about the logic to only apply the active style if active? Let's put that in Style too.
 
-   (live code) replace if/then with
+   Demo: replace if/then with buttonIsActive
 
 -}
 
@@ -159,11 +152,11 @@ order2 model =
 
 {-
 
-   COMPOSE: Stateless Component - Toggle Button
+   COMPOSE: View Function - Toggle Button
 
-   Let's make a component that uses the styles, and combines it with the toggle logic above to make things easy. All without its own update function
+   Let's make a function that uses the styles, and combines it with the toggle logic above to make things easy. All without its own update function
 
-   See ./Functions/Button.elm -> toggleButton
+   See toggleButton in ./Examples/Button.elm
 
 -}
 
@@ -185,7 +178,7 @@ update3 msg model =
 
 
 
--- look, this got really simple, and we don't have to do ANY update forwarding, msg forwarding, or init stuff!
+-- Explain: using reusable view functions is way easier than using a component.
 
 
 order3 : Model -> Html Msg3
@@ -204,7 +197,7 @@ order3 model =
 
    If you start to get too many arguments to your component, you can use a type alias.
 
-   See toggleButtonContext in ./Functions/Button.elm
+   See toggleButtonContext in ./Examples/Button.elm
 
 -}
 
@@ -226,16 +219,27 @@ order4 model =
         ]
 
 
+
+{-
+
+   WARNING: Try before you design
+
+   Don't choose to create helper functions before you have a real problem to solve. You'll design it wrong.
+
+   Rule of thumb: when you repeat yourself 3 times you can see the repeated pattern.
+
+-}
 {-
    EXERCISE:
 
-   Make a stateless component that lets someone choose Good, Bad, or Ok. When you select one, the others should deactivate.
+   1. Make a view that lets someone choose a side: Fries, Salad, or Soup. It should look like several toggle buttons in a row. (Use the same styles). When they select one, the others should deactivate.
 
    It should look something like this:
 
-       How do you feel?
+       [  Fries  ] [ *Salad* ] [  Soup  ]
+       [  Fries  ] [  Salad  ] [ *Soup* ]
+       [ *Fries* ] [  Salad  ] [  Soup  ]
 
-           [  Bad  ] [ *OK* ] [  Good  ]
-           [  Bad  ] [  OK  ] [ *Good* ]
-           [ *Bad* ] [  OK  ] [  Good  ]
+   2. Change Drink to the same thing: Water | Soda | Beer | Nothing. Create a view function to make it easier to write both the Drink and Side selectors
+
 -}

@@ -1,17 +1,17 @@
-module Components.Library exposing (..)
+module Reuse.Library exposing (..)
 
 import Html exposing (Html, div, text, button, span)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 import Html.App as Html
-import Components.Functions as Order exposing (Msg3(..), update3, Model)
-import Components.Examples.Button as Button
+import Reuse.Functions as Order exposing (Msg3(..), update3, Model)
+import Reuse.Examples.Button as Button
 
 
 {-
    EXAMPLE: Comosable Children
 
-   HTML lets me wrap things to add functionality. Let's say I make a box component/function. I don't have to change box to have it support layout. I can wrap it in a div!
+   HTML lets me wrap things to add functionality. Let's say I make a box function. I don't have to change box to have it support layout. I can wrap it in a div!
 
    Div is very composable because it can hold anything inside. You don't have to explicitly program div to accept different kinds of content:
 -}
@@ -227,7 +227,7 @@ main =
 
     LEARN: Simplest solution
 
-    stateButton is way to customizable and generic for the benefit it provides. Often the best thing to do is to go ahead and repeat yourself, because this can lead to simpler, understandable code.
+    stateButton is probably too customizable and generic given the benefit it provides. Often the best thing to do is to go ahead and repeat yourself, because this can lead to simpler, understandable code.
 
     Simplicity is far more important than avoiding repetition.
 
@@ -241,7 +241,7 @@ main =
 
    Write some functions to simplify creating navigation tabs.
 
-   Assume you will be publishing the module to package.elm-lang.org, so separate the styles from the view and logic.
+   Separate the styles from the view and logic.
 
    The tabs should:
        Display different content depending on which tab is active

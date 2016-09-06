@@ -3,8 +3,8 @@ module Functional.Composition exposing (..)
 {-
    LEARN: Composition
    combine small, useful functions to solve a larger problems
-   keep your functions small
-   leverage the community
+   keep your functions small - if they get big, break pieces out
+   leverage the community - find existing solutions
 
    LEARN: List.map
    multiply every element in a list by x.
@@ -118,6 +118,8 @@ duplicateAll_Pipe' ns =
    EXERCISE
      write repeatAll, which is the same as duplicate, but n times instead of 2
 
+        repeatAll 3 [1,2,3] -> [1,1,1,2,2,2,3,3,3]
+
      to solve this, write a function repeat that takes a value and repeats it n times. Compose it with list functions
 -}
 
@@ -136,3 +138,15 @@ repeatAll n xs =
     let repeatValue x =
         repeat n x
     in List.concatMap repeatValue xs
+
+
+{-
+   EXERCISE
+
+   Write a function that finds the maximum Int in a list using List.foldl
+
+-}
+
+maximum : List Int -> Int
+maximum ns =
+    Debug.crash "TODO"

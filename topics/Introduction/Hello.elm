@@ -8,7 +8,14 @@ import Html exposing (div, text, Html)
 
    Introduce the core language:
      http://guide.elm-lang.org/core_language.html
-     values, functions, if/then, lists, tuples, records
+
+   Do you feel comfortable writing the following:
+     - values
+     - functions
+     - if/then
+     - lists
+     - tuples
+     - records
 
    Install the elm tools:
      http://elm-lang.org/install
@@ -19,6 +26,8 @@ import Html exposing (div, text, Html)
    elm-live:
      https://github.com/tomekwi/elm-live
 
+   elm-format:
+     https://github.com/avh4/elm-format
 
    RESOURCES
 
