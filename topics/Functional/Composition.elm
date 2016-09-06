@@ -132,3 +132,15 @@ repeat n x =
 repeatAll : Int -> List a -> List a
 repeatAll n xs =
     Debug.crash "TODO"
+
+
+{-
+   EXERCISE
+
+   Write a function that finds the maximum Int in a list using List.foldl
+
+-}
+
+maximum : List Int -> Int
+maximum ns =
+    Debug.crash "TODO"
