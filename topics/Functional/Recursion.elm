@@ -102,7 +102,7 @@ sum ns =
 
 {-
    EXERCISE
-   only keep values less than x
+   return a new list that only has contains values less than x
    use explicit recursion
 -}
 
