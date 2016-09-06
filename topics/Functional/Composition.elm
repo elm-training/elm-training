@@ -133,14 +133,25 @@ repeatAll : Int -> List a -> List a
 repeatAll n xs =
     Debug.crash "TODO"
 
-
 {-
    EXERCISE
 
-   Write a function that finds the maximum Int in a list using List.foldl
+   Write a function maximum that returns the maximum Int in a list, or 0 for an empty list. Make sure it works for negative numbers
 
 -}
 
 maximum : List Int -> Int
 maximum ns =
+    Debug.crash "TODO"
+
+
+{-
+   EXERCISE
+
+   Write a function that finds the length of the longest string in a list using List.foldl, or 0 if the list is empty. Hint: look at the type of List.foldl. What types are a and b? Try creating the function you pass to List.foldl at the top level and giving it a type annotation
+
+-}
+
+longestLength : List String -> Int
+longestLength ns =
     Debug.crash "TODO"
