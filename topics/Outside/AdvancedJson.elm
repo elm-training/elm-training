@@ -33,7 +33,7 @@ luke =
   "eye_color": "Blue",
   "birth_year": "19BBY",
   "gender": "Male",
-  "robot_hands": 1,
+  "robot_hands": 1
 }
 """
 
@@ -153,6 +153,9 @@ person3 =
 
 
 -- EXERCISE: Modify the `person2` decoder to have a default eye_color and skin_color instead of `Maybe`
+
+
+
 {-
    LEARN: decoders and HTTP
 
