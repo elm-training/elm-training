@@ -15,7 +15,9 @@ import Routing.Routes as Routes exposing (Route(..))
 {-
    LEARN: Routing
 
-   Navigation and UrlParser provide enough library support to implement routing without a framework. This approach scales better and is more explicit
+   Navigation and UrlParser provide enough library support to implement routing without a framework.
+
+   http://package.elm-lang.org/packages/elm-lang/navigation/1.0.0/Navigation and http://package.elm-lang.org/packages/evancz/url-parser/latest/
 
    See ./Routes.elm
 

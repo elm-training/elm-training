@@ -158,6 +158,13 @@ hungerStyles hunger =
             Button.button ++ Button.hyperActive
 
 
+
+{-
+NOTE: Just like the individual union type are functions, the whole union type itself is a function.
+> import Reuse.Library exposing (..)
+> Hunger
+<function> : Reuse.Library.Hunger -> Reuse.Library.Msg
+-}
 hungerView : Model -> Html Msg
 hungerView model =
     div []

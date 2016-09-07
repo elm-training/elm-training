@@ -36,7 +36,7 @@ type alias Employee =
 
 
 {-
-   LEARN: But that structure is infinitely recursive. We can't define the Employee until we have the Project, and we can't define the Project until we have the employees. Instead, let's create a new type, that comoses both:
+   LEARN: But that structure is infinitely recursive. We can't define the Employee until we have the Project, and we can't define the Project until we have the employees. Instead, let's create a new type, that composes both:
 
    Now we can easily display a page with all of this information. Our local model doesn't have to match the API or the database!
 
@@ -130,7 +130,7 @@ createPage page =
 
 
 
--- we might use it like this:
+-- we might use it like this (note the destructuring)
 
 
 pageView : Record Page -> Html msg

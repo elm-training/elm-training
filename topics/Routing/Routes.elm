@@ -53,7 +53,7 @@ url route =
 
 routeParser : Parser (Route -> a) a
 routeParser =
-    -- live cod
+    -- live code
     oneOf
         [ format Counter (s "counter")
         , format Post (s "posts" </> int)
