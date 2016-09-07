@@ -2,11 +2,10 @@ port module Outside.JavaScript exposing (..)
 
 import Html exposing (div, h1, h2, text, button, ul, li, Html)
 import Html.App exposing (program)
-import Html.Attributes exposing (disabled)
+import Html.Attributes exposing (disabled, style)
 import Html.Events exposing (onClick)
-import Http
 import Task
-import DetailedRendering.InlineStyles exposing (center)
+import Outside.Styles exposing (center)
 
 
 {-
@@ -38,7 +37,7 @@ type Msg
 
 
 view model =
-    div [ center ]
+    div [ style center ]
         [ h1 [] [ text "Let Us Shake" ]
         , renderList
         , renderList
