@@ -187,7 +187,7 @@ view model =
     div [ center ]
         [ h1 [] [ text "LUKE SKYWALKER?" ]
         , div []
-            [ button [ ] [ text "Fetch Luke" ] ]
+            [ button [ onClick FetchLuke ] [ text "Fetch Luke" ] ]
         ]
 
 
@@ -200,7 +200,7 @@ update msg model =
             -- TODO: FILL ME OUT
             ( model, Cmd.none )
 
-        _ ->
+        RequestError ->
             -- ALERT ALERT NEVER DO THIS I'M JUST BEING LAZY
             ( model, Cmd.none )
 
@@ -217,6 +217,8 @@ fetchLuke =
 
 
 -- EXERCISE: add a button to fetch, decode, and render Luke Skywalker from the API. "http://swapi.co/api/people/1/" You should be able to re-use your person decoder.
+
+-- ASIDE: Talk about how you would do more detailed error handling
 
 {-
    LEARN: Decodeing union types.
@@ -395,6 +397,6 @@ postHighScore url aHighScore =
 {-
 
 * Show http://noredink.github.io/json-to-elm/ for auto-generating encoders and decoders
-* Show posting JSON content-types with Http.send (ugh this is a giant mess)
+* Show posting JSON content-types with Http.send (WHICH IS A GIANT MESS)
 * Show https://github.com/lukewestby/elm-http-builder as an alternative to Http.send
 -}

@@ -1,4 +1,4 @@
-function harlemShake(cb) {
+function harlemShake(done, notifyBeatDropped) {
 
   var MIN_HEIGHT = 30;
   var MIN_WIDTH = 30;
@@ -123,6 +123,12 @@ function harlemShake(cb) {
         for (i = 0; i < len; i++) {
           shakeOther(nodes[i]);
         }
+        if (notifyBeatDropped && typeof notifyBeatDropped == 'function') {
+          notifyBeatDropped()
+          setTimeout(notifyBeatDropped, 18.6)
+          setTimeout(notifyBeatDropped, 20.6)
+          setTimeout(notifyBeatDropped, 23.6)
+        }
       }
 
       // slow motion at the end
@@ -135,8 +141,8 @@ function harlemShake(cb) {
     audioTag.addEventListener("ended", function() {
       stopShakeAll();
       removeAddedFiles();
-      if (cb && typeof cb === 'function') {
-        cb();
+      if (done && typeof done === 'function') {
+        done();
       }
     }, true);
 

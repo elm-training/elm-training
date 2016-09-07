@@ -8,7 +8,7 @@
 <script type="text/javascript">
   var app = Elm.Outside.JavaScript.fullscreen()
 
-  /* Code for demo 1 here  */
+  /* Code for demo 1 here 
   app.ports.shake.subscribe(function(arg) {
     console.log('got a message from Elm, and it looks like this', arg)
     harlemShake()
@@ -22,12 +22,34 @@
     app.ports.stopShaking.send('we have finished')
   }
 
+
   app.ports.shake.subscribe(function(arg) {
     console.log('got a message from Elm, and it looks like this', arg)
     harlemShake(stopShaking)
   })
 
   //*/
+
+
+  /* Code for example here */
+
+  // Pass this in as the second argument to `harlemShake`
+  function notifyBeats() {
+    // Notify elm every time the beat drops
+    app.ports. // ?????
+  }
+
+  function stopShaking() {
+    app.ports.stopShaking.send('we have finished')
+  }
+
+
+  app.ports.shake.subscribe(function(arg) {
+    console.log('got a message from Elm, and it looks like this', arg)
+    harlemShake(stopShaking)
+  })
+
+  */
 </script>
   </body>
 </html>

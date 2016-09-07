@@ -159,4 +159,4 @@ main =
     program { init = init, view = view, update = update, subscriptions = subscriptions }
 --}
 
--- EXERCISE: Send a message in from JS to increment BEATS_DROPPED
+-- EXERCISE: Create a new port in Elm. In JavaScript, pass a second callback in to `harlemShake` that will send some data to that new port. In Elm, when you recieve that data, increment a `beatsDropped` counter on the model and render that in your view.
