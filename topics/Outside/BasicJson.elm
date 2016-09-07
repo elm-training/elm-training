@@ -8,6 +8,8 @@ import Html exposing (text)
 
    LEARN: How to parse JSON in Elm
 
+   Pull open the Http.get docs (http://package.elm-lang.org/packages/evancz/elm-http/3.0.1/Http#get)
+
    JSON decoding is how you transform JSON in to Elm types.
 
    Demo: fill in the examples, then run in the repl
