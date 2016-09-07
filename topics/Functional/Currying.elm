@@ -63,10 +63,10 @@ add2 =
     ((+) 2)
 
 
-lessThan : Int -> List Int -> List Int
-lessThan x ns =
-    -- live code
-    List.filter ((<) x) ns
+multiplyBy' : Int -> List Int -> List Int
+multiplyBy' x ns =
+    -- live code: copy previous version
+    List.map ((*) x) ns
 
 
 
