@@ -286,6 +286,30 @@ person4 =
 
 
 -- EXERCISE: Create a union type for gender and add it to the `Person` type and `person` decoder.
+
+{-
+
+    LEARN: Post-Processing with Json.map
+
+    In the previous exercise, we asked you to decode star wars characters, but look at the height and mass fields. We would like to decode those as floats instead of strings.
+
+-}
+
+
+height =
+    """
+    "1.72 m"
+    """
+
+
+lengthDecoder : Decoder Float
+lengthDecoder =
+    -- live code
+    Debug.crash "..."
+
+
+
+
 {-
    LEARN: How to POST data to the server using Json.Encode
 
@@ -389,6 +413,8 @@ postHighScore url aHighScore =
     -- live code
     Http.post highScore url (aHighScore |> encodeHighScore |> Encode.encode 2 |> Http.string)
 
+
+-- EXERCISE: Change the decoder for Star Wars characters to use floats for height and mass, and an int for birth year.
 
 
 -- EXERCISE: add a button to the Elm Architecture app that posts Luke Skywalker you fetched from the star wars api to http://httpbin.org/
