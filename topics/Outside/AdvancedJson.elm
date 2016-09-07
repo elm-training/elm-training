@@ -305,7 +305,8 @@ height =
 lengthDecoder : Decoder Float
 lengthDecoder =
     -- live code
-    Debug.crash "..."
+    float
+
 
 
 
