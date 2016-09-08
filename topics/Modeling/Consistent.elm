@@ -1,6 +1,7 @@
 module Modeling.Consistent exposing (..)
 
-import Html exposing (text, Html)
+import Html exposing (text, Html, div, img, video)
+import Html.Attributes exposing (src)
 
 
 {-
@@ -48,6 +49,7 @@ displayShape shape =
                 Just r ->
                     text "Now we can display a circle"
                 Nothing ->
+                    -- how do we handle errors in our view?
                     text "This is an invalid Shape... "
 
         _ ->
@@ -88,14 +90,33 @@ type alias PolygonInfo =
 
 
 
+
+
+
+
 {-
-   EXERCISE: Tweet Content
+   EXERCISE: Tweet Media
 
-   Tweets sometimes contain media: a video, link, or image. A video should be rendered in a <video> tag, an image in an <img> tag, and a link should display an <img>, and a title
+   Tweets sometimes contain media: a video, link, image, or nothing. A video should be rendered in a <video> tag, an image in an <img> tag, and a link should display both an <img> and a title.
 
-   Write a type that represents TweetContent
+   Write a type that represents TweetMedia and Tweet
 
-   Write a function that displays TweetContent
+        { tweet: "This tweet has an image"
+        , imageURL: "..."
+        }
+
+        { tweet: "This tweet has a video"
+        , videoURL: "..."
+        }
+
+        { tweet: "This tweet has a link"
+        , linkURL: "..."
+        , linkImageURL: "..."
+        }
+
+        { tweet: "This tweek just has text" }
+
+   Write a function that displays TweetMedia
 -}
 
 
