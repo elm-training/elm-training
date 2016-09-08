@@ -186,4 +186,9 @@ sortByUpdated =
 -}
 
 
-type alias EmployeeProject = ()
+type alias EmployeeProject =
+    {}
+
+employeeView : EmployeeProject -> Html msg
+employeeView ep =
+    div [] [ text "display employee information, and the project info that they are assigned to" ]
