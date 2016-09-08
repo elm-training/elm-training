@@ -205,6 +205,7 @@ validateUser =
         , "lastName" : "Smith"
         , "addressLine1" : "1234 Oceanic Blvd"
         , "addressLine2" : "#24"
+        , "city" : "London"
         , "phoneNumber" : "(801) 321-2345"
         , "citizenId" : 555774888
         , "age": 42
@@ -213,10 +214,25 @@ validateUser =
         , "party": "outer" (or "inner")
         }
 
-    1. Model this in the type system. Be as specific as you can and differentiate between different types.
+    1. Create a Citizen type alias. Look for ways to make it as strict as possible. For example, look for types like "Address" that you can compose to create Citizen. Make age and citizen id be different types so you can't mix them up. Look for other ways
 
-    2. Write a function that can create a citizen from the primitive types (Strings), or a decoder for it
+    2. Construct a citizen from the raw data below
 
 -}
 
 type alias Citizen = ()
+
+winston : Citizen
+winston = ()
+
+firstName = "Winston"
+lastName = "Smith"
+addressLine1 = "1234 Oceanic Blvd"
+addressLine2 = "#24"
+city = "London"
+phoneNumber = "(801) 321-2345"
+citizenId = 555774888
+age = 42
+assignment = "Historical Archives"
+isPartyMember = True
+party = "outer"
