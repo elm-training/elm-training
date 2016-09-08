@@ -199,23 +199,24 @@ validateUser =
 
    EXERCISE:
 
-   Create a simple ID type to make sure you don't mix it up with regular Ints.
+   We are loyal party members working in the Ministry of Privacy, and our job is to track everything about all citizens. Our double-plus good API returns citizens in the following format:
 
-   Write a function that converts an Int -> ID
+        { "firstName" : "Winston"
+        , "lastName" : "Smith"
+        , "addressLine1" : "1234 Oceanic Blvd"
+        , "addressLine2" : "#24"
+        , "phoneNumber" : "(801) 321-2345"
+        , "citizenId" : 555774888
+        , "age": 42
+        , "assignment": "Historical Archives"
+        , "isPartyMember": true
+        , "party": "outer" (or "inner")
+        }
 
-   Given an ID for a user, write a function that returns its path in our API.
+    1. Model this in the type system. Be as specific as you can and differentiate between different types.
 
-        /users/1
-        /users/303
+    2. Write a function that can create a citizen from the primitive types (Strings), or a decoder for it
 
 -}
 
-type alias ID = ()
-
-toID : Int -> ()
-toID =
-    Debug.crash "TODO: fix the signature"
-
-userPath : ID -> String
-userPath _ =
-    Debug.crash "TODO"
+type alias Citizen = ()
