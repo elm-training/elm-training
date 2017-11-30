@@ -32,7 +32,7 @@ init =
 
 type Msg
     = CheckChristmas
-    | IsItChristmas String
+    | IsItChristmas (Result Http.Error String)
 
 
 view : Model -> Html Msg
@@ -57,8 +57,10 @@ update msg model =
   case msg of
     CheckChristmas ->
       (model, checkChristmasStatus)
-    IsItChristmas str ->
+    IsItChristmas (Ok str) ->
       ( { model | isItChristmas = Just str }, Cmd.none )
+    IsItChristmas (Err _) ->
+      ( model, Cmd.none )
 
 subscriptions _ = Sub.none
 
@@ -123,7 +125,7 @@ type alias Model =
 
 type Msg =
     CheckChristmas
-    | IsItChristmas String
+    | IsItChristmas (Result Http.Error String)
     | RequestError
 
 
@@ -155,8 +157,10 @@ update msg model =
   case msg of
     CheckChristmas ->
       (model, checkChristmasStatus)
-    IsItChristmas str ->
+    IsItChristmas (Ok str) ->
       ( { model | isItChristmas = Just str, error = Nothing }, Cmd.none )
+    IsItChristmas (Err _) ->
+      ( model, Cmd.none )
     RequestError ->
       ( { model | isItChristmas = Nothing, error = Just "OH NO AN ERROR" }, Cmd.none )
 
@@ -166,7 +170,8 @@ subscriptions _ = Sub.none
 
 checkChristmasStatus : Cmd Msg
 checkChristmasStatus =
-  Task.perform (always RequestError) IsItChristmas <| Http.getString "https://is-it-christmas-api-bjpuutprrl.now.sh/is-it-christmas"
+  let request = Http.getString "https://is-it-christmas-api-bjpuutprrl.now.sh/is-it-christmas"
+  in Http.send IsItChristmas request
 
 --}
 

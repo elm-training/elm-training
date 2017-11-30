@@ -66,17 +66,3 @@ parseRoute loc =
     Just r -> r
     Nothing -> NotFound
 
-
-{-
-   Demonstrate: create some useful navigation functions
--}
-
-
-navigateTo : Route -> Cmd msg
-navigateTo route =
-    Navigation.newUrl (url route)
-
-
-redirectTo : Route -> Cmd msg
-redirectTo route =
-    Navigation.modifyUrl (url route)

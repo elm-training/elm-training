@@ -124,10 +124,10 @@ view model =
 renderChild model =
     case model.activeApp of
         RandomApp ->
-            Html.App.map RandomMsg (ER.view model.random)
+            Html.map RandomMsg (ER.view model.random)
 
         HttpApp ->
-            Html.App.map HttpMsg (EH.view model.http)
+            Html.map HttpMsg (EH.view model.http)
 
 
 update msg model =

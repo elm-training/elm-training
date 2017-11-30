@@ -1,7 +1,7 @@
 module ElmArchitectureModules.ImportingFiles exposing (..)
 
 -- import ElmArchitectureModules.Imports
-import ElmArchitectureModules.Imports as Imports
+-- import ElmArchitectureModules.Imports as Imports
 
 {-
 So far we've only done everything in a single file. This doesn't scale. Eventually you'll need to import other files.
@@ -27,12 +27,10 @@ DEMO: Import infix operator (also this is why infix operators suck)
 
 -- EXERCISE: You are feeling STRONG. Import String but alias it as STRONG to reflect your newfound strength. Make this function compile.
 
-{--
 isLongString : String -> Bool
 isLongString str =
-  STRONG.length str > 1000
-
---}
+  Debug.crash "Fix the following"
+  -- STRONG.length str > 1000
 
 
 

@@ -1,9 +1,9 @@
 module Routing.Screens.Post exposing (..)
 
 import Html exposing (Html, button, div, text, a)
-import Html.Attributes exposing (href, style)
 import Html.Events exposing (onClick)
 import Routing.Routes exposing (url, Route(..))
+import Navigation
 
 
 -- MODEL ---------------------------
@@ -25,12 +25,18 @@ init id =
 
 
 type Msg
-    = Like
+    = Next
+    | Previous
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    ( model, Cmd.none )
+  case msg of
+    Next ->
+      ( model, Navigation.newUrl <| url <| Post (model.postId + 1) )
+
+    Previous ->
+      ( model, Navigation.newUrl <| url <| Post (model.postId - 1) )
 
 
 
@@ -42,10 +48,10 @@ view model =
     div []
         [ div [] [ text "Post: ", text (toString model.postId) ]
         , div []
-            [ a [ href (url (Post (model.postId - 1))) ]
+            [ button [ onClick Previous ]
                 [ text "Previous" ]
             , text " "
-            , a [ href (url (Post (model.postId + 1))) ]
+            , button [ onClick Next ]
                 [ text "Next" ]
             ]
         ]
