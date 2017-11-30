@@ -1,7 +1,7 @@
 module Routing.Routes exposing (..)
 
-import Navigation
-import UrlParser exposing (map, s, string, int, oneOf, Parser, (</>), top)
+import Navigation exposing (Location)
+import UrlParser as Url exposing (map, s, string, int, oneOf, Parser, (</>), top)
 
 {-
    These need to be in a separate file so they can be imported anywhere in your application
@@ -49,8 +49,8 @@ url route =
 -}
 
 
-routeParser : Parser (Route -> a) a
-routeParser =
+matchRoute : Parser (Route -> a) a
+matchRoute =
     -- live code
     oneOf
         [ map Counter (s "counter")
@@ -60,17 +60,11 @@ routeParser =
         ]
 
 
-toRoute : Navigation.Location -> Route
-toRoute = Debug.crash "woot"
-    -- create a parser that works with Navigation
-    -- this one parses hash, but you can use normal urls if you like
-    -- Navigation.makeParser
-    --     (.hash
-    --         >> String.dropLeft 2
-    --         >> UrlParser.parseHash identity routeParser
-    --         >> Result.withDefault NotFound
-    --     )
-
+parseRoute : Location -> Route
+parseRoute loc =
+  case Url.parseHash matchRoute loc of
+    Just r -> r
+    Nothing -> NotFound
 
 
 {-

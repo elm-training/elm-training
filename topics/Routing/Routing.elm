@@ -2,14 +2,14 @@ module Routing.Routing exposing (..)
 
 import Html exposing (Html, div, h1, text)
 import Html.Attributes exposing (style)
-import Navigation
-import UrlParser exposing (s, string, int, oneOf, Parser, (</>))
+import Navigation exposing (Location)
 import Routing.Screens.Home as Home
 import Routing.Screens.Post as Post
 import Routing.Screens.Counter as Counter
-import Routing.Routes as Routes exposing (Route(..), toRoute)
+import Routing.Routes as Routes exposing (Route(..), parseRoute)
 
 -- https://github.com/evancz/url-parser/blob/master/examples/Example.elm
+-- https://www.elm-tutorial.org/en/07-routing/02-routing.html
 
 
 {-
@@ -42,7 +42,8 @@ type RouteModel
 
 
 type Msg
-    = PostMsg Post.Msg
+    = NewUrl Location
+    | PostMsg Post.Msg
     | CounterMsg Counter.Msg
 
 
@@ -54,9 +55,11 @@ type Msg
 -}
 
 
-init : Route -> ( Model, Cmd Msg )
-init route =
+init : Navigation.Location -> ( Model, Cmd Msg )
+init loc =
     let
+        route = parseRoute loc
+
         routeModel =
             case route of
                 Post id ->
@@ -89,6 +92,10 @@ update msg model =
             ( model, Cmd.none )
     in
         case ( msg, model.routeModel ) of
+
+            ( NewUrl loc, _ ) ->
+              init loc
+
             ( PostMsg subMsg, PostModel postModel ) ->
                 let
                     ( post, postCmd ) =
@@ -165,11 +172,10 @@ subscriptions model =
 
 
 main : Program Never Model Msg
-main = -- Debug.crash "No"
-    Navigation.program UrlChange
-        { init = \l -> toRoute l |> init
+main =
+    Navigation.program NewUrl
+        { init = init
         , update = update
-        , urlUpdate = urlUpdate
         , view = view
         , subscriptions = subscriptions
         }
