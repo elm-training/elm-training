@@ -7,6 +7,7 @@ import Navigation
 
 
 -- MODEL ---------------------------
+-- Demonstrate: use the Navigation.newUrl Cmd instead of href
 
 
 type alias Model =
