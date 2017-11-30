@@ -57,6 +57,7 @@ showSkateboard skateboard =
 -- live-code
 
 
+showSkateboard2 : Skateboard -> Html a
 showSkateboard2 { wheels, trucks, deck } =
     div []
         [ ul []
@@ -67,6 +68,7 @@ showSkateboard2 { wheels, trucks, deck } =
         ]
 
 
+main : Html a
 main =
     showSkateboard mySkateboard
 

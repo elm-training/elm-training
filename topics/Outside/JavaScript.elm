@@ -3,7 +3,6 @@ port module Outside.JavaScript exposing (..)
 import Html exposing (div, h1, h2, text, button, ul, li, Html, program)
 import Html.Attributes exposing (disabled, style)
 import Html.Events exposing (onClick)
-import Task
 import Outside.Styles exposing (center)
 
 

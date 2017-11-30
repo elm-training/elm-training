@@ -126,5 +126,6 @@ result stats =
     Debug.crash "TODO"
 
 
+main : Html a
 main =
     text "Use elm-repl to test"

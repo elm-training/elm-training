@@ -42,6 +42,8 @@ The Elm Architecture: Effects
 - [Http](./topics/Effects/Http.elm)
 - [Subscriptions](./topics/Effects/Subscriptions.elm)
 - [Task](http://guide.elm-lang.org/error_handling/task.html)
+- * https://becoming-functional.com/tasks-in-elm-0-18-2b64a35fd82e
+- * 
 
 
 Functional Programming

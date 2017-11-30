@@ -114,6 +114,7 @@ update msg model =
             { model | text = str }
 
 
+main : Program Never Model Msg
 main =
     beginnerProgram { model = model, view = view, update = update }
 --}
