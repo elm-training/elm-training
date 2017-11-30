@@ -61,7 +61,7 @@ displayShape shape =
 -- now you know that radius is always and only present on circles
 
 
-type Shape'
+type Shape2
     = Circle Color Radius
     | Polygon Color Sides
 
@@ -70,7 +70,7 @@ type Shape'
 -- Or you can move what is different into a sub-field: ShapeType
 
 
-type alias Shape'' =
+type alias Shape3 =
     { shapeType : ShapeType
     , color : Color
     }

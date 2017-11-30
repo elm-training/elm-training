@@ -167,7 +167,7 @@ filterNotDeleted records =
 -}
 
 
-type alias Record' =
+type alias Record2 =
     {}
 
 

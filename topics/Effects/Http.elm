@@ -1,7 +1,6 @@
 module Effects.Http exposing (..)
 
-import Html exposing (div, h1, h2, text, button, Html)
-import Html.App exposing (program)
+import Html exposing (div, h1, h2, text, button, Html, program)
 import Html.Events exposing (onClick)
 import Http
 import Task exposing (Task)

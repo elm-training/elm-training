@@ -63,8 +63,8 @@ add2 =
     ((+) 2)
 
 
-multiplyBy' : Int -> List Int -> List Int
-multiplyBy' x ns =
+multiplyBy2 : Int -> List Int -> List Int
+multiplyBy2 x ns =
     -- live code: copy previous version
     List.map ((*) x) ns
 

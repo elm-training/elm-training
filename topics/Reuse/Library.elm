@@ -3,7 +3,6 @@ module Reuse.Library exposing (..)
 import Html exposing (Html, div, text, button, span)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
-import Html.App as Html
 import Reuse.Functions as Order exposing (Msg3(..), update3, Model)
 import Reuse.Examples.Button as Button
 
@@ -75,7 +74,7 @@ order model =
         -- live code
     in
         div []
-            [ Button.toggleButton2 Food
+            [ Button.toggleButton3 Food
                 model.wantsFood
                 [ span
                     [ style bigText ]
@@ -83,7 +82,7 @@ order model =
                 , span [] [ text "Food" ]
                 ]
               -- We can have the content respond to the state, without having to change toggleButton to support it
-            , Button.toggleButton2 Drink
+            , Button.toggleButton3 Drink
                 model.wantsDrink
                 [ text ("Drink: " ++ yesNo model.wantsDrink) ]
             ]

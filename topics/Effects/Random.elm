@@ -1,7 +1,6 @@
 module Effects.Random exposing (..)
 
-import Html exposing (div, h1, text, button, Html)
-import Html.App exposing (program)
+import Html exposing (div, h1, text, button, Html, program)
 import Html.Events exposing (onClick)
 import Random exposing (generate)
 import DetailedRendering.InlineStyles exposing (center)

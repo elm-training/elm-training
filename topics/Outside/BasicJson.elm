@@ -1,6 +1,6 @@
 module Outside.BasicJson exposing (..)
 
-import Json.Decode as Decode exposing (decodeString, list, int, float, string, bool, null, (:=), object2, object4, object5, object8, Decoder)
+import Json.Decode as Decode exposing (decodeString, list, int, float, string, bool, null, field, map2, map4, map5, map8, Decoder)
 import Html exposing (text)
 
 
@@ -131,9 +131,9 @@ type alias Person =
 personDecoder : Decoder Person
 personDecoder =
   -- live code
-  object2 Person
-    ("name" := string)
-    ("weight" := float)
+  map2 Person
+    (field "name" string)
+    (field "weight" float)
 
 decodedPerson =
   decodeString personDecoder jamison
@@ -159,11 +159,11 @@ type alias Person2 =
 person2Decoder : Decoder Person2
 person2Decoder =
   -- live code
-  object4 Person2
-    ("name" := string)
-    ("weight" := float)
-    ("ssn" := string)
-    ("favorite_food" := string)
+  map4 Person2
+    (field "name" string)
+    (field "weight" float)
+    (field "ssn" string)
+    (field "favorite_food" string)
 
 decodedPerson2 =
   decodeString person2Decoder jamison

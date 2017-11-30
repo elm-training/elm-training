@@ -1,10 +1,9 @@
 module Outside.AdvancedJson exposing (..)
 
-import Json.Decode exposing (decodeString, succeed, string, (:=), Decoder, maybe, oneOf, list, float, int)
+import Json.Decode exposing (decodeString, succeed, string, field, Decoder, maybe, oneOf, list, float, int)
 import Json.Decode.Extra exposing ((|:))
 import Json.Encode as Encode
-import Html exposing (div, h1, h2, text, button, ul, li, Html)
-import Html.App exposing (program)
+import Html exposing (div, h1, h2, text, button, ul, li, Html, program)
 import Html.Events exposing (onClick)
 import Http
 import Task exposing (Task)
@@ -14,7 +13,7 @@ import DetailedRendering.InlineStyles exposing (center)
 {-
    LEARN: Decoding with elm-json-extra
 
-   `objectN` is convenient but it has a few issues. If you add or remove fields you have to change things in a few different places now.
+   `mapN` is convenient but it has a few issues. If you add or remove fields you have to change things in a few different places now.
 
    There is a third party library called `json-extra` that makes decoding large objects easier.
 
@@ -58,14 +57,14 @@ person : Decoder Person
 person =
     --  live code
     succeed Person
-        |: ("name" := string)
-        |: ("height" := string)
-        |: ("mass" := string)
-        |: ("hair_color" := string)
-        |: ("skin_color" := string)
-        |: ("eye_color" := string)
-        |: ("birth_year" := string)
-        |: ("gender" := string)
+        |: (field "name" string)
+        |: (field "height" string)
+        |: (field "mass" string)
+        |: (field "hair_color" string)
+        |: (field "skin_color" string)
+        |: (field "eye_color" string)
+        |: (field "birth_year" string)
+        |: (field "gender" string)
 
 
 decodedPerson =
@@ -97,8 +96,8 @@ person2 : Decoder Person2
 person2 =
     -- live code
     succeed Person2
-        |: (maybe ("eye_color" := string))
-        |: ("skin_color" := string)
+        |: (maybe (field "eye_color" string))
+        |: (field "skin_color" string)
 
 
 decodedLuke =
@@ -145,7 +144,7 @@ person3 =
     -- live code
     succeed Person3
         |: (oneOf
-                [ ("eye_color" := string)
+                [ (field "eye_color" string)
                 , succeed "flashing red and green, like christmas lights"
                 ]
            )
@@ -197,7 +196,7 @@ view model =
 update msg model =
     case msg of
         FetchLuke ->
-            ( model, getLuke )
+            ( model, fetchLuke )
 
         GotLuke luke ->
             -- TODO: FILL ME OUT
@@ -283,8 +282,8 @@ person4 : Decoder Person4
 person4 =
     -- live code
     succeed Person4
-        |: ("name" := string)
-        |: ("favorite_band" := (Json.Decode.map parseBand string))
+        |: (field "name" string)
+        |: (field "favorite_band" (Json.Decode.map parseBand string))
 
 
 
@@ -339,12 +338,12 @@ post _ _ _ =
 -}
 
 
-coolestHats : Task Http.Error (List String)
+coolestHats : Http.Request (List String)
 coolestHats =
     Http.post
-        (list string)
         "http://example.com/hats"
-        (Http.string """{ "sortBy": "coolness", "take": 10 }""")
+        (Http.stringBody "applicaton/json" """{ "sortBy": "coolness", "take": 10 }""")
+        (list string)
 
 
 
@@ -398,10 +397,10 @@ parseWeapon weapon =
 highScore : Decoder HighScore
 highScore =
   succeed HighScore
-      |: ("name" := string)
-      |: ("points" := int)
-      |: ("favorite_weapon" := Json.Decode.map parseWeapon string)
-      |: ("time" := float)
+      |: (field "name" string)
+      |: (field "points" int)
+      |: (field "favorite_weapon" <| Json.Decode.map parseWeapon string)
+      |: (field "time" float)
 
 
 {-
@@ -412,10 +411,10 @@ highScore =
 -}
 
 
-postHighScore : String -> HighScore -> Task Http.Error HighScore
+postHighScore : String -> HighScore -> Http.Request HighScore
 postHighScore url aHighScore =
     -- live code
-    Http.post highScore url (aHighScore |> encodeHighScore |> Encode.encode 2 |> Http.string)
+    Http.post url (aHighScore |> encodeHighScore |> Http.jsonBody) highScore
 
 
 -- EXERCISE: Change the decoder for Star Wars characters to use floats for height and mass, and an int for birth year.
@@ -425,7 +424,6 @@ postHighScore url aHighScore =
 
 
 {-
-
 * Show http://noredink.github.io/json-to-elm/ for auto-generating encoders and decoders
 * Show posting JSON content-types with Http.send (WHICH IS A GIANT MESS)
 * Show https://github.com/lukewestby/elm-http-builder as an alternative to Http.send

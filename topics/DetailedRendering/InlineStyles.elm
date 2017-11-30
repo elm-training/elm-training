@@ -1,7 +1,6 @@
 module DetailedRendering.InlineStyles exposing (..)
 
-import Html exposing (div, h1, text, button, Html)
-import Html.App exposing (beginnerProgram)
+import Html exposing (div, h1, text, button, Html, beginnerProgram)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 

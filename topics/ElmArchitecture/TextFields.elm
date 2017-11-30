@@ -1,7 +1,6 @@
 module ElmArchitecture.TextFields exposing (..)
 
-import Html exposing (Html, Attribute, div, input, text)
-import Html.App as App
+import Html exposing (Html, Attribute, div, input, text, beginnerProgram)
 import Html.Attributes exposing (placeholder)
 import Html.Events exposing (onInput)
 import String
@@ -12,7 +11,7 @@ LEARN: How to take input from text fields
 
 
 main =
-  App.beginnerProgram { model = model, view = view, update = update }
+  beginnerProgram { model = model, view = view, update = update }
 
 
 -- MODEL

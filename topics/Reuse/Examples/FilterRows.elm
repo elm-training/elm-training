@@ -3,7 +3,6 @@ module Reuse.Examples.FilterRows exposing (..)
 import Html exposing (Html, div, text, button, span, tr, table, td, tbody, thead, th, h2, img, input)
 import Html.Attributes exposing (style, src, placeholder)
 import Html.Events exposing (onClick, onInput)
-import Html.App as Html
 import String
 import Regex exposing (Regex, regex, caseInsensitive)
 

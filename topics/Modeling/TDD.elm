@@ -84,8 +84,8 @@ calculateOps ops =
     List.foldl calculateOp 0 ops
 
 
-calculate' : String -> Float
-calculate' input =
+calculate2 : String -> Float
+calculate2 input =
     -- live code: does this fit with parse and calculateOps?
     -- fill this in
     -- we still need to parse into that format though

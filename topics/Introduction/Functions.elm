@@ -32,7 +32,7 @@ catView =
     -- live code, add to main
     div []
         [ img
-            [ src "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"
+            [ src "http://s1.dmcdn.net/FUyF3/x240-RkH.jpg"
             , width 400
             ]
             []
@@ -42,7 +42,7 @@ catView =
     EXERCISE: Make the image in catView into a link that points to the wikipedia page. https://en.wikipedia.org/wiki/Cat. It should create this HTML:
 
         <a href="https://en.wikipedia.org/wiki/Cat">
-            <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+            <img src="http://s1.dmcdn.net/FUyF3/x240-RkH.jpg">
         </a>
 
     Use the `a` function. Example:

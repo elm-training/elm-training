@@ -1,7 +1,6 @@
 module DetailedRendering.Css exposing (..)
 
-import Html exposing (button, div, h1, text)
-import Html.App exposing (beginnerProgram)
+import Html exposing (button, div, h1, text, beginnerProgram)
 import Html.Attributes exposing (classList)
 import Html.Events exposing (onClick)
 

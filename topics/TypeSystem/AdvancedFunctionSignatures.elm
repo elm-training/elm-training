@@ -57,7 +57,7 @@ showSkateboard skateboard =
 -- live-code
 
 
-showSkateboard' { wheels, trucks, deck } =
+showSkateboard2 { wheels, trucks, deck } =
     div []
         [ ul []
             [ li [] [ text ("Wheels: " ++ wheels) ]

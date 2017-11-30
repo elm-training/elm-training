@@ -1,8 +1,7 @@
 module ElmArchitectureModules.Nesting exposing (..)
 
-import Html exposing (div, h1, text, button, ul, li, Html)
+import Html exposing (div, h1, text, button, ul, li, Html, program)
 import Html.Attributes exposing (disabled)
-import Html.App exposing (program)
 import Html.Events exposing (onClick)
 import Effects.Random as ER
 import Effects.Http as EH

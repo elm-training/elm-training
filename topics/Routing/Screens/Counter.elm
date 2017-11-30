@@ -1,7 +1,6 @@
 module Routing.Screens.Counter exposing (..)
 
 import Html exposing (Html, button, div, text, p)
-import Html.App as App
 import Html.Events exposing (onClick)
 
 

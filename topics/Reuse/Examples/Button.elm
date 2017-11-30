@@ -3,7 +3,6 @@ module Reuse.Examples.Button exposing (..)
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
-import Html.App as Html
 
 
 -- styles -------------------------------------------
@@ -72,8 +71,8 @@ type alias ToggleContext msg =
     }
 
 
-toggleButton' : ToggleContext msg -> Html msg
-toggleButton' { onToggle, isActive, label } =
+toggleButton2 : ToggleContext msg -> Html msg
+toggleButton2 { onToggle, isActive, label } =
     Html.button
         [ onClick (onToggle (toggle isActive))
         , style (buttonIsActive isActive)
@@ -86,8 +85,8 @@ toggleButton' { onToggle, isActive, label } =
 ------------------------------------------------------
 
 
-toggleButton2 : (Bool -> msg) -> Bool -> List (Html msg) -> Html msg
-toggleButton2 setValue isActive content =
+toggleButton3 : (Bool -> msg) -> Bool -> List (Html msg) -> Html msg
+toggleButton3 setValue isActive content =
     Html.button
         [ onClick (setValue (toggle isActive))
         , style (buttonIsActive isActive)

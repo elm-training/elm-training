@@ -13,16 +13,16 @@ LINK TO GUIDE: http://guide.elm-lang.org/architecture/effects/time.html
 
 -}
 
-import Html exposing (Html)
-import Html.App as App
+import Html exposing (Html, program)
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 import Time exposing (Time, second)
 
 
 
+main : Program Never Model Msg
 main =
-  App.program
+  program
     { init = init
     , view = view
     , update = update

@@ -108,8 +108,8 @@ duplicateAll_Pipe ns =
         |> List.concat
 
 
-duplicateAll_Pipe' : List a -> List a
-duplicateAll_Pipe' ns =
+duplicateAll_Pipe2 : List a -> List a
+duplicateAll_Pipe2 ns =
     -- live code
     List.concat <| List.map duplicate ns
 

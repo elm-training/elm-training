@@ -3,7 +3,6 @@ module Reuse.Functions exposing (..)
 import Html exposing (Html, div, text, button, span)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
-import Html.App as Html
 import Reuse.Examples.Button as Button
 
 
@@ -206,12 +205,12 @@ order4 : Model -> Html Msg3
 order4 model =
     -- live code
     div []
-        [ Button.toggleButton'
+        [ Button.toggleButton2
             { onToggle = Food
             , isActive = model.wantsFood
             , label = "Food"
             }
-        , Button.toggleButton'
+        , Button.toggleButton2
             { onToggle = Drink
             , isActive = model.wantsDrink
             , label = "Drink"

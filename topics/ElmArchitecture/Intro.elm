@@ -1,7 +1,6 @@
 module Main exposing (..)
 
-import Html exposing (button, div, img, text, Html)
-import Html.App exposing (beginnerProgram)
+import Html exposing (button, div, img, text, Html, beginnerProgram)
 import Html.Attributes exposing (src)
 import Html.Events exposing (onClick)
 
@@ -22,12 +21,11 @@ Mention the magic of `main`: It is basically a magical function that Elm knows t
 -}
 
 import Html exposing (Html, button, div, text)
-import Html.App as App
 import Html.Events exposing (onClick)
 
 
 main =
-  App.beginnerProgram { model = model, view = view, update = update }
+  beginnerProgram { model = model, view = view, update = update }
 
 
 -- MODEL

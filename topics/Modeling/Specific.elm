@@ -103,8 +103,8 @@ type Degrees
     = Degrees Float
 
 
-toRadians' : Degrees -> Radians
-toRadians' (Degrees d) =
+toRadians2 : Degrees -> Radians
+toRadians2 (Degrees d) =
     let
         convert n =
             Debug.crash "..."
@@ -112,8 +112,8 @@ toRadians' (Degrees d) =
         Radians (convert d)
 
 
-sin' : Radians -> Float
-sin' (Radians r) =
+sin2 : Radians -> Float
+sin2 (Radians r) =
     -- try calling sin' with the wrong unit
     r
 

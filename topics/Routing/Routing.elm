@@ -2,14 +2,14 @@ module Routing.Routing exposing (..)
 
 import Html exposing (Html, div, h1, text)
 import Html.Attributes exposing (style)
-import Html.App as Html
 import Navigation
-import String
-import UrlParser exposing (format, s, string, int, oneOf, Parser, (</>))
+import UrlParser exposing (s, string, int, oneOf, Parser, (</>))
 import Routing.Screens.Home as Home
 import Routing.Screens.Post as Post
 import Routing.Screens.Counter as Counter
-import Routing.Routes as Routes exposing (Route(..))
+import Routing.Routes as Routes exposing (Route(..), toRoute)
+
+-- https://github.com/evancz/url-parser/blob/master/examples/Example.elm
 
 
 {-
@@ -118,7 +118,7 @@ update msg model =
 -}
 
 
-urlUpdate : Route -> Model -> ( Model, Cmd Msg )
+urlUpdate : Location -> Model -> ( Model, Cmd Msg )
 urlUpdate route model =
     init route
 
@@ -164,10 +164,10 @@ subscriptions model =
             Sub.none
 
 
-main : Program Never
-main =
-    Navigation.program Routes.urlParser
-        { init = init
+main : Program Never Model Msg
+main = -- Debug.crash "No"
+    Navigation.program UrlChange
+        { init = \l -> toRoute l |> init
         , update = update
         , urlUpdate = urlUpdate
         , view = view

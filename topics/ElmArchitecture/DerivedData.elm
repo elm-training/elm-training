@@ -1,8 +1,7 @@
 module ElmArchitecture.DerivedData exposing (..)
 
-import Html exposing (div, input, text, Html)
-import Html.Attributes exposing (type')
-import Html.App exposing (beginnerProgram)
+import Html exposing (div, input, text, Html, beginnerProgram)
+import Html.Attributes exposing (type_)
 import Html.Events exposing (onInput)
 import String
 
@@ -39,7 +38,7 @@ view model =
         div []
             [ text "Password: "
             , input
-                [ type' "password"
+                [ type_ "password"
                 , onInput SetText
                 ]
                 []
@@ -86,7 +85,7 @@ view model =
     div []
         [ text "Password: "
         , input
-            [ type' "password"
+            [ type_ "password"
             , onInput SetText
             ]
             []

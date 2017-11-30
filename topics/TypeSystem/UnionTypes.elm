@@ -1,7 +1,7 @@
 module TypeSystem.UnionTypes exposing (..)
 
 import Html exposing (div, text, input)
-import Html.Attributes exposing (class, type')
+import Html.Attributes exposing (class, type_)
 
 
 -- LEARN: Union types as enums

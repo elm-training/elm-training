@@ -1,7 +1,6 @@
 module DetailedRendering.Optimization exposing (..)
 
-import Html exposing (button, div, h1, li, ul, text)
-import Html.App exposing (beginnerProgram)
+import Html exposing (button, div, h1, li, ul, text, beginnerProgram)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 import Html.Lazy exposing (lazy)

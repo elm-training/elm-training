@@ -2,7 +2,6 @@ module Routing.Screens.Post exposing (..)
 
 import Html exposing (Html, button, div, text, a)
 import Html.Attributes exposing (href, style)
-import Html.App as App
 import Html.Events exposing (onClick)
 import Routing.Routes exposing (url, Route(..))
 
